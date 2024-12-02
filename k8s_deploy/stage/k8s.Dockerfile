@@ -7,7 +7,7 @@ COPY package.json yarn.lock ./
 RUN yarn install --immutable --immutable-cache
 
 COPY . .
-RUN yarn dev
+#RUN yarn dev
 # Expose the default port
 EXPOSE 3000
-#CMD ["npm", "run", "start"]
+CMD ["yarn", "run", "dev"]
