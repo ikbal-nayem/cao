@@ -62,7 +62,7 @@ post {
                 scmWebUrl: 'https://github.com/CAO-BD/cao-portal.git',
                 showChangeset: true,
                 footer: "Status:  ${currentBuild.currentResult}, build ${env.BUILD_NUMBER} Job ${env.JOB_NAME}\nMore info at: ${env.BUILD_URL}",
-                webhookURL: 'https://discord.com/api/webhooks/1208421423119470662/GC0oRal1UnnOEgaA7CLo9LEjIJJOdoCmUg5jrkiX0AZ9q33UjhI8vh-YpTLZy0CDqIPA',
+                webhookURL: 'https://discord.com/api/webhooks/1313072151074574356/oIupw7MDCWAXBdSoY3uqbSW6573CTfJyzD4_Yc6cR6PJ9v37IC5-wt6ESQEo_566KeoA',
             )
     } 
 }
