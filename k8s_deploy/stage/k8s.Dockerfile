@@ -9,5 +9,5 @@ RUN yarn install --immutable --immutable-cache
 COPY . .
 #RUN yarn dev
 # Expose the default port
-EXPOSE 3000
+EXPOSE 80
 CMD ["yarn", "run", "dev"]
