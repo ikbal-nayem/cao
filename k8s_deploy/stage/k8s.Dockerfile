@@ -8,8 +8,6 @@ RUN yarn install --immutable --immutable-cache
 
 COPY . .
 RUN yarn dev
-
-### STAGE 2: Run ###
-FROM nginx
-COPY ./k8s_deploy/stage/stage-nginx.conf /etc/nginx/nginx.conf
-COPY --from=build /app/build/ /usr/share/nginx/html/
+# Expose the default port
+EXPOSE 3000
+#CMD ["npm", "run", "start"]

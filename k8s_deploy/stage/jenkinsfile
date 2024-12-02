@@ -100,18 +100,6 @@ post {
             }
         }
 
-
-
-        stage('create nginx config for host mapping') {
-            steps {
-                sh '''
-                cat ./k8s_deploy/stage/stage-nginx.conf.tm|sed "s/INSIGHT_HOSTNAME/$INSIGHT_HOSTNAME/g" > ./k8s_deploy/stage/stage-nginx.conf
-                cat ./k8s_deploy/stage/stage-nginx.conf
-                '''
-            }
-        }
-
-
         stage('Creating production building and Docker image') {
             steps {
                 script {
