@@ -31,7 +31,7 @@ const LeadershipSection: FC = () => {
           >
             <div className="relative h-96">
               <Image
-                src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTDQv46ipsEqt9MZ6FaIZWysVAwOYVF3Ivy72QjYrwB-VyZKxoOMGy3CavLZ9pmpQoKIYNcEKfDOQuWTG0"
+                src="https://www.dailymessenger.net/media/imgAll/2024February/en/02-2408101027.jpg"
                 alt="Dr. Muhammad Yunus"
                 fill
                 className="object-cover"
@@ -65,7 +65,7 @@ const LeadershipSection: FC = () => {
               />
             </div>
             <div className="p-6">
-              <h3 className="text-2xl font-bold mb-2">M Siraz Uddin Mia</h3>
+              <h3 className="text-2xl font-bold mb-2">M Siraj Uddin Mia</h3>
               <p className="text-lg text-muted-foreground mb-4">Principal Secretary</p>
               <blockquote className="border-l-4 border-primary pl-4 italic mb-4">
                 "Efficient administration and transparent governance are the cornerstones of our progress. We are committed to serving the people of Bangladesh with dedication and integrity."
