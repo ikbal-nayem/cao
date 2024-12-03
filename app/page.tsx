@@ -2,7 +2,8 @@ import HeroSection from "@/src/components/home/hero-section";
 import ServicesSection from "@/src/components/home/services-section";
 import StatsSection from "@/src/components/home/stats-section";
 import NewsSection from "@/src/components/home/news-section";
-import LeadershipSection from "@/src/components/home/leadership-section";
+import LeadershipSection from "@/src/components/home/leadership/leadership-section";
+import PartnersSection from "@/src/components/home/partners/partners-section";
 import Header from "@/src/components/layout/header";
 import Footer from "@/src/components/layout/footer";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <LeadershipSection />
       <StatsSection />
       <NewsSection />
+      <PartnersSection />
       <Footer />
     </main>
   );
