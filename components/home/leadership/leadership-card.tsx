@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { FC } from 'react';
 import { motion } from 'framer-motion';
@@ -23,7 +23,7 @@ const LeadershipCard: FC<LeadershipCardProps> = ({ name, role, image, quote, des
       transition={{ duration: 0.8, delay: index * 0.2 }}
       className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
     >
-      <div className={`relative h-[600px] ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+      <div className="relative h-[600px]">
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
         <Image
           src={image}
@@ -33,7 +33,7 @@ const LeadershipCard: FC<LeadershipCardProps> = ({ name, role, image, quote, des
         />
       </div>
       
-      <div className={`space-y-6 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+      <div className="space-y-6">
         <div className="inline-block bg-primary/10 px-4 py-2 rounded-full">
           <span className="text-primary font-medium">{role}</span>
         </div>

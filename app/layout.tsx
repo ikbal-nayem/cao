@@ -1,7 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ThemeProvider } from "@/src/components/theme/theme-provider";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { LanguageProvider } from '@/components/language/language-context';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,13 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
+        <ThemeProvider>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
       </body>
     </html>

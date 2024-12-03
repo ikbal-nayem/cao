@@ -1,29 +1,33 @@
-"use client";
+'use client';
 
 import { FC } from 'react';
-import { motion } from "framer-motion";
-import { FileText, Scale, Users, Building } from "lucide-react";
+import { motion } from 'framer-motion';
+import { FileText, Scale, Users, Building } from 'lucide-react';
 
 const services = [
   {
     icon: <FileText className="w-8 h-8" />,
-    title: "Policy Development",
-    description: "Formulating and implementing national policies for sustainable development.",
+    title: 'Policy Development',
+    description:
+      'Formulating and implementing national policies for sustainable development.',
   },
   {
     icon: <Scale className="w-8 h-8" />,
-    title: "Governance",
-    description: "Ensuring transparent and effective governance across all sectors.",
+    title: 'Governance',
+    description:
+      'Ensuring transparent and effective governance across all sectors.',
   },
   {
     icon: <Building className="w-8 h-8" />,
-    title: "Administration",
-    description: "Coordinating with various ministries and government departments.",
+    title: 'Administration',
+    description:
+      'Coordinating with various ministries and government departments.',
   },
   {
     icon: <Users className="w-8 h-8" />,
-    title: "Public Services",
-    description: "Facilitating efficient delivery of public services to citizens.",
+    title: 'Public Services',
+    description:
+      'Facilitating efficient delivery of public services to citizens.',
   },
 ];
 
@@ -42,7 +46,8 @@ const ServicesSection: FC = () => {
             Our Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive range of services provided by the Chief Advisor's Office
+            Comprehensive range of services provided by the Chief Advisor's
+            Office
           </p>
         </motion.div>
 

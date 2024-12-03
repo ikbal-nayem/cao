@@ -1,0 +1,51 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import { FC } from 'react';
+
+const HeroSection: FC = () => {
+  return (
+    <div
+      className="relative min-h-screen flex items-center"
+      style={{
+        background: "url('/static/image/cao.jpg') no-repeat",
+        backgroundPosition: 'center',
+      }}
+    >
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 to-blue-300/10" />
+      </div>
+
+      <div className="container mx-auto px-4 z-10">
+        <div className="max-w-4xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold text-white mb-6"
+          >
+            Office of the{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-500">
+              Chief Advisor
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl text-blue-100 mb-8 max-w-2xl"
+          >
+            Serving the nation through effective governance, transparent
+            leadership, and sustainable development initiatives.
+          </motion.p>
+        </div>
+      </div>
+
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
+    </div>
+  );
+};
+
+export default HeroSection;

@@ -1,10 +1,11 @@
-"use client";
+'use client';
 
-import { FC, useState, useEffect } from "react";
-import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/src/components/theme/theme-toggle";
+import { FC, useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { LanguageSwitch } from '@/components/language/language-switch';
 
 const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,30 +16,37 @@ const Header: FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const menuItems = [
     {
-      title: "About Us",
-      submenu: ["Leadership", "Mission & Vision", "Organization Structure"],
+      title: 'About Us',
+      href: '/about-us',
     },
+    // {
+    //   title: 'Services',
+    //   submenu: [
+    //     'Policy Development',
+    //     'Governance',
+    //     'Administration',
+    //     'Public Services',
+    //   ],
+    // },
     {
-      title: "Services",
-      submenu: ["Policy Development", "Governance", "Administration", "Public Services"],
+      title: 'Resources',
+      submenu: ['Publications', 'Reports', 'Guidelines'],
     },
-    {
-      title: "Resources",
-      submenu: ["Publications", "Reports", "Guidelines"],
-    },
-    { title: "Contact", href: "/contact" },
+    { title: 'Contact', href: '/contact' },
   ];
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : "bg-transparent"
+        isScrolled
+          ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'
+          : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -63,7 +71,7 @@ const Header: FC = () => {
                   </button>
                 ) : (
                   <Link
-                    href={item.href || "#"}
+                    href={item.href || '#'}
                     className="text-foreground hover:text-primary"
                   >
                     {item.title}
@@ -86,17 +94,22 @@ const Header: FC = () => {
                 )}
               </div>
             ))}
-            <ThemeToggle />
+            <div className="flex items-center space-x-4">
+              <LanguageSwitch />
+              <ThemeToggle />
+            </div>
           </nav>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-4">
+            <LanguageSwitch />
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -121,7 +134,7 @@ const Header: FC = () => {
                   </div>
                 ) : (
                   <Link
-                    href={item.href || "#"}
+                    href={item.href || '#'}
                     className="block px-4 py-2 text-foreground hover:text-primary"
                     onClick={() => setIsMenuOpen(false)}
                   >
