@@ -59,10 +59,12 @@ const NewsSection: FC = () => {
 									{item.title}
 								</h3>
 								<p className='text-muted-foreground mb-4 line-clamp-2'>{item.description}</p>
-								<Button variant='outline' size='sm' className='group w-full'>
-									Read More
-									<ArrowRight className='w-4 h-4 ml-2 transition-transform group-hover:translate-x-1' />
-								</Button>
+								<Link href={'/news/' + index}>
+									<Button variant='outline' size='sm' className='group w-full'>
+										Read More
+										<ArrowRight className='w-4 h-4 ml-2 transition-transform group-hover:translate-x-1' />
+									</Button>
+								</Link>
 							</div>
 						</motion.div>
 					))}
