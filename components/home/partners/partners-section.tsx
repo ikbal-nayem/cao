@@ -6,24 +6,19 @@ import PartnerCard from './partner-card';
 
 const partners = [
 	{
-		name: 'a2i Programme',
-		logo: 'static/logo/a2i.png',
-		url: 'https://a2i.gov.bd/',
-	},
-	{
 		name: 'Cabinet Division',
 		logo: 'static/logo/cd.png',
 		url: 'https://cabinet.gov.bd/',
 	},
 	{
+		name: 'Ministry of Public Administration',
+		logo: 'static/logo/mopa.png',
+		url: 'https://mopa.gov.bd/',
+	},
+	{
 		name: 'ICT Division',
 		logo: 'static/logo/ict.png',
 		url: 'https://ictd.gov.bd/',
-	},
-	{
-		name: 'UNDP Bangladesh',
-		logo: 'static/logo/undp.png',
-		url: 'https://www.undp.org/',
 	},
 ];
 
@@ -46,7 +41,7 @@ const PartnersSection: FC = () => {
 					</p>
 				</motion.div>
 
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
+				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
 					{partners.map((partner, index) => (
 						<PartnerCard key={index} {...partner} index={index} />
 					))}

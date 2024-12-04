@@ -1,53 +1,39 @@
-import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
+import HeroSection from '../components/home/hero-section';
 import Loading from '../components/ui/loading';
 
-// Dynamic imports with loading fallbacks
-const Header = dynamic(() => import('@/components/layout/header'), {
-  loading: () => <Loading />
-});
-
-const HeroSection = dynamic(() => import('@/components/home/hero-section'), {
-  loading: () => <Loading />
-});
-
-// const ServicesSection = dynamic(() => import('../components/home/services-section'), {
-//   loading: () => <Loading />
-// });
-
 const LeadershipSection = dynamic(() => import('@/components/home/leadership/leadership-section'), {
-  loading: () => <Loading />
+	loading: () => <Loading />,
 });
 
 const StatsSection = dynamic(() => import('@/components/home/stats-section'), {
-  loading: () => <Loading />
+	loading: () => <Loading />,
 });
 
 const NewsSection = dynamic(() => import('@/components/home/news-section'), {
-  loading: () => <Loading />
+	loading: () => <Loading />,
+});
+
+const PrioritiesSection = dynamic(() => import('@/components/home/priorities-section'), {
+	loading: () => <Loading />,
 });
 
 const PartnersSection = dynamic(() => import('@/components/home/partners/partners-section'), {
-  loading: () => <Loading />
-});
-
-const Footer = dynamic(() => import('@/components/layout/footer'), {
-  loading: () => <Loading />
+	loading: () => <Loading />,
 });
 
 export default function Home() {
-  return (
-    <main>
-      <Suspense fallback={<Loading />}>
-        <Header />
-        <HeroSection />
-        {/* <ServicesSection /> */}
-        <LeadershipSection />
-        <StatsSection />
-        <NewsSection />
-        <PartnersSection />
-        <Footer />
-      </Suspense>
-    </main>
-  );
+	return (
+		<main>
+			<Suspense fallback={<Loading />}>
+				<HeroSection />
+				<LeadershipSection />
+				<StatsSection />
+				<NewsSection />
+				<PrioritiesSection />
+				<PartnersSection />
+			</Suspense>
+		</main>
+	);
 }
