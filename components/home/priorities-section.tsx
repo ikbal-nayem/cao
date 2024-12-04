@@ -99,7 +99,7 @@ const PrioritiesSection: FC = () => {
 					transition={{ duration: 0.8, delay: 0.4 }}
 					className='text-center mt-12'
 				>
-					<Link href='/priorities'>
+					<Link href='/programs'>
 						<Button size='lg' className='group'>
 							View All Programs
 							<ArrowRight className='w-4 h-4 ml-2 transition-transform group-hover:translate-x-1' />

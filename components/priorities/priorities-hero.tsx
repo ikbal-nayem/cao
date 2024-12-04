@@ -25,7 +25,7 @@ const PrioritiesHero: FC = () => {
           className="max-w-3xl"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Priority Programs
+            Programs
           </h1>
           <p className="text-xl text-muted-foreground">
             Discover the key initiatives and programs driving Bangladesh&apos;s
