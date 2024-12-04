@@ -28,7 +28,6 @@ const TeamMemberCard: FC<TeamMemberCardProps> = ({ name, role, organization, ima
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
       </div>
       
       <div className="p-6">

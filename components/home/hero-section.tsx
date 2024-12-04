@@ -14,7 +14,7 @@ const HeroSection: FC = () => {
     >
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-950 to-blue-300/10" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-700/20 " />
       </div>
 
       <div className="container mx-auto px-4 z-10">

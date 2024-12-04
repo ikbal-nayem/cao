@@ -27,10 +27,10 @@ const teamMembers = [
     image: 'https://giupmo.gov.bd/sites/default/files/files/giupmo.portal.gov.bd/officer_list/3853365b_c5dd_41df_8a11_1567882f6d7d/2021-01-06-12-50-ed7716b5876a2b0f555faca03e4da3b4.jpg'
   },
   {
-    name: 'Shamima Nasrin, PhD',
-    role: 'Director (Research & Capacity Development) (Joint Secretary)',
+    name: 'Saifullah Panna',
+    role: 'Secretary',
     organization: 'Chief Advisor Office',
-    image: 'https://i1.rgstatic.net/ii/profile.image/686979104641038-1540799990685_Q512/Shamima-Nasrin-12.jpg'
+    image: 'https://www.shokalshondha.com/wp-content/uploads/elementor/thumbs/saifullah-panna-qua4sxivz8fekpmywgnu62hh3d9sq5q7y75i45buoo.jpg'
   }
 ];
 
