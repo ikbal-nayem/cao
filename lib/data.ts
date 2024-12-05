@@ -1,6 +1,6 @@
 export const newsItems = [
   {
-    id: 0,
+    id: '0',
     title: 'Hasina destroyed everything, Yunus tells Nikkei Asia',
     date: '2024-09-15',
     description:
@@ -10,7 +10,7 @@ export const newsItems = [
     category: 'Politics',
   },
   {
-    id: 1,
+    id: '1',
     title: 'Committee submits White Paper on economy to Chief Adviser',
     date: '2024-12-01',
     description:
@@ -20,7 +20,7 @@ export const newsItems = [
     category: 'Economy',
   },
   {
-    id: 2,
+    id: '2',
     title: 'Chief Adviser urges people to remain calm, united',
     date: '2024-11-19',
     description:
@@ -30,7 +30,7 @@ export const newsItems = [
     category: 'Politics',
   },
   {
-    id: 3,
+    id: '3',
     title: "Bangladesh's Yunus meets with Biden, other world leaders at UN",
     date: '2024-09-24',
     description:
@@ -40,7 +40,7 @@ export const newsItems = [
     category: 'International',
   },
   {
-    id: 4,
+    id: '4',
     title: 'Yunus to hold dialogue with political parties on Wednesday',
     date: '2024-11-17',
     description:
@@ -50,7 +50,7 @@ export const newsItems = [
     category: 'Economy',
   },
   {
-    id: 5,
+    id: '5',
     title: 'Anti-Discrimination Student Movement to meet other student organizations',
     date: '2024-12-04',
     description: 'Meeting will follow observance of national student solidarity week.',
