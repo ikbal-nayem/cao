@@ -1,3 +1,5 @@
+'use client';
+
 import Loading from '@/components/ui/loading';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
