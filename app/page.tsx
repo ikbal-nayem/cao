@@ -1,3 +1,5 @@
+'use client';
+
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import HeroSection from '../components/home/hero-section';
@@ -7,7 +9,7 @@ const LeadershipSection = dynamic(() => import('@/components/home/leadership/lea
 	loading: () => <Loading />,
 });
 
-const StatsSection = dynamic(() => import('@/components/home/stats-section'), {
+const EmergencyContacts = dynamic(() => import('@/components/home/emergency-contacts'), {
 	loading: () => <Loading />,
 });
 
@@ -29,7 +31,7 @@ export default function Home() {
 			<Suspense fallback={<Loading />}>
 				<HeroSection />
 				<LeadershipSection />
-				<StatsSection />
+				<EmergencyContacts />
 				<NewsSection />
 				<PrioritiesSection />
 				<PartnersSection />

@@ -25,15 +25,6 @@ const Header: FC = () => {
       title: 'About Us',
       href: '/about-us',
     },
-    // {
-    //   title: 'Services',
-    //   submenu: [
-    //     'Policy Development',
-    //     'Governance',
-    //     'Administration',
-    //     'Public Services',
-    //   ],
-    // },
     {
       title: 'Resources',
       submenu: ['Publications', 'Reports', 'Guidelines'],

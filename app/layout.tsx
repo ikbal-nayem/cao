@@ -2,6 +2,7 @@ import { LanguageProvider } from '@/components/language/language-context';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import { ThemeProvider } from '@/components/theme/theme-provider';
+import ScrollToTop from '@/components/ui/scroll-to-top';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 						<Header />
 						{children}
 						<Footer />
+						<ScrollToTop />
 					</LanguageProvider>
 				</ThemeProvider>
 			</body>
