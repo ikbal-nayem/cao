@@ -22,6 +22,7 @@ const slides = [
 		image: '/static/image/yunus_0.png',
 		title: 'Transforming Bangladesh',
 		description: 'Leading the way towards digital innovation and economic growth.',
+		textAlign: 'left',
 	},
 	{
 		image: '/static/image/yunus_1.png',
@@ -54,12 +55,11 @@ const HeroSection: FC = () => {
 							<div className='absolute inset-0'>
 								<div className='absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]' />
 								<div
-									className={clsx(
-										'absolute inset-0 bg-gradient-to-br from-blue-700/20 to-transparent',{
-                      'bg-gradient-to-b': slide?.textAlign === 'center',
-                      'bg-gradient-to-bl': slide?.textAlign === 'right',
-                    }
-									)}
+									className={clsx('absolute inset-0 from-blue-700/20 to-transparent', {
+										'bg-gradient-to-br': slide?.textAlign === 'left',
+										'bg-gradient-to-b': slide?.textAlign === 'center',
+										'bg-gradient-to-bl': slide?.textAlign === 'right',
+									})}
 								/>
 							</div>
 							<div className='absolute inset-0 flex items-center'>
