@@ -26,6 +26,6 @@ RUN yarn run build
 # COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Expose the default port
-EXPOSE 3000
+EXPOSE 8000
 
 CMD ["yarn", "start"]

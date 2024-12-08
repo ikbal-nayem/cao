@@ -9,7 +9,7 @@ const LeadershipSection = dynamic(() => import('@/components/home/leadership/lea
 	loading: () => <Loading />,
 });
 
-const EmergencyContacts = dynamic(() => import('@/components/home/emergency-contacts'), {
+const MissionVisionSection = dynamic(() => import('@/components/home/mission-vision-section'), {
 	loading: () => <Loading />,
 });
 
@@ -21,7 +21,7 @@ const PrioritiesSection = dynamic(() => import('@/components/home/priorities-sec
 	loading: () => <Loading />,
 });
 
-const PartnersSection = dynamic(() => import('@/components/home/partners/partners-section'), {
+const EmergencyContacts = dynamic(() => import('@/components/home/emergency-contacts'), {
 	loading: () => <Loading />,
 });
 
@@ -31,10 +31,10 @@ export default function Home() {
 			<Suspense fallback={<Loading />}>
 				<HeroSection />
 				<LeadershipSection />
-				<EmergencyContacts />
+				<MissionVisionSection />
 				<NewsSection />
 				<PrioritiesSection />
-				<PartnersSection />
+				<EmergencyContacts />
 			</Suspense>
 		</main>
 	);

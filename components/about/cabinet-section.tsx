@@ -6,17 +6,17 @@ import Image from 'next/image';
 
 const cabinetMembers = [
   {
+    name: 'Saifullah Panna',
+    role: 'Secretary',
+    image: 'https://www.shokalshondha.com/wp-content/uploads/elementor/thumbs/saifullah-panna-qua4sxivz8fekpmywgnu62hh3d9sq5q7y75i45buoo.jpg',
+    department: 'Planning and Development'
+  },
+  {
     name: 'Dr. Mohammad Abdul Latif',
     role: 'Director General (Additional Secretary)',
     image: 'https://giupmo.gov.bd/sites/default/files/files/giupmo.portal.gov.bd/officer_list/3853365b_c5dd_41df_8a11_1567882f6d7d/2021-01-06-12-50-ed7716b5876a2b0f555faca03e4da3b4.jpg',
     department: 'Administration'
   },
-  {
-    name: 'Saifullah Panna',
-    role: 'Secretary',
-    image: 'https://www.shokalshondha.com/wp-content/uploads/elementor/thumbs/saifullah-panna-qua4sxivz8fekpmywgnu62hh3d9sq5q7y75i45buoo.jpg',
-    department: 'Planning and Development'
-  }
 ];
 
 const CabinetSection: FC = () => {
