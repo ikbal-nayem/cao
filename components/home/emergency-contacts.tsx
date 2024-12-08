@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FC } from 'react';
 import {
   AlertCircle,
-  Shield,
+  FlameKindling,
   Heart,
   FileText,
   CloudLightning,
@@ -38,7 +38,7 @@ const contacts = [
     title: 'Fire Service',
     number: '16163',
     description: 'Emergency Fire Service Support',
-    icon: Shield,
+    icon: FlameKindling,
     color: 'from-orange-600 to-orange-400',
   },
   {

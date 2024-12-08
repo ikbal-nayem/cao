@@ -10,7 +10,7 @@ const MissionVisionSection: FC = () => {
 		<section className='relative w-full py-24 overflow-hidden'>
 			<div className='absolute inset-0'>
 				<Image src='/static/logo/gov-bn.png' alt='' fill className='object-cover opacity-20' />
-				<div className='absolute inset-0 bg-gradient-to-r from-background via-background/10 to-background' />
+				<div className='absolute inset-0 bg-gradient-to-r from-background via-background/50 to-background' />
 			</div>
 			<div className='container mx-auto px-4'>
 				<div className='relative grid grid-cols-1 lg:grid-cols-2 gap-8 items-center'>
