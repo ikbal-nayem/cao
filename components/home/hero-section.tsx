@@ -25,7 +25,7 @@ const slides = [
 		textAlign: 'left',
 	},
 	{
-		image: '/static/image/yunus_1.png',
+		image: '/static/image/yunus_1.jpg',
 		title: 'Building Tomorrow',
 		description: 'Creating a sustainable and prosperous future for all citizens.',
 		textAlign: 'right',
