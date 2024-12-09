@@ -1,14 +1,14 @@
 'use client';
 
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { FC, useState } from 'react';
-import { Autoplay, EffectFade } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import clsx from 'clsx';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import { Autoplay, EffectFade } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const slides = [
 	{
@@ -34,6 +34,13 @@ const slides = [
 
 const HeroSection: FC = () => {
 	const [activeIndex, setActiveIndex] = useState(0);
+
+	const scrollToContent = () => {
+		window.scrollTo({
+			top: window.innerHeight,
+			behavior: 'smooth',
+		});
+	};
 
 	return (
 		<div className='relative min-h-screen'>
@@ -108,7 +115,22 @@ const HeroSection: FC = () => {
 					</SwiperSlide>
 				))}
 			</Swiper>
-			<div className='absolute bottom-0 left-0 right-0 h-14 bg-gradient-to-t from-background to-transparent z-10' />
+
+			{/* Scroll Down Indicator */}
+			<motion.div
+				className='absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer z-20'
+				animate={{ y: [0, 10, 0] }}
+				transition={{
+					duration: 1.5,
+					repeat: Infinity,
+					ease: 'easeInOut',
+				}}
+				onClick={scrollToContent}
+			>
+				<ChevronDown className='w-8 h-8 dark:text-white text-slate-800' />
+			</motion.div>
+
+			<div className='absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background/50 to-transparent z-10' />
 		</div>
 	);
 };

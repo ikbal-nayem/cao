@@ -5,6 +5,7 @@ import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useEffect, useState } from 'react';
 
@@ -29,7 +30,11 @@ const Header: FC = () => {
 		},
 		{
 			title: 'Resources',
-			submenu: ['Publications', 'Reports', 'Guidelines'],
+			submenu: [
+				{ title: 'Publications', href: '#' },
+				{ title: 'Reports', href: '#' },
+				{ title: 'Guidelines', href: '#' },
+			],
 		},
 		{ title: 'Contact', href: '/contact' },
 	];
@@ -45,6 +50,7 @@ const Header: FC = () => {
 			<div className='container mx-auto px-4'>
 				<div className='flex items-center justify-between h-16'>
 					<Link href='/' className='flex items-center space-x-2'>
+						<Image src='/static/logo/ca.png' alt='CAO Logo' width={40} height={40} className='rounded-full' />
 						<span
 							className='text-2xl font-bold'
 							style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
@@ -80,15 +86,15 @@ const Header: FC = () => {
 									</Link>
 								)}
 								{item.submenu && activeDropdown === item.title && (
-									<div className='absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-popover border border-border'>
+									<div className='absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5'>
 										<div className='py-1'>
 											{item.submenu.map((subItem) => (
 												<Link
-													key={subItem}
-													href='#'
-													className='block px-4 py-2 text-sm text-foreground hover:bg-accent hover:text-accent-foreground'
+													key={subItem.title}
+													href={subItem.href}
+													className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
 												>
-													{subItem}
+													{subItem.title}
 												</Link>
 											))}
 										</div>
@@ -122,11 +128,11 @@ const Header: FC = () => {
 										<div className='font-medium px-4 py-2'>{item.title}</div>
 										{item.submenu.map((subItem) => (
 											<Link
-												key={subItem}
-												href='#'
+												key={subItem.title}
+												href={subItem.href}
 												className='block px-8 py-2 text-sm text-muted-foreground hover:text-foreground'
 											>
-												{subItem}
+												{subItem.title}
 											</Link>
 										))}
 									</div>
