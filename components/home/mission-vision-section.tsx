@@ -12,12 +12,11 @@ const MissionVisionSection: FC = () => {
     offset: ['start start', 'end start'],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '90%']);
 
   return (
     <section ref={ref} className='relative w-full py-24 overflow-hidden'>
-      <motion.div style={{ y, opacity }} className='absolute inset-0'>
+      <motion.div style={{ y }} className='absolute inset-0'>
         <Image
           src='/static/logo/gov-bn.png'
           alt=''
