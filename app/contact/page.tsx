@@ -60,7 +60,7 @@ export default function ContactPage() {
 								backdropFilter: 'blur(10px)',
 								WebkitBackdropFilter: 'blur(10px)',
 							}}
-							className='bg-white/10 dark:bg-slate-900/50 rounded-lg p-8'
+							className='shadow-xl bg-white/10 dark:bg-slate-900/50 rounded-lg p-8'
 						>
 							<h2 className='text-center text-3xl font-bold text-gray-600 mb-6'>Send Message</h2>
 							<ContactForm />

@@ -10,8 +10,8 @@ export default function ContactForm() {
 			<div>
 				<Input
 					placeholder='Full Name'
-          required
-					className='w-full p-4 bg-transparent border-b border-gray-300 focus:border-cyan-500 transition-colors'
+					required
+					className='w-full p-4 bg-transparent border-b border-gray-400 focus:border-cyan-500 transition-colors focus-visible:ring-offset-0 focus-visible:ring-0'
 				/>
 			</div>
 
@@ -19,8 +19,8 @@ export default function ContactForm() {
 				<Input
 					type='email'
 					placeholder='Email'
-          required
-					className='w-full p-4 bg-transparent border-b border-gray-300 focus:border-cyan-500 transition-colors'
+					required
+					className='w-full p-4 bg-transparent border-b border-gray-400 focus:border-cyan-500 transition-colors focus-visible:ring-offset-0 focus-visible:ring-0'
 				/>
 			</div>
 
@@ -28,15 +28,15 @@ export default function ContactForm() {
 				<Input
 					type='phone'
 					placeholder='Phone'
-          required
-					className='w-full p-4 bg-transparent border-b border-gray-300 focus:border-cyan-500 transition-colors'
+					required
+					className='w-full p-4 bg-transparent border-b border-gray-400 focus:border-cyan-500 transition-colors focus-visible:ring-offset-0 focus-visible:ring-0'
 				/>
 			</div>
 
 			<div>
 				<Textarea
 					placeholder='Type your Message...'
-					className='w-full p-4 bg-transparent border-b border-gray-300 focus:border-cyan-500 transition-colors min-h-[150px]'
+					className='w-full p-4 bg-transparent border-b border-gray-400 focus:border-cyan-500 transition-colors min-h-[150px] focus-visible:ring-offset-0 focus-visible:ring-0'
 				/>
 			</div>
 
