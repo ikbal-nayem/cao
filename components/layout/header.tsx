@@ -8,6 +8,7 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useEffect, useState } from 'react';
+import { menuItems } from './menu-items';
 
 const Header: FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,22 +23,6 @@ const Header: FC = () => {
 		window.addEventListener('scroll', handleScroll);
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
-
-	const menuItems = [
-		{
-			title: 'About Us',
-			href: '/about-us',
-		},
-		{
-			title: 'Resources',
-			submenu: [
-				{ title: 'Publications', href: '#' },
-				{ title: 'Reports', href: '#' },
-				{ title: 'Guidelines', href: '#' },
-			],
-		},
-		{ title: 'Contact', href: '/contact' },
-	];
 
 	return (
 		<header
@@ -55,7 +40,7 @@ const Header: FC = () => {
 							className='text-2xl font-bold'
 							style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 						>
-							CAO Bangladesh
+							Chief Adviser's Office
 						</span>
 					</Link>
 
@@ -68,9 +53,9 @@ const Header: FC = () => {
 								onMouseEnter={() => setActiveDropdown(item.title)}
 								onMouseLeave={() => setActiveDropdown(null)}
 							>
-								{item.submenu ? (
+								{item.items ? (
 									<button
-										className='flex items-center space-x-1 text-foreground hover:text-primary'
+										className='flex items-center space-x-1 text-foreground hover:text-gray-700'
 										style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 									>
 										<span>{item.title}</span>
@@ -79,19 +64,19 @@ const Header: FC = () => {
 								) : (
 									<Link
 										href={item.href || '#'}
-										className='text-foreground hover:text-primary'
+										className='text-foreground hover:text-gray-700'
 										style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 									>
 										{item.title}
 									</Link>
 								)}
-								{item.submenu && activeDropdown === item.title && (
-									<div className='absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5'>
+								{item.items && activeDropdown === item.title && (
+									<div className='absolute left-0 w-max rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5'>
 										<div className='py-1'>
-											{item.submenu.map((subItem) => (
+											{item.items.map((subItem) => (
 												<Link
 													key={subItem.title}
-													href={subItem.href}
+													href={subItem.href || '#'}
 													className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
 												>
 													{subItem.title}
@@ -123,14 +108,15 @@ const Header: FC = () => {
 					<div className='md:hidden bg-background border-t border-border'>
 						{menuItems.map((item) => (
 							<div key={item.title} className='py-2'>
-								{item.submenu ? (
+								{item.items ? (
 									<div className='space-y-2'>
 										<div className='font-medium px-4 py-2'>{item.title}</div>
-										{item.submenu.map((subItem) => (
+										{item.items.map((subItem) => (
 											<Link
 												key={subItem.title}
-												href={subItem.href}
+												href={subItem.href || '#'}
 												className='block px-8 py-2 text-sm text-muted-foreground hover:text-foreground'
+												onClick={() => setIsMenuOpen(false)}
 											>
 												{subItem.title}
 											</Link>

@@ -1,10 +1,15 @@
 'use client';
 
-import { FC } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 const cabinetMembers = [
+  {
+    name: 'Dr. Muhammad Yunus',
+    role: 'Chief Adviser',
+    image: 'https://www.dailymessenger.net/media/imgAll/2024February/en/02-2408101027.jpg',
+    department: 'Office of the Chief Adviser'
+  },
   {
     name: 'Saifullah Panna',
     role: 'Secretary',
@@ -19,53 +24,51 @@ const cabinetMembers = [
   },
 ];
 
-const CabinetSection: FC = () => {
+export default function CabinetPage() {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-blue-950/10">
+    <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-6">The Cabinet</h2>
+          <h1 className="text-4xl font-bold mb-6">Cabinet Members</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Meet our distinguished cabinet members who work tirelessly to implement
-            national policies and drive Bangladesh&apos;s development agenda
+            Meet our distinguished cabinet members who work tirelessly to implement national policies
+            and drive Bangladesh&apos;s development agenda
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cabinetMembers.map((member, index) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border/50"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
             >
-              <div className="relative h-[300px]">
+              <div className="relative h-[400px]">
                 <Image
                   src={member.image}
                   alt={member.name}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
-                <p className="text-primary font-medium mb-2">{member.role}</p>
-                <p className="text-muted-foreground">{member.department}</p>
+
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
+                <p className="text-lg text-blue-200 mb-1">{member.role}</p>
+                <p className="text-sm text-blue-300">{member.department}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </main>
   );
-};
-
-export default CabinetSection;
+}

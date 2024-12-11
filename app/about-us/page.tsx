@@ -10,10 +10,6 @@ const Biography = dynamic(() => import('@/components/about/biography-section'), 
 	loading: () => <Loading />,
 });
 
-const Cabinet = dynamic(() => import('@/components/about/cabinet-section'), {
-	loading: () => <Loading />,
-});
-
 const Organization = dynamic(() => import('@/components/about/organization-section'), {
 	loading: () => <Loading />,
 });
@@ -28,7 +24,6 @@ export default function AboutPage() {
 			<Suspense fallback={<Loading />}>
 				<Overview />
 				<Biography />
-				<Cabinet />
 				<Organization />
 				<ExecutiveOffices />
 			</Suspense>
