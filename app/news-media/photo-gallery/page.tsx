@@ -1,30 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-
-const photos = [
-  {
-    title: 'Meeting with World Leaders',
-    date: '2024-03-15',
-    image: '/static/image/cao.jpg',
-    category: 'International Relations'
-  },
-  {
-    title: 'Cabinet Meeting',
-    date: '2024-03-10',
-    image: '/static/image/cao.jpg',
-    category: 'Government'
-  },
-  {
-    title: 'Public Address',
-    date: '2024-03-05',
-    image: '/static/image/cao.jpg',
-    category: 'Events'
-  }
-];
+import { useState } from 'react';
+import { PhotoPreview } from '@/components/gallery/photo-preview';
+import { PhotoGroupCard } from '@/components/gallery/photo-group-card';
+import { photoGroups } from '@/lib/data';
 
 export default function PhotoGalleryPage() {
+  const [selectedGroup, setSelectedGroup] = useState<(typeof photoGroups)[0] | null>(null);
+  const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
+
   return (
     <main className="min-h-screen pt-24">
       <div className="container mx-auto px-4">
@@ -41,36 +26,31 @@ export default function PhotoGalleryPage() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {photos.map((photo, index) => (
-            <motion.div
-              key={photo.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative overflow-hidden rounded-2xl"
-            >
-              <div className="relative aspect-[4/3]">
-                <Image
-                  src={photo.image}
-                  alt={photo.title}
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              </div>
-
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="mb-2">
-                  <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm backdrop-blur-sm">
-                    {photo.category}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold mb-1">{photo.title}</h3>
-                <p className="text-sm text-gray-300">{photo.date}</p>
-              </div>
-            </motion.div>
+          {photoGroups.map((group, index) => (
+            <PhotoGroupCard
+              key={group.title}
+              title={group.title}
+              description={group.description}
+              coverImage={group.coverImage}
+              photoCount={group.photos.length}
+              onClick={() => {
+                setSelectedGroup(group);
+                setSelectedPhotoIndex(0);
+              }}
+              index={index}
+            />
           ))}
         </div>
+
+        {selectedGroup && (
+          <PhotoPreview
+            isOpen={!!selectedGroup}
+            onClose={() => setSelectedGroup(null)}
+            photos={selectedGroup.photos}
+            currentIndex={selectedPhotoIndex}
+            onIndexChange={setSelectedPhotoIndex}
+          />
+        )}
       </div>
     </main>
   );
