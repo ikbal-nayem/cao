@@ -54,17 +54,19 @@ const Header: FC = () => {
 								onMouseLeave={() => setActiveDropdown(null)}
 							>
 								{item.items ? (
-									<button
-										className='flex items-center space-x-1 text-foreground hover:text-gray-700'
+									<Button
+										variant='ghost'
+										size='sm'
+										className='flex items-center space-x-1 text-foreground hover:bg-inherit hover:text-gray-800'
 										style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 									>
 										<span>{item.title}</span>
 										<ChevronDown className='w-4 h-4' />
-									</button>
+									</Button>
 								) : (
 									<Link
 										href={item.href || '#'}
-										className='text-foreground hover:text-gray-700'
+										className='text-foreground hover:text-gray-800'
 										style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 									>
 										{item.title}
