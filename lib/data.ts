@@ -113,17 +113,17 @@ export const pastAdvisers = [
 			'Promoted administrative transparency',
 		],
 	},
-	{
-		name: 'Muhammad Yunus',
-		period: '8 Aug 2024 - Present',
-		image:
-			'https://cdn.bdnews24.com/bdnews24/media/bangla/imgAll/2024August/muhammad-yunus-250824-02-1724594325.jpg',
-		achievements: [
-			'Organized the eighth parliamentary election',
-			'Strengthened electoral process',
-			'Promoted administrative transparency',
-		],
-	},
+	// {
+	// 	name: 'Muhammad Yunus',
+	// 	period: '8 Aug 2024 - Present',
+	// 	image:
+	// 		'https://cdn.bdnews24.com/bdnews24/media/bangla/imgAll/2024August/muhammad-yunus-250824-02-1724594325.jpg',
+	// 	achievements: [
+	// 		'Organized the eighth parliamentary election',
+	// 		'Strengthened electoral process',
+	// 		'Promoted administrative transparency',
+	// 	],
+	// },
 ];
 
 export const photoGroups = [
