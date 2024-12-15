@@ -31,7 +31,7 @@ const videoGroups = [
     description: 'Coverage of key government initiatives and activities',
     videos: [
       {
-        title: 'Cabinet Meeting Highlights',
+        title: 'Advisery Council Meeting Highlights',
         thumbnail: '/static/image/cao.jpg',
         duration: '5:45',
         date: '2024-03-10',

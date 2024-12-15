@@ -11,8 +11,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Chief Advisor Office - Bangladesh',
-  description: 'Official website of the Chief Advisor Office of Bangladesh',
+  title: 'Chief Adviser Office - Bangladesh',
+  description: 'Official website of the Chief Adviser Office of Bangladesh',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

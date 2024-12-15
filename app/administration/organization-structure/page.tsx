@@ -72,7 +72,7 @@ export default function OrganizationStructurePage() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">
               <div className="text-center p-6 bg-primary text-primary-foreground rounded-lg">
-                Chief Advisor
+                Chief Adviser
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-card rounded-lg border border-border/50">

@@ -7,7 +7,7 @@ import Image from 'next/image';
 const OverviewSection: FC = () => {
   return (
     <section className="py-24 bg-gradient-to-b from-background to-blue-950/10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mt-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,7 +16,7 @@ const OverviewSection: FC = () => {
           className="max-w-4xl mx-auto text-center mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            About the Chief Advisor&apos;s Office
+            About the Chief Adviser&apos;s Office
           </h1>
           <p className="text-xl text-muted-foreground">
             Leading Bangladesh towards progress through effective governance
@@ -33,7 +33,7 @@ const OverviewSection: FC = () => {
           >
             <h2 className="text-3xl font-bold mb-4">Our Role & History</h2>
             <p className="text-lg text-muted-foreground">
-              The Chief Advisor&apos;s Office serves as the principal administrative authority
+              The Chief Adviser&apos;s Office serves as the principal administrative authority
               of Bangladesh, coordinating national policies and ensuring effective governance.
               Established during a critical period of democratic transition, the office has
               evolved to become a cornerstone of administrative excellence.
@@ -54,7 +54,7 @@ const OverviewSection: FC = () => {
           >
             <Image
               src="/static/image/cao.jpg"
-              alt="Chief Advisor's Office"
+              alt="Chief Adviser's Office"
               fill
               className="object-cover"
             />

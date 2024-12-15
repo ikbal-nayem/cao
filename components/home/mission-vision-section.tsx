@@ -68,7 +68,7 @@ const MissionVisionSection: FC = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="bg-green-600 text-white p-12 rounded-2xl relative overflow-hidden">
+            <div className="bg-purple-600 text-white p-12 rounded-2xl relative overflow-hidden">
               <div className="absolute right-4 bottom-4 opacity-10">
                 <Target className="w-32 h-32" />
               </div>

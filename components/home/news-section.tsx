@@ -22,7 +22,7 @@ const NewsSection: FC = () => {
 				>
 					<h2 className='text-4xl font-bold mb-4'>Latest Updates</h2>
 					<p className='text-xl text-muted-foreground max-w-2xl mx-auto'>
-						Stay informed about the latest initiatives and developments from the Chief Advisor's Office
+						Stay informed about the latest initiatives and developments from the Chief Adviser's Office
 					</p>
 				</motion.div>
 

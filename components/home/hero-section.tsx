@@ -13,7 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 const slides = [
 	{
 		image: '/static/image/cao.jpg',
-		title: 'Office of the Chief Advisor',
+		title: 'Office of the Chief Adviser',
 		description:
 			'Serving the nation through effective governance, transparent leadership, and sustainable development initiatives.',
 		textAlign: 'center',

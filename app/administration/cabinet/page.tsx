@@ -34,9 +34,9 @@ export default function CabinetPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold mb-6">Cabinet Members</h1>
+          <h1 className="text-4xl font-bold mb-6">Advisery Council Members</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Meet our distinguished cabinet members who work tirelessly to implement national policies
+            Meet our distinguished Advisery council members who work tirelessly to implement national policies
             and drive Bangladesh&apos;s development agenda
           </p>
         </motion.div>

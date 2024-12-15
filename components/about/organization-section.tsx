@@ -17,12 +17,12 @@ const departments = [
   {
     title: 'Economic Affairs Wing',
     description: 'Handles economic policy coordination and financial matters',
-    roles: ['Director General', 'Economic Advisor', 'Research Director']
+    roles: ['Director General', 'Economic Adviser', 'Research Director']
   },
   {
     title: 'International Cooperation Wing',
     description: 'Manages international relations and development partnerships',
-    roles: ['Director General', 'Foreign Affairs Advisor', 'Program Coordinator']
+    roles: ['Director General', 'Foreign Affairs Adviser', 'Program Coordinator']
   }
 ];
 
@@ -79,7 +79,7 @@ const OrganizationSection: FC = () => {
           <div className="max-w-2xl mx-auto">
             <div className="space-y-4">
               <div className="text-center p-4 bg-primary text-primary-foreground rounded-lg">
-                Chief Advisor
+                Chief Adviser
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center p-4 bg-card rounded-lg border border-border/50">

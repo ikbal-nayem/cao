@@ -8,7 +8,7 @@ export const menuItems: MenuItemType[] = [
   {
     title: 'Administration',
     items: [
-      { title: 'Cabinet', href: '/administration/cabinet' },
+      { title: 'Advisery Council', href: '/administration/cabinet' },
       {
         title: 'Past Chief Advisers',
         href: '/administration/past-chief-advisers',

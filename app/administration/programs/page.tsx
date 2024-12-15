@@ -53,7 +53,7 @@ export default function ProgramsPage() {
         >
           <h1 className="text-4xl font-bold mb-6">Our Programs</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Discover the key initiatives and programs driving Bangladesh&apos;s development agenda under the leadership of the Chief Advisor&apos;s Office.
+            Discover the key initiatives and programs driving Bangladesh&apos;s development agenda under the leadership of the Chief Adviser&apos;s Office.
           </p>
         </motion.div>
 

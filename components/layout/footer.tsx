@@ -10,7 +10,7 @@ const Footer: FC = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
             <p className="text-gray-300">
-              Chief advisor office of Bangladesh
+              Chief Adviser office of Bangladesh
               <br />
               Tejgaon, Dhaka-1215
               <br />
@@ -88,7 +88,7 @@ const Footer: FC = () => {
         </div>
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Chief advisor office. All rights reserved.
+            © {new Date().getFullYear()} Chief Adviser office. All rights reserved.
           </p>
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function NewsPage() {
 						<h1 className='text-5xl md:text-7xl font-bold mb-6'>Latest News</h1>
 						<p className='text-xl text-muted-foreground'>
 							Stay updated with the latest announcements, policies, and developments from the Chief
-							Advisor&apos;s Office
+							Adviser&apos;s Office
 						</p>
 					</motion.div>
 				</div>

@@ -10,7 +10,7 @@ import { FC } from 'react';
 const priorities = [
 	{
 		title: 'Social Security Policy Support (SSPS) Programme',
-		description: 'This program is supported by DFAT/DFID/UNDP and the Cabinet Division and the General Economics Division of the Planning Commission. It has two components: governance of social security and strengthening of delivery systems.',
+		description: 'This program is supported by DFAT/DFID/UNDP and the Advisery Council Division and the General Economics Division of the Planning Commission. It has two components: governance of social security and strengthening of delivery systems.',
 		image: 'https://socialprotection.gov.bd/wp-content/uploads/2024/11/WhatsApp-Image-2024-11-26-at-10.09.26-scaled.jpeg',
 		category: 'Digital Transformation',
 	},

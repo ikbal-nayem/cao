@@ -7,7 +7,7 @@ import TeamMemberCard from './team-member-card';
 
 const leader = {
 	name: 'Dr. Muhammad Yunus',
-	role: 'Chief Advisor',
+	role: 'Chief Adviser',
 	image: 'https://www.dailymessenger.net/media/imgAll/2024February/en/02-2408101027.jpg',
 	quote:
 		'Our mission is to build a Bangladesh where every citizen has the opportunity to prosper. Through innovative policies and sustainable development, we are creating pathways for inclusive growth.',
@@ -19,21 +19,21 @@ const teamMembers = [
 	{
 		name: 'M Siraj Uddin Mia',
 		role: 'Principal Secretary',
-		organization: 'Chief Advisor Office',
+		organization: 'Chief Adviser Office',
 		image:
 			'https://cdn.ittefaqbd.com/contents/cache/images/1100x618x1/uploads/media/2024/10/02/c49360402c1e1a6f375d3e94c6b58392-66fd54110b8f4.JPG?jadewits_media_id=189251',
 	},
 	{
 		name: 'Saifullah Panna',
 		role: 'Secretary',
-		organization: 'Chief Advisor Office',
+		organization: 'Chief Adviser Office',
 		image:
 			'https://www.shokalshondha.com/wp-content/uploads/elementor/thumbs/saifullah-panna-qua4sxivz8fekpmywgnu62hh3d9sq5q7y75i45buoo.jpg',
 	},
 	{
 		name: 'Dr. Mohammad Abdul Latif',
 		role: 'Director General (Additional Secretary)',
-		organization: 'Chief Advisor Office',
+		organization: 'Chief Adviser Office',
 		image:
 			'https://giupmo.gov.bd/sites/default/files/files/giupmo.portal.gov.bd/officer_list/3853365b_c5dd_41df_8a11_1567882f6d7d/2021-01-06-12-50-ed7716b5876a2b0f555faca03e4da3b4.jpg',
 	},
@@ -58,7 +58,7 @@ const LeadershipSection: FC = () => {
 					</p>
 				</motion.div>
 
-				{/* Chief Advisor Section */}
+				{/* Chief Adviser Section */}
 				<div className='mb-24'>
 					<LeadershipCard {...leader} index={0} />
 				</div>

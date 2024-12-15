@@ -7,7 +7,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: 'Address',
-    content: ['Chief Advisor Office', 'Old Parliament Building', 'Dhaka 1221, Bangladesh']
+    content: ['Chief Adviser Office', 'Old Parliament Building', 'Dhaka 1221, Bangladesh']
   },
   {
     icon: Phone,
