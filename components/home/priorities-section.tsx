@@ -101,7 +101,7 @@ const PrioritiesSection: FC = () => {
 				>
 					<Link href='/programs'>
 						<Button size='lg' className='group'>
-							View All Programs
+							View More
 							<ArrowRight className='w-4 h-4 ml-2 transition-transform group-hover:translate-x-1' />
 						</Button>
 					</Link>

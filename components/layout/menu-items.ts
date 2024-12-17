@@ -10,8 +10,8 @@ export const menuItems: MenuItemType[] = [
     items: [
       { title: 'Advisery Council', href: '/administration/cabinet' },
       {
-        title: 'Past Chief Advisers',
-        href: '/administration/past-chief-advisers',
+        title: 'Former Chief Advisers',
+        href: '/administration/former-chief-advisers',
       },
       {
         title: 'Organization Structure',
@@ -35,6 +35,7 @@ export const menuItems: MenuItemType[] = [
     title: 'News & Media',
     items: [
       { title: 'News', href: '/news-media/news' },
+      { title: 'Advisers Speeches', href: '/news-media/video-gallery' },
       { title: 'Photo Gallery', href: '/news-media/photo-gallery' },
       { title: 'Video Gallery', href: '/news-media/video-gallery' },
     ],

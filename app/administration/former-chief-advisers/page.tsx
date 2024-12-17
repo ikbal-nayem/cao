@@ -14,7 +14,7 @@ export default function PastChiefAdvisersPage() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl font-bold mb-6">Past Chief Advisers</h1>
+          <h1 className="text-4xl font-bold mb-6">Former Chief Advisers</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A chronological journey through the leadership that has shaped our nation
           </p>
