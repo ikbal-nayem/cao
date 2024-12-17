@@ -9,18 +9,17 @@ export const menuItems: MenuItemType[] = [
     title: 'Administration',
     items: [
       { title: 'Advisery Council', href: '/administration/cabinet' },
+      { title: 'Former Chief Advisers', href: '/administration/former-chief-advisers' },
+      { title: 'Organization Structure', href: '/administration/organization-structure' },
+      { title: 'Programs and Priorities', href: '/administration/programs' },
+      { title: 'Our Staffs', href: '/administration/staffs' },
       {
-        title: 'Former Chief Advisers',
-        href: '/administration/former-chief-advisers',
-      },
-      {
-        title: 'Organization Structure',
-        href: '/administration/organization-structure',
-      },
-      {
-        title: 'Programs and Priorities',
-        href: '/administration/programs',
-      },
+        title: 'Documents & Publications',
+        items: [
+          { title: 'Policy Documents', href: '/administration/documents/policy' },
+          { title: 'Reports & Stats', href: '/administration/documents/reports' },
+        ]
+      }
     ],
   },
   {
@@ -42,6 +41,11 @@ export const menuItems: MenuItemType[] = [
   },
   {
     title: 'Contact',
-    href: '/contact',
+    items: [
+      { title: 'Contact Us', href: '/contact' },
+      { title: 'FAQ', href: '/contact/faq' },
+      { title: 'Feedback', href: '/contact/feedback' },
+      { title: 'Address', href: '/contact/address' }
+    ],
   },
 ];

@@ -1,6 +1,9 @@
 "use client";
 
 import { FC } from 'react';
+import { Facebook, Twitter, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import Link from 'next/link';
+import { ThemeSwitcher } from '@/components/theme/theme-switcher';
 
 const Footer: FC = () => {
   return (
@@ -9,40 +12,43 @@ const Footer: FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Us</h3>
-            <p className="text-gray-300">
-              Chief Adviser office of Bangladesh
-              <br />
-              Tejgaon, Dhaka-1215
-              <br />
-              Phone: +880-2-XXXXXXXX
-              <br />
-              Fax: +880-2-XXXXXXXX
-              <br />
-              Email: info@cao.gov.bd
-            </p>
+            <div className="space-y-2">
+              <p className="flex items-center gap-2">
+                <MapPin className="w-4 h-4" />
+                <span>Chief Adviser office of Bangladesh<br />Tejgaon, Dhaka-1215</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>+880-2-XXXXXXXX</span>
+              </p>
+              <p className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>info@cao.gov.bd</span>
+              </p>
+            </div>
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link href="/about-us" className="text-gray-300 hover:text-white">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link href="/administration/programs" className="text-gray-300 hover:text-white">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link href="/tenders-notice/notices" className="text-gray-300 hover:text-white">
                   Regulations
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <Link href="/contact" className="text-gray-300 hover:text-white">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -50,22 +56,22 @@ const Footer: FC = () => {
             <h3 className="text-xl font-bold mb-4">Important Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="http://www.bangabhaban.gov.bd/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   President's Office (Bangabhaban)
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="https://cabinet.gov.bd/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   Cabinet Division
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="https://mopa.gov.bd/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   Ministry of Public Administration
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white">
+                <a href="https://bangladesh.gov.bd/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
                   Bangladesh National Information Portal
                 </a>
               </li>
@@ -73,16 +79,20 @@ const Footer: FC = () => {
           </div>
           <div>
             <h3 className="text-xl font-bold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-6">
               <a href="#" className="text-gray-300 hover:text-white">
-                Facebook
+                <Facebook className="w-6 h-6" />
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
-                Twitter
+                <Twitter className="w-6 h-6" />
               </a>
               <a href="#" className="text-gray-300 hover:text-white">
-                LinkedIn
+                <Linkedin className="w-6 h-6" />
               </a>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-sm">Theme:</span>
+              <ThemeSwitcher />
             </div>
           </div>
         </div>

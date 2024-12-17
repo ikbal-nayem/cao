@@ -1,9 +1,8 @@
 'use client';
 
 import { LanguageSwitch } from '@/components/language/language-switch';
-import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, ChevronRight, Menu, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -76,13 +75,38 @@ const Header: FC = () => {
 									<div className='absolute left-0 w-max rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5'>
 										<div className='py-1'>
 											{item.items.map((subItem) => (
-												<Link
-													key={subItem.title}
-													href={subItem.href || '#'}
-													className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
-												>
-													{subItem.title}
-												</Link>
+												<div key={subItem.title}>
+													{subItem.items ? (
+														<div className='relative group'>
+															<button className='w-full text-left block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'>
+																{subItem.title}
+																<ChevronRight className='inline-block w-4 h-4 ml-2' />
+															</button>
+															<div className='absolute left-full top-0 hidden group-hover:block'>
+																<div className='ml-2 w-max rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5'>
+																	<div className='py-1'>
+																		{subItem.items.map((nestedItem) => (
+																			<Link
+																				key={nestedItem.title}
+																				href={nestedItem.href || '#'}
+																				className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+																			>
+																				{nestedItem.title}
+																			</Link>
+																		))}
+																	</div>
+																</div>
+															</div>
+														</div>
+													) : (
+														<Link
+															href={subItem.href || '#'}
+															className='block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+														>
+															{subItem.title}
+														</Link>
+													)}
+												</div>
 											))}
 										</div>
 									</div>
@@ -91,14 +115,12 @@ const Header: FC = () => {
 						))}
 						<div className='flex items-center space-x-4'>
 							<LanguageSwitch />
-							<ThemeToggle />
 						</div>
 					</nav>
 
 					{/* Mobile Menu Button */}
 					<div className='md:hidden flex items-center space-x-4'>
 						<LanguageSwitch />
-						<ThemeToggle />
 						<Button variant='ghost' onClick={() => setIsMenuOpen(!isMenuOpen)}>
 							{isMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
 						</Button>
@@ -114,14 +136,31 @@ const Header: FC = () => {
 									<div className='space-y-2'>
 										<div className='font-medium px-4 py-2'>{item.title}</div>
 										{item.items.map((subItem) => (
-											<Link
-												key={subItem.title}
-												href={subItem.href || '#'}
-												className='block px-8 py-2 text-sm text-muted-foreground hover:text-foreground'
-												onClick={() => setIsMenuOpen(false)}
-											>
-												{subItem.title}
-											</Link>
+											<div key={subItem.title}>
+												{subItem.items ? (
+													<div className='px-8'>
+														<div className='font-medium py-2'>{subItem.title}</div>
+														{subItem.items.map((nestedItem) => (
+															<Link
+																key={nestedItem.title}
+																href={nestedItem.href || '#'}
+																className='block px-4 py-2 text-sm text-muted-foreground hover:text-foreground'
+																onClick={() => setIsMenuOpen(false)}
+															>
+																{nestedItem.title}
+															</Link>
+														))}
+													</div>
+												) : (
+													<Link
+														href={subItem.href || '#'}
+														className='block px-8 py-2 text-sm text-muted-foreground hover:text-foreground'
+														onClick={() => setIsMenuOpen(false)}
+													>
+														{subItem.title}
+													</Link>
+												)}
+											</div>
 										))}
 									</div>
 								) : (
