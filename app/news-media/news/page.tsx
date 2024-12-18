@@ -1,23 +1,31 @@
 'use client';
 
 import Loading from '@/components/ui/loading';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-import { Suspense } from 'react';
+import { Suspense, useRef } from 'react';
 
 const NewsList = dynamic(() => import('@/components/news/news-list'), {
 	loading: () => <Loading />,
 });
 
 export default function NewsPage() {
+	const ref = useRef<HTMLDivElement>(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ['start start', 'end start'],
+	});
+
+	const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
+
 	return (
 		<main>
-			<section className='relative min-h-[60vh] flex items-center'>
-				<div className='absolute inset-0'>
+			<section ref={ref} className='relative min-h-[60vh] flex items-center'>
+				<motion.div style={{ y }} className='absolute inset-0'>
 					<Image src='/static/image/cao.jpg' alt='News Background' fill className='object-cover' />
 					<div className='absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60' />
-				</div>
+				</motion.div>
 
 				<div className='container relative mx-auto px-4'>
 					<motion.div
