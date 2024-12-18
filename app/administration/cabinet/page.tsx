@@ -2,27 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-
-const cabinetMembers = [
-  {
-    name: 'Dr. Muhammad Yunus',
-    role: 'Chief Adviser',
-    image: 'https://www.dailymessenger.net/media/imgAll/2024February/en/02-2408101027.jpg',
-    department: 'Office of the Chief Adviser'
-  },
-  {
-    name: 'Saifullah Panna',
-    role: 'Secretary',
-    image: 'https://www.shokalshondha.com/wp-content/uploads/elementor/thumbs/saifullah-panna-qua4sxivz8fekpmywgnu62hh3d9sq5q7y75i45buoo.jpg',
-    department: 'Planning and Development'
-  },
-  {
-    name: 'Dr. Mohammad Abdul Latif',
-    role: 'Director General (Additional Secretary)',
-    image: 'https://giupmo.gov.bd/sites/default/files/files/giupmo.portal.gov.bd/officer_list/3853365b_c5dd_41df_8a11_1567882f6d7d/2021-01-06-12-50-ed7716b5876a2b0f555faca03e4da3b4.jpg',
-    department: 'Administration'
-  },
-];
+import { cabinetMembers, ministryDivisions } from '@/lib/cabinet-data';
 
 export default function CabinetPage() {
   return (
@@ -41,7 +21,8 @@ export default function CabinetPage() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Council Members */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {cabinetMembers.map((member, index) => (
             <motion.div
               key={member.name}
@@ -68,6 +49,42 @@ export default function CabinetPage() {
             </motion.div>
           ))}
         </div>
+
+        {/* Ministries & Divisions */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-card border border-border/50 rounded-xl p-8"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-center">Ministries & Divisions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {ministryDivisions.map((ministry, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="p-6 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold mb-4">{ministry.name}</h3>
+                {ministry.divisions && (
+                  <div className="space-y-2">
+                    <h4 className="font-medium text-primary mb-2">Divisions:</h4>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      {ministry.divisions.map((division, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-primary">•</span>
+                          <span>{division}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </main>
   );

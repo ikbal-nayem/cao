@@ -34,7 +34,7 @@ export const menuItems: MenuItemType[] = [
     title: 'News & Media',
     items: [
       { title: 'News', href: '/news-media/news' },
-      { title: 'Advisers Speeches', href: '/news-media/video-gallery' },
+      { title: 'Advisers Speeches', href: '/news-media/adviser-speeches' },
       { title: 'Photo Gallery', href: '/news-media/photo-gallery' },
       { title: 'Video Gallery', href: '/news-media/video-gallery' },
     ],

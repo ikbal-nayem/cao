@@ -107,16 +107,6 @@ export const ourTeam = [
 				phone: '+৮৮-০২-৫৫০২৯৪২২',
 			},
 			{
-				sl: '৯',
-				image:
-					'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/officer_list/a6ea0ec1_5db6_4a79_bd15_c2e4f58c489b/dg2_ahmedullah_171124.jpeg',
-				name: 'ড. আহমেদ উল্লাহ্‌ এফসিএমএ',
-				designation: 'মহাপরিচালক-২',
-				office: 'প্রধান উপদেষ্টার কার্যালয়',
-				email: '',
-				phone: '+৮৮-০২-৫৫০২৯৪০৬',
-			},
-			{
 				sl: '১০',
 				image:
 					'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/officer_list/e7013b3b_4f8a_40fa_8d3b_fb5b92a3ad15/dir6_AKM_fazlur_290522.jpg',
@@ -135,16 +125,6 @@ export const ourTeam = [
 				office: 'প্রধান উপদেষ্টার কার্যালয়',
 				email: '',
 				phone: '+৮৮-০২-৫৫০২৯৪২৭',
-			},
-			{
-				sl: '১২',
-				image:
-					'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/officer_list/2824417a_4abb_4df0_bf31_546d089c8aec/dg3_abu-sayed_281124.jpg',
-				name: 'মোঃ আবু সাঈদ',
-				designation: 'মহাপরিচালক-৩ (অতিরিক্ত সচিব)',
-				office: 'প্রধান উপদেষ্টার কার্যালয়',
-				email: '',
-				phone: '+৮৮-০২-৫৫০২৯৫৬৩',
 			},
 			{
 				sl: '১৩',
@@ -773,16 +753,6 @@ export const ourTeam = [
 	{
 		grpName: 'Others',
 		members: [
-			{
-				sl: '১',
-				image:
-					'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/officer_list/e27ed8e2_fede_4b93_a492_dfb07cb19d8b/ashrayan2_DPD_EliasMehedi_201124.png',
-				name: 'মোঃ ইলিয়াস মেহেদী',
-				designation: 'প্রকল্প পরিচালক (ভারপ্রাপ্ত)',
-				office: 'আশ্রয়ণ-২ প্রকল্প, প্রধান উপদেষ্টার কার্যালয়',
-				email: '',
-				phone: '',
-			},
 			{
 				sl: '২',
 				image:
