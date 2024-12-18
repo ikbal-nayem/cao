@@ -21,7 +21,7 @@ export default function NewsPage() {
 
 	return (
 		<main>
-			<section ref={ref} className='relative min-h-[60vh] flex items-center'>
+			<section ref={ref} className='relative min-h-[50vh] flex items-center'>
 				<motion.div style={{ y }} className='absolute inset-0'>
 					<Image src='/static/image/cao.jpg' alt='News Background' fill className='object-cover' />
 					<div className='absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60' />
