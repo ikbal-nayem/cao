@@ -1,51 +1,11 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useState } from 'react';
-import Image from 'next/image';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { ourTeam } from '@/lib/team-data';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
-
-const staffMembers = [
-	{
-		id: 1,
-		name: 'Dr. Muhammad Yunus',
-		designation: 'Chief Adviser',
-		email: 'yunus@cao.gov.bd',
-		phone: '+880-2-XXXXXXXX',
-		image: 'https://www.dailymessenger.net/media/imgAll/2024February/en/02-2408101027.jpg',
-		department: 'Office of the Chief Adviser',
-		education: [
-			'Ph.D. in Economics, Vanderbilt University',
-			'M.A. in Economics, Vanderbilt University',
-			'B.A. in Economics, Dhaka University',
-		],
-		experience: [
-			'Founder, Grameen Bank',
-			'Professor, Chittagong University',
-			'Nobel Peace Prize Laureate, 2006',
-		],
-		bio: 'Dr. Muhammad Yunus is a Bangladeshi social entrepreneur, banker, economist, and civil society leader who was awarded the Nobel Peace Prize for founding the Grameen Bank and pioneering the concepts of microcredit and microfinance.',
-	},
-	{
-		id: 2,
-		name: 'Saifullah Panna',
-		designation: 'Secretary',
-		email: 'panna@cao.gov.bd',
-		phone: '+880-2-XXXXXXXX',
-		image:
-			'https://www.shokalshondha.com/wp-content/uploads/elementor/thumbs/saifullah-panna-qua4sxivz8fekpmywgnu62hh3d9sq5q7y75i45buoo.jpg',
-		department: 'Planning and Development',
-		education: ['Masters in Public Administration', 'Bachelor in Civil Engineering'],
-		experience: [
-			'Joint Secretary, Ministry of Planning',
-			'Deputy Commissioner, Dhaka Division',
-			'Additional Secretary, Cabinet Division',
-		],
-		bio: 'Mr. Saifullah Panna is a seasoned civil servant with extensive experience in public administration and development planning.',
-	},
-	// Add more staff members as needed
-];
+import Image from 'next/image';
+import { useRef, useState } from 'react';
 
 export default function StaffsPage() {
 	const ref = useRef<HTMLDivElement>(null);
@@ -55,14 +15,14 @@ export default function StaffsPage() {
 	});
 
 	const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-	const [selectedStaff, setSelectedStaff] = useState<(typeof staffMembers)[0] | null>(null);
+	const [selectedStaff, setSelectedStaff] = useState<(typeof ourTeam)[0]['members'][0] | null>(null);
 
 	return (
 		<main className='min-h-screen'>
-			<section ref={ref} className='relative h-[60vh]'>
+			<section ref={ref} className='relative h-[40vh]'>
 				<motion.div style={{ y }} className='absolute inset-0'>
 					<Image src='/static/image/cao.jpg' alt='Office' fill className='object-cover' />
-          <div className='absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60' />
+					<div className='absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60' />
 				</motion.div>
 				<div className='relative container mx-auto px-4 h-full flex items-center'>
 					<motion.div
@@ -79,45 +39,64 @@ export default function StaffsPage() {
 				</div>
 			</section>
 
-			<section className='py-24 bg-gradient-to-b from-background to-blue-950/10'>
+			<section className='pb-24 bg-gradient-to-b from-background to-blue-950/10'>
 				<div className='container mx-auto px-4'>
-					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
-						{staffMembers.map((member, index) => (
+					{ourTeam.map((grp) => (
+						<section key={grp.grpName}>
 							<motion.div
-								key={member.id}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
-								viewport={{ once: true }}
-								transition={{ duration: 0.5, delay: index * 0.1 }}
-								className='group cursor-pointer'
-								onClick={() => setSelectedStaff(member)}
+								transition={{ duration: 0.8 }}
+								className='my-16'
 							>
-								<div className='relative h-[400px] rounded-2xl overflow-hidden'>
-									<Image
-										src={member.image}
-										alt={member.name}
-										fill
-										className='object-cover transition-transform duration-300 group-hover:scale-105'
-									/>
-									<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
-									<div className='absolute bottom-0 left-0 right-0 p-6 text-white'>
-										<h3 className='text-2xl font-bold mb-1'>{member.name}</h3>
-										<p className='text-lg text-blue-200 mb-2'>{member.designation}</p>
-										<div className='space-y-1'>
-											<p className='flex items-center text-sm text-blue-300'>
-												<Mail className='w-4 h-4 mr-2' />
-												{member.email}
-											</p>
-											<p className='flex items-center text-sm text-blue-300'>
-												<Phone className='w-4 h-4 mr-2' />
-												{member.phone}
-											</p>
-										</div>
-									</div>
-								</div>
+								<h2 className='text-4xl font-bold mb-4'>{grp?.grpName}</h2>
 							</motion.div>
-						))}
-					</div>
+							<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5'>
+								{grp?.members?.map((member, index) => (
+									<motion.div
+										key={member.name}
+										initial={{ opacity: 0, y: 20 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{ duration: 0.5, delay: index * 0.1 }}
+										className='group cursor-pointer'
+										onClick={() => setSelectedStaff(member)}
+									>
+										<div className='relative h-[400px] rounded-2xl overflow-hidden'>
+											<Image
+												src={
+													member.image ||
+													'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png'
+												}
+												alt={member.name}
+												fill
+												className='object-cover transition-transform duration-300 group-hover:scale-105'
+											/>
+											<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
+											<div className='absolute bottom-0 left-0 right-0 p-6 text-white'>
+												<h3 className='text-base font-bold mb-1'>{member.name}</h3>
+												<p className='text-sm text-blue-200 mb-2'>{member.designation}</p>
+												<div className='space-y-1'>
+													{member?.email && (
+														<p className='flex items-center text-xs text-blue-300'>
+															<Mail className='w-4 h-4 mr-2' />
+															{member.email}
+														</p>
+													)}
+													{member?.phone && (
+														<p className='flex items-center text-xs text-blue-300'>
+															<Phone className='w-4 h-4 mr-2' />
+															{member.phone}
+														</p>
+													)}
+												</div>
+											</div>
+										</div>
+									</motion.div>
+								))}
+							</div>
+						</section>
+					))}
 				</div>
 			</section>
 
@@ -132,7 +111,7 @@ export default function StaffsPage() {
 								<div>
 									<h2 className='text-3xl font-bold'>{selectedStaff.name}</h2>
 									<p className='text-xl text-primary'>{selectedStaff.designation}</p>
-									<p className='text-muted-foreground'>{selectedStaff.department}</p>
+									<p className='text-muted-foreground'>{selectedStaff.office}</p>
 								</div>
 
 								<div className='space-y-2'>
@@ -148,24 +127,24 @@ export default function StaffsPage() {
 
 								<div>
 									<h3 className='text-xl font-semibold mb-2'>Biography</h3>
-									<p className='text-muted-foreground'>{selectedStaff.bio}</p>
+									{/* <p className='text-muted-foreground'>{selectedStaff.bio}</p> */}
 								</div>
 
 								<div>
 									<h3 className='text-xl font-semibold mb-2'>Education</h3>
 									<ul className='list-disc list-inside text-muted-foreground'>
-										{selectedStaff.education.map((edu, index) => (
+										{/* {selectedStaff.education.map((edu, index) => (
 											<li key={index}>{edu}</li>
-										))}
+										))} */}
 									</ul>
 								</div>
 
 								<div>
 									<h3 className='text-xl font-semibold mb-2'>Experience</h3>
 									<ul className='list-disc list-inside text-muted-foreground'>
-										{selectedStaff.experience.map((exp, index) => (
+										{/* {selectedStaff.experience.map((exp, index) => (
 											<li key={index}>{exp}</li>
-										))}
+										))} */}
 									</ul>
 								</div>
 							</div>
