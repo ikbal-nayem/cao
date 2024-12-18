@@ -1,6 +1,15 @@
 export const newsItems = [
 	{
 		id: '0',
+		title: 'Chief Adviser reaches Cairo to join D-8 Summit',
+		date: '2024-09-15',
+		description:
+			'Chief Adviser Professor Muhammad Yunus arrived in the Egyptian capital at 11 am local time on Wednesday to attend the D-8 Summit. The Minister of the Public Business Sector of the Arab Republic of Egypt, Mohamed Shimi, received him at the Cairo International Airport. Later the Chief Adviser held a brief meeting with the minister.',
+		image: 'https://www.bssnews.net/assets/news_photos/2024/12/18/image-231679-1734516601.jpg',
+		category: 'Politics',
+	},
+	{
+		id: '0',
 		title: 'Hasina destroyed everything, Yunus tells Nikkei Asia',
 		date: '2024-09-15',
 		description:
@@ -55,7 +64,8 @@ export const newsItems = [
 		date: '2024-10-16',
 		description:
 			'Chief Adviser Professor Muhammad Yunus today visited the Dhaka University campus to see the graffiti drawn by young revolutionaries during the student-led mass uprising in July and August.',
-		image: 'https://www.thedailystar.net/sites/default/files/styles/big_202/public/images/2024/10/16/ynus_du.jpg',
+		image:
+			'https://www.thedailystar.net/sites/default/files/styles/big_202/public/images/2024/10/16/ynus_du.jpg',
 		category: 'Youth',
 	},
 ];
