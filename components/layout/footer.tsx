@@ -31,23 +31,23 @@ const Footer: FC = () => {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about-us" className="text-gray-300 hover:text-white">
-                  About Us
+                <Link href="/administration/cabinet" className="text-gray-300 hover:text-white">
+                  Advisery Council
                 </Link>
               </li>
               <li>
-                <Link href="/administration/programs" className="text-gray-300 hover:text-white">
-                  Services
+                <Link href="/administration/organization-structure" className="text-gray-300 hover:text-white">
+                  Organization Structure
                 </Link>
               </li>
               <li>
-                <Link href="/tenders-notice/notices" className="text-gray-300 hover:text-white">
-                  Regulations
+                <Link href="/administration/documents/policy" className="text-gray-300 hover:text-white">
+                  Policy Documents
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white">
-                  Contact
+                <Link href="/news-media/news" className="text-gray-300 hover:text-white">
+                  Latest News
                 </Link>
               </li>
             </ul>
@@ -72,7 +72,7 @@ const Footer: FC = () => {
               </li>
               <li>
                 <a href="https://bangladesh.gov.bd/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white">
-                  Bangladesh National Information Portal
+                  Bangladesh National Portal
                 </a>
               </li>
             </ul>
