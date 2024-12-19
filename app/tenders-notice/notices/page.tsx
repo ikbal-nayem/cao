@@ -109,6 +109,7 @@ export default function NoticesPage() {
 					))}
 				</div>
 			</div>
+
 			<Dialog open={isPreviewOpen} onOpenChange={handleClosePreview}>
 				<DialogContent className='max-w-5xl p-0 border-none'>
 					<h4 className='pt-3 pl-3 font-bold mb-0'>Notice</h4>
