@@ -59,16 +59,13 @@ const HeroSection: FC = () => {
 					<SwiperSlide key={index}>
 						<div className='relative h-screen'>
 							<Image src={slide.image} alt={slide.title} fill className='object-cover object-top' priority />
-							<div className='absolute inset-0'>
-								<div className='absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]' />
-								<div
-									className={clsx('absolute inset-0 from-blue-700/20 to-transparent', {
-										'bg-gradient-to-br': slide?.textAlign === 'left',
-										'bg-gradient-to-b': slide?.textAlign === 'center',
-										'bg-gradient-to-bl': slide?.textAlign === 'right',
-									})}
-								/>
-							</div>
+							<div
+								className={clsx('absolute inset-0 from-blue-700/20 to-transparent', {
+									'bg-gradient-to-br': slide?.textAlign === 'left',
+									'bg-gradient-to-b': slide?.textAlign === 'center',
+									'bg-gradient-to-bl': slide?.textAlign === 'right',
+								})}
+							/>
 							<div className='absolute inset-0 flex items-center'>
 								<div className='container px-4'>
 									<div

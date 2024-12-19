@@ -1,15 +1,38 @@
 export const newsItems = [
 	{
-		id: '0',
+		id: '8',
+		title: 'Malaysian minister calls on Chief Adviser in Cairo',
+		date: '2024-12-18',
+		description: `December 18: Malaysian Higher Education Minister Dr. Zambry Andel Kadir called on Chief Adviser Professor Muhammad Yunus at the St. Regis Hotel in the Egyptian capital, Cairo, on Wednesday.
+			
+			They discussed issues of mutual interest between the two countries, including the recruitment of Bangladeshis in Malaysia, expansion of higher education ties, the Rohingya crisis, and the possibilities of Bangladesh joining ASEAN.
+			
+			The Malaysian minister, who is also a champion of microcredit, said Kuala Lumpur would continue to support Bangladesh, including in the Rohingya humanitarian crisis and Bangladesh's inclusion as a pectoral dialogue partner of ASEAN.
+			
+			'We are looking forward to closer ties with Bangladesh,' Dr. Zambry told Professor Yunus.
+			
+			The Chief Adviser said he has proposed an international conference on the Rohingya crisis, and he expects Malaysia to extend support to the move.
+			
+			He said more than 80,000 new Rohingyas have entered Bangladesh in recent months after the latest bout of violence gripped Myanmar's Rakhine state, which has been home to the Rohingya people for centuries.
+			
+			Professor Yunus said he also favoured creating a UN-supervised safe zone for the displaced people in Rakhine state in an effort to assist the violence-plagued region.
+			
+			During the talks, Professor Yunus said his government planned to hold elections by the first half of 2026.`,
+		image:
+			'https://www.thedailystar.net/sites/default/files/styles/big_202/public/images/2024/12/18/malaysia-bangladesh_0.jpg',
+		category: 'International',
+	},
+	{
+		id: '7',
 		title: 'Chief Adviser reaches Cairo to join D-8 Summit',
-		date: '2024-09-15',
+		date: '2024-12-17',
 		description:
 			'Chief Adviser Professor Muhammad Yunus arrived in the Egyptian capital at 11 am local time on Wednesday to attend the D-8 Summit. The Minister of the Public Business Sector of the Arab Republic of Egypt, Mohamed Shimi, received him at the Cairo International Airport. Later the Chief Adviser held a brief meeting with the minister.',
 		image: 'https://www.bssnews.net/assets/news_photos/2024/12/18/image-231679-1734516601.jpg',
-		category: 'Politics',
+		category: 'International',
 	},
 	{
-		id: '0',
+		id: '6',
 		title: 'Hasina destroyed everything, Yunus tells Nikkei Asia',
 		date: '2024-09-15',
 		description:
@@ -190,33 +213,39 @@ export const photoGroups = [
 ];
 
 export const speeches = [
-  {
-    title: "Address at the D-8 Summit in Cairo",
-    subtitle: "Chief Adviser emphasizes regional cooperation and economic development",
-    date: "2024-03-15",
-    category: "International",
-    thumbnail: "https://www.bssnews.net/assets/news_photos/2024/12/18/image-231679-1734516601.jpg",
-    image: "https://www.bssnews.net/assets/news_photos/2024/12/18/image-231679-1734516601.jpg",
-    video: "VIDEO_ID_1",
-    content: "Distinguished Heads of State and Government, Excellencies, Ladies and Gentlemen,\n\nIt is my great pleasure to address the D-8 Summit here in the historic city of Cairo. Today, we gather at a crucial moment when global cooperation and economic partnerships are more important than ever.\n\nBangladesh stands ready to work with all D-8 member states to strengthen our economic ties and promote sustainable development across our regions. Our collective strength lies in our unity and shared vision for prosperity."
-  },
-  {
-    title: "National Address on Economic Reforms",
-    subtitle: "Comprehensive plan unveiled for economic stability and growth",
-    date: "2024-03-10",
-    category: "Economy",
-    thumbnail: "https://images.prothomalo.com/prothomalo-english%2F2024-12-01%2Fgca1lfmu%2FDebapriya-YUnus.jpg",
-    image: "https://images.prothomalo.com/prothomalo-english%2F2024-12-01%2Fgca1lfmu%2FDebapriya-YUnus.jpg",
-    content: "My fellow citizens,\n\nToday, I address you on the crucial matter of our economy and the steps we are taking to ensure stability and growth. The reforms we are implementing are designed to strengthen our financial institutions, promote investment, and create opportunities for all citizens.\n\nThese measures will help us build a more resilient economy that can withstand global challenges and continue to grow sustainably."
-  },
-  {
-    title: "Speech at the Climate Action Summit",
-    subtitle: "Bangladesh's commitment to environmental sustainability",
-    date: "2024-03-05",
-    category: "Environment",
-    thumbnail: "https://ecdn.dhakatribune.net/contents/cache/images/1100x618x1/uploads/media/2024/11/13/Yunus-COP29-health-89bf39da4d24397e9c3cb3efd84520fb.jpg",
-    image: "https://ecdn.dhakatribune.net/contents/cache/images/1100x618x1/uploads/media/2024/11/13/Yunus-COP29-health-89bf39da4d24397e9c3cb3efd84520fb.jpg",
-    video: "VIDEO_ID_3",
-    content: "Distinguished delegates, environmental leaders, and global citizens,\n\nClimate change represents one of the greatest challenges of our time. Bangladesh, as a country particularly vulnerable to its effects, is committed to taking bold action.\n\nWe have implemented comprehensive policies to reduce emissions, protect our natural resources, and build climate-resilient communities. Our commitment to environmental sustainability remains unwavering."
-  }
+	{
+		title: 'Address at the D-8 Summit in Cairo',
+		subtitle: 'Chief Adviser emphasizes regional cooperation and economic development',
+		date: '2024-03-15',
+		category: 'International',
+		thumbnail: 'https://www.bssnews.net/assets/news_photos/2024/12/18/image-231679-1734516601.jpg',
+		image: 'https://www.bssnews.net/assets/news_photos/2024/12/18/image-231679-1734516601.jpg',
+		video: 'VIDEO_ID_1',
+		content:
+			'Distinguished Heads of State and Government, Excellencies, Ladies and Gentlemen,\n\nIt is my great pleasure to address the D-8 Summit here in the historic city of Cairo. Today, we gather at a crucial moment when global cooperation and economic partnerships are more important than ever.\n\nBangladesh stands ready to work with all D-8 member states to strengthen our economic ties and promote sustainable development across our regions. Our collective strength lies in our unity and shared vision for prosperity.',
+	},
+	{
+		title: 'National Address on Economic Reforms',
+		subtitle: 'Comprehensive plan unveiled for economic stability and growth',
+		date: '2024-03-10',
+		category: 'Economy',
+		thumbnail:
+			'https://images.prothomalo.com/prothomalo-english%2F2024-12-01%2Fgca1lfmu%2FDebapriya-YUnus.jpg',
+		image: 'https://images.prothomalo.com/prothomalo-english%2F2024-12-01%2Fgca1lfmu%2FDebapriya-YUnus.jpg',
+		content:
+			'My fellow citizens,\n\nToday, I address you on the crucial matter of our economy and the steps we are taking to ensure stability and growth. The reforms we are implementing are designed to strengthen our financial institutions, promote investment, and create opportunities for all citizens.\n\nThese measures will help us build a more resilient economy that can withstand global challenges and continue to grow sustainably.',
+	},
+	{
+		title: 'Speech at the Climate Action Summit',
+		subtitle: "Bangladesh's commitment to environmental sustainability",
+		date: '2024-03-05',
+		category: 'Environment',
+		thumbnail:
+			'https://ecdn.dhakatribune.net/contents/cache/images/1100x618x1/uploads/media/2024/11/13/Yunus-COP29-health-89bf39da4d24397e9c3cb3efd84520fb.jpg',
+		image:
+			'https://ecdn.dhakatribune.net/contents/cache/images/1100x618x1/uploads/media/2024/11/13/Yunus-COP29-health-89bf39da4d24397e9c3cb3efd84520fb.jpg',
+		video: 'VIDEO_ID_3',
+		content:
+			'Distinguished delegates, environmental leaders, and global citizens,\n\nClimate change represents one of the greatest challenges of our time. Bangladesh, as a country particularly vulnerable to its effects, is committed to taking bold action.\n\nWe have implemented comprehensive policies to reduce emissions, protect our natural resources, and build climate-resilient communities. Our commitment to environmental sustainability remains unwavering.',
+	},
 ];

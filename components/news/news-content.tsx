@@ -15,9 +15,9 @@ export function NewsContent({ description }: NewsContentProps) {
 			className='lg:col-span-7'
 		>
 			<div className='prose prose-lg dark:prose-invert max-w-none'>
-				<p className='text-lg leading-relaxed text-muted-foreground'>{description}</p>
+				<p className='text-lg leading-relaxed text-muted-foreground whitespace-pre-line'>{description}</p>
 
-				<h2 className='text-2xl font-bold mt-8 mb-4'>Background</h2>
+				{/* <h2 className='text-2xl font-bold mt-8 mb-4'>Background</h2>
 				<p className='text-lg leading-relaxed text-muted-foreground'>
 					The interim government, led by Chief Adviser Muhammad Yunus, has been implementing various reforms
 					and initiatives to address the country&apos;s pressing challenges. These efforts span across
@@ -37,7 +37,7 @@ export function NewsContent({ description }: NewsContentProps) {
 					These developments are expected to have lasting impacts on Bangladesh&apos;s political and economic
 					landscape. The initiatives undertaken by the interim government aim to establish a foundation for
 					sustainable progress and inclusive growth.
-				</p>
+				</p> */}
 			</div>
 		</motion.div>
 	);
