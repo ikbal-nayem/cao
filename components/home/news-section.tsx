@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { NEWS_DETAILS } from '@/constants/routes.constants';
+import { NEWS } from '@/constants/routes.constants';
 import { newsItems } from '@/lib/data';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
@@ -60,7 +60,7 @@ const NewsSection: FC = () => {
 									{item.title}
 								</h3>
 								<p className='text-muted-foreground mb-4 line-clamp-2'>{item.description}</p>
-								<Link href={NEWS_DETAILS + item?.id}>
+								<Link href={NEWS + item?.id}>
 									<Button variant='outline' size='sm' className='group w-full'>
 										Read More
 										<ArrowRight className='w-4 h-4 ml-2 transition-transform group-hover:translate-x-1' />

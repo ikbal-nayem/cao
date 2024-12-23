@@ -1,6 +1,6 @@
 'use client';
 
-import { NEWS_DETAILS } from '@/constants/routes.constants';
+import { NEWS } from '@/constants/routes.constants';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
@@ -29,7 +29,7 @@ export function RelatedNews({ items }: RelatedNewsProps) {
 			<h2 className='text-2xl font-bold mb-8'>Related News</h2>
 			<div className='grid gap-8'>
 				{items.map((item, index) => (
-					<Link key={index} href={`${NEWS_DETAILS}${item?.id}`} className='group flex gap-4 items-start'>
+					<Link key={index} href={`${NEWS}${item?.id}`} className='group flex gap-4 items-start'>
 						<div className='relative w-24 h-24 rounded-lg overflow-hidden shrink-0'>
 							<Image
 								src={item.image}

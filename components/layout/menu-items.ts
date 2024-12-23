@@ -1,4 +1,4 @@
-import { NEWS } from '@/constants/routes.constants';
+import { NEWS, NEWS_MEDIA } from '@/constants/routes.constants';
 import { MenuItemType } from '@/lib/types';
 
 export const menuItems: MenuItemType[] = [
