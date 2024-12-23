@@ -1,5 +1,6 @@
 'use client';
 
+import { useTranslation } from '@/hooks/use-translation';
 import { Button } from '@/components/ui/button';
 import { NEWS } from '@/constants/routes.constants';
 import { newsItems } from '@/lib/data';
@@ -11,6 +12,7 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 const NewsSection: FC = () => {
+  const { t } = useTranslation();
 	return (
 		<section className='py-20 bg-gradient-to-b from-background via-background/50 to-background'>
 			<div className='container mx-auto px-4'>
@@ -62,7 +64,7 @@ const NewsSection: FC = () => {
 								<p className='text-muted-foreground mb-4 line-clamp-2'>{item.description}</p>
 								<Link href={NEWS + item?.id}>
 									<Button variant='outline' size='sm' className='group w-full'>
-										Read More
+                    {t('viewMore')}
 										<ArrowRight className='w-4 h-4 ml-2 transition-transform group-hover:translate-x-1' />
 									</Button>
 								</Link>
