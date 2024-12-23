@@ -1,6 +1,7 @@
 'use client';
 
 import Loading from '@/components/ui/loading';
+import { DEFAULT_LINKS } from '@/constants/common.constant';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -23,7 +24,7 @@ export default function NewsPage() {
 		<main>
 			<section ref={ref} className='relative min-h-[50vh] flex items-center'>
 				<motion.div style={{ y }} className='absolute inset-0'>
-					<Image src='/static/image/cao.jpg' alt='News Background' fill className='object-cover' />
+					<Image src={DEFAULT_LINKS.CAO_1} alt='News Background' fill className='object-cover' />
 					<div className='absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60' />
 				</motion.div>
 

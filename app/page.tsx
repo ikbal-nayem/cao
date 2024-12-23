@@ -1,10 +1,10 @@
 'use client';
 
+import SubordinaryOfficeSection from '@/components/home/subordinary-office';
 import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import HeroSection from '../components/home/hero-section';
 import Loading from '../components/ui/loading';
-import SubordinaryOfficeSection from '@/components/home/subordinary-office';
 
 const LeadershipSection = dynamic(() => import('@/components/home/leadership/leadership-section'), {
 	loading: () => <Loading />,
@@ -22,9 +22,9 @@ const PrioritiesSection = dynamic(() => import('@/components/home/priorities-sec
 	loading: () => <Loading />,
 });
 
-const EmergencyContacts = dynamic(() => import('@/components/home/emergency-contacts'), {
-	loading: () => <Loading />,
-});
+// const EmergencyContacts = dynamic(() => import('@/components/home/emergency-contacts'), {
+// 	loading: () => <Loading />,
+// });
 
 export default function Home() {
 	return (
