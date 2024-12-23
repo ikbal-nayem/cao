@@ -2,15 +2,19 @@
 
 import { useNewsList } from '@/api/news-media';
 import { Button } from '@/components/ui/button';
+import { DEFAULT_LINKS } from '@/constants/common.constant';
 import { NEWS } from '@/constants/routes.constants';
 import { INewsList } from '@/interface/news-media.interface';
+import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLanguage } from '../language/language-context';
 
 export default function NewsList() {
+	const { language } = useLanguage();
 	const { data: newsList } = useNewsList();
 
 	return (
@@ -28,8 +32,11 @@ export default function NewsList() {
 						>
 							<div className='relative h-56'>
 								<Image
-									src={item?.newsitem?.[0]?.thumbnail_path?.[0]?.filepath}
-									alt={item.title_en}
+									src={
+										makePreviewURL(item?.newsitem?.[0]?.thumbnail_path?.[0]?.filepath) ||
+										DEFAULT_LINKS.NOT_AVAILABLE
+									}
+									alt={language === 'en' ? item.title_en : item.title_bn}
 									fill
 									className='object-cover transition-transform duration-300 group-hover:scale-105'
 								/>
@@ -46,9 +53,11 @@ export default function NewsList() {
 									{format(new Date(item.news_date), 'MMMM d, yyyy')}
 								</div>
 								<h3 className='text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors'>
-									{item.title_en}
+									{language === 'en' ? item.title_en : item.title_bn}
 								</h3>
-								<p className='text-muted-foreground mb-4 line-clamp-2'>{item.content_en}</p>
+								<p className='text-muted-foreground mb-4 line-clamp-2'>
+									{language === 'en' ? item.content_en : item.content_bn}
+								</p>
 								<Link href={NEWS + item?.id}>
 									<Button variant='outline' size='sm' className='group w-full'>
 										Read More
