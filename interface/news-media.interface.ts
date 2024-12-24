@@ -17,6 +17,7 @@ export interface INewsList {
 			contenttype: string;
 			filesize: number;
 			filepath: string;
+			relativepath: string;
 		}[];
 		thumbnail_path: {
 			id: number;
@@ -24,6 +25,7 @@ export interface INewsList {
 			contenttype: string;
 			filesize: number;
 			filepath: string;
+			relativepath: string;
 		}[];
 	}[];
 }

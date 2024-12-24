@@ -7,5 +7,5 @@ export function cn(...inputs: ClassValue[]) {
 
 export const makePreviewURL = (url: string) => {
 	if (!url) return;
-	return 'http://admin-stage.cao.gov.bd/' + url;
+	return 'http://admin-stage.cao.gov.bd' + url;
 };
