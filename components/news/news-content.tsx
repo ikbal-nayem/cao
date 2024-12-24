@@ -1,12 +1,16 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '../language/language-context';
 
 interface NewsContentProps {
-	description: string;
+	descriptionBn?: string;
+	descriptionEn?: string;
 }
 
-export function NewsContent({ description }: NewsContentProps) {
+export function NewsContent({ descriptionBn, descriptionEn }: NewsContentProps) {
+	const { language } = useLanguage();
+
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: 20 }}
@@ -15,7 +19,10 @@ export function NewsContent({ description }: NewsContentProps) {
 			className='lg:col-span-7'
 		>
 			<div className='prose prose-lg dark:prose-invert max-w-none'>
-				<p className='text-lg leading-relaxed text-muted-foreground whitespace-pre-line'>{description}</p>
+				<div
+					className='text-lg leading-relaxed text-muted-foreground whitespace-pre-line'
+					dangerouslySetInnerHTML={{ __html: (language === 'en' ? descriptionEn : descriptionBn) || '' }}
+				/>
 
 				{/* <h2 className='text-2xl font-bold mt-8 mb-4'>Background</h2>
 				<p className='text-lg leading-relaxed text-muted-foreground'>

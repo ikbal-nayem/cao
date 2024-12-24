@@ -6,7 +6,7 @@ export const useNewsList = (limit: number = 6) => {
 		queryKey: ['news-list'],
 		queryFn: async ({ pageParam }) => {
 			const response = await axiosIns.get(
-				`/get-news-event-list?pageNumber=${pageParam || 1}&pageSize=${limit}`
+				`/get-news-event-list?newsType=news&pageNumber=${pageParam || 1}&pageSize=${limit}`
 			);
 			return response.data;
 		},

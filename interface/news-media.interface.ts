@@ -1,5 +1,27 @@
 export interface INewsList {
-	id: number;
+	id: string;
+	title_bn: string;
+	title_en: string;
+	news_category: string;
+	news_type: string;
+	content_bn: string;
+	content_en: string;
+	news_date: string;
+	newsitem: {
+		id: number;
+		thumbnail_path: {
+			id: number;
+			orgfilename: string;
+			contenttype: string;
+			filesize: number;
+			filepath: string;
+			relativepath: string;
+		}[];
+	}[];
+}
+
+export interface INewsDetails {
+	id: string;
 	title_bn: string;
 	title_en: string;
 	news_category: string;

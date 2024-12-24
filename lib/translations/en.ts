@@ -20,6 +20,8 @@ export const en = {
   // News Section
   newsTitle: 'Latest Updates',
   newsSubtitle: "Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
+  relatedNews: 'Related News',
+  noRelatedNewsFound: 'No related news found!',
   
   // Contact
   contactUs: 'Contact Us',
