@@ -8,19 +8,26 @@ import { useTranslation } from '@/hooks/use-translation';
 import { INewsList } from '@/interface/news-media.interface';
 import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
 import { useLanguage } from '../language/language-context';
+import Loading from '../ui/loading';
 
 export default function NewsList() {
+	const ref = useRef(null);
+	const isInView = useInView(ref);
 	const { t } = useTranslation();
 	const { language } = useLanguage();
-	const { data: newsList } = useNewsList();
+	const { data: newsList, isFetching, fetchNextPage } = useNewsList(3);
 
-	console.log(newsList);
+	useEffect(() => {
+		if (isInView) {
+			fetchNextPage();
+		}
+	}, [isInView]);
 
 	return (
 		<section className='py-20'>
@@ -28,7 +35,7 @@ export default function NewsList() {
 				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
 					{newsList?.pages?.map((itemGrp, grpIdx: number) => (
 						<Fragment key={grpIdx}>
-							{itemGrp?.map((item: INewsList, index: number) => (
+							{itemGrp?.data?.map((item: INewsList, index: number) => (
 								<motion.div
 									key={item?.id}
 									initial={{ opacity: 0, y: 20 }}
@@ -48,8 +55,8 @@ export default function NewsList() {
 											className='object-cover transition-transform duration-300 group-hover:scale-105'
 										/>
 										<div className='absolute top-4 left-4'>
-											<span className='px-3 py-1 rounded-full bg-primary/10 text-primary text-sm backdrop-blur-sm'>
-												{item.news_type}
+											<span className='px-3 py-1 rounded-full bg-primary/10 text-primary text-sm backdrop-blur-sm capitalize'>
+												{item.news_category}
 											</span>
 										</div>
 									</div>
@@ -77,6 +84,8 @@ export default function NewsList() {
 						</Fragment>
 					))}
 				</div>
+				<div ref={ref} />
+				{isFetching && <Loading />}
 			</div>
 		</section>
 	);

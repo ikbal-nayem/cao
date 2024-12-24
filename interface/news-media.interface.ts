@@ -2,6 +2,7 @@ export interface INewsList {
 	id: number;
 	title_bn: string;
 	title_en: string;
+	news_category: string;
 	news_type: string;
 	content_bn: string;
 	content_en: string;

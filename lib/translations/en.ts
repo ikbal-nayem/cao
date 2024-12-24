@@ -19,7 +19,7 @@ export const en = {
   
   // News Section
   newsTitle: 'Latest Updates',
-  newsSubtitle: 'Stay informed about the latest initiatives and developments from the Chief Adviser\'s Office',
+  newsSubtitle: "Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
   
   // Contact
   contactUs: 'Contact Us',

@@ -2,6 +2,7 @@
 
 import Loading from '@/components/ui/loading';
 import { DEFAULT_LINKS } from '@/constants/common.constant';
+import { useTranslation } from '@/hooks/use-translation';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -12,6 +13,7 @@ const NewsList = dynamic(() => import('@/components/news/news-list'), {
 });
 
 export default function NewsPage() {
+	const { t } = useTranslation();
 	const ref = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -35,11 +37,8 @@ export default function NewsPage() {
 						transition={{ duration: 0.8 }}
 						className='max-w-3xl'
 					>
-						<h1 className='text-5xl md:text-7xl font-bold mb-6'>Latest News</h1>
-						<p className='text-xl text-muted-foreground'>
-							Stay updated with the latest announcements, policies, and developments from the Chief
-							Adviser&apos;s Office
-						</p>
+						<h1 className='text-5xl md:text-7xl font-bold mb-6'>{t('latestNews')}</h1>
+						<p className='text-xl text-muted-foreground'>{t('latestNewsSubtitle')}</p>
 					</motion.div>
 				</div>
 			</section>
