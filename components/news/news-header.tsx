@@ -1,9 +1,11 @@
 'use client';
 
 import { DEFAULT_LINKS } from '@/constants/common.constant';
+import { useTranslation } from '@/hooks/use-translation';
 import { INewsDetails } from '@/interface/news-media.interface';
 import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
+import { bn, enUS } from 'date-fns/locale';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
@@ -15,6 +17,7 @@ interface NewsHeaderProps {
 
 export function NewsHeader({ item }: NewsHeaderProps) {
 	const { language } = useLanguage();
+	const { tNumber } = useTranslation();
 
 	return (
 		<div className='space-y-8'>
@@ -32,7 +35,11 @@ export function NewsHeader({ item }: NewsHeaderProps) {
 				</h1>
 				<div className='flex items-center text-muted-foreground'>
 					<Calendar className='w-4 h-4 mr-2' />
-					{item?.news_date ? format(new Date(item?.news_date), 'MMMM d, yyyy') : ''}
+					{item?.news_date
+						? tNumber(
+								format(new Date(item?.news_date), 'MMMM d, yyyy', { locale: language === 'en' ? enUS : bn })
+						  )
+						: ''}
 				</div>
 			</motion.div>
 

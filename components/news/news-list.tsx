@@ -8,6 +8,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { INewsList } from '@/interface/news-media.interface';
 import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
+import { bn, enUS } from 'date-fns/locale';
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Image from 'next/image';
@@ -19,7 +20,7 @@ import Loading from '../ui/loading';
 export default function NewsList() {
 	const ref = useRef(null);
 	const isInView = useInView(ref);
-	const { t } = useTranslation();
+	const { t, tNumber } = useTranslation();
 	const { language } = useLanguage();
 	const { data: newsList, isFetching, fetchNextPage } = useNewsList(3);
 
@@ -64,7 +65,11 @@ export default function NewsList() {
 									<div className='p-6'>
 										<div className='flex items-center text-muted-foreground text-sm mb-3'>
 											<Calendar className='w-4 h-4 mr-2' />
-											{item?.news_date ? format(new Date(item?.news_date), 'MMMM d, yyyy') : ''}
+											{item?.news_date
+												? tNumber(format(new Date(item?.news_date), 'MMMM d, yyyy', {
+														locale: language === 'en' ? enUS : bn,
+												  }))
+												: ''}
 										</div>
 										<h3 className='text-xl font-bold mb-3 line-clamp-2 group-hover:text-primary transition-colors'>
 											{language === 'en' ? item.title_en : item.title_bn}

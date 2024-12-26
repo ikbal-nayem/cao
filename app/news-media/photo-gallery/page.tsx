@@ -22,16 +22,11 @@ export default function PhotoGalleryPage() {
 	const [photoGroups, setPhotoGroups] = useState<IImageGallery[]>([]);
 	const [selectedGroup, setSelectedGroup] = useState<IImageGallery | null>(null);
 	const [selectedPhotoIndex, setSelectedPhotoIndex] = useState(0);
-	const [isLoading, setLoading] = useState<boolean>(true);
 	const { language } = useLanguage();
 	const { t } = useTranslation();
 
 	useEffect(() => {
-		setLoading(true);
-		axiosIns
-			.get('/get-image-gallery-list')
-			.then((resp) => setPhotoGroups(resp?.data))
-			.finally(() => setLoading(false));
+		axiosIns.get('/get-image-gallery-list').then((resp) => setPhotoGroups(resp?.data));
 	}, []);
 
 	const recentPhotos = photoGroups
@@ -118,7 +113,7 @@ export default function PhotoGalleryPage() {
 					<PhotoPreview
 						isOpen={!!selectedGroup}
 						onClose={() => setSelectedGroup(null)}
-            caption={language === 'en' ? selectedGroup.caption_en : selectedGroup.caption_bn}
+						caption={language === 'en' ? selectedGroup.caption_en : selectedGroup.caption_bn}
 						photos={selectedGroup.file_path}
 						currentIndex={selectedPhotoIndex}
 						onIndexChange={setSelectedPhotoIndex}

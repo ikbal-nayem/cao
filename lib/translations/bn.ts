@@ -26,6 +26,7 @@ export const bn = {
 	// Gallery
   photoGallery: 'ফটো গ্যালারি',
   photoGallerySubtitle: "প্রধান উপদেষ্টার কার্যালয়ের গুরুত্বপূর্ণ মুহূর্ত এবং ঘটনাগুলির একটি দৃশ্যমান যাত্রা",
+	pictures: 'টি ছবি',
   noPhotosFound: 'কোন ছবি পাওয়া যায়নি!',
   videoGallery: 'ভিডিও গ্যালারি',
   videoGallerySubtitle: "প্রধান উপদেষ্টা কার্যালয়ের কাজ এবং উদ্যোগগুলি প্রদর্শনকারী ভিডিওগুলির একটি সংগ্রহ",

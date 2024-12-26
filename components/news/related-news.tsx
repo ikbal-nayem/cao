@@ -7,6 +7,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { INewsList } from '@/interface/news-media.interface';
 import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
+import { bn, enUS } from 'date-fns/locale';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
@@ -23,7 +24,7 @@ export function RelatedNews({ currentNewsId, category }: RelatedNewsProps) {
 	const [isLoading, setLoading] = useState<boolean>(true);
 	const [relatedNews, setRelatedNews] = useState<Array<INewsList>>([]);
 	const { language } = useLanguage();
-	const { t } = useTranslation();
+	const { t, tNumber } = useTranslation();
 
 	useEffect(() => {
 		setLoading(true);
@@ -68,7 +69,13 @@ export function RelatedNews({ currentNewsId, category }: RelatedNewsProps) {
 								</span>
 								<span className='flex items-center'>
 									<Calendar className='w-3 h-3 mr-1' />
-									{item?.news_type ? format(new Date(item.news_date), 'MMM d, yyyy') : ''}
+									{item?.news_type
+										? tNumber(
+												format(new Date(item.news_date), 'MMM d, yyyy', {
+													locale: language === 'en' ? enUS : bn,
+												})
+										  )
+										: ''}
 								</span>
 							</div>
 							<h3 className='font-semibold line-clamp-2 group-hover:text-primary transition-colors'>

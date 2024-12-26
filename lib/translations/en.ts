@@ -26,6 +26,7 @@ export const en = {
   // Gallery
   photoGallery: 'Photo Gallery',
   photoGallerySubtitle: "A visual journey through key moments and events of the Chief Adviser's Office",
+  pictures: 'Pictures',
   noPhotosFound: 'No photos found!',
   videoGallery: 'Video Gallery',
   videoGallerySubtitle: "A collection of videos showcasing the work and initiatives of the Chief Adviser's Office",
