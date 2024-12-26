@@ -1,4 +1,4 @@
-import { NEWS, NEWS_MEDIA } from '@/constants/routes.constants';
+import { ARCHIVE_TENDER, NEWS, NOTICE, OPEN_TENDER } from '@/constants/routes.constants';
 import { MenuItemType } from '@/lib/types';
 
 export const menuItems: MenuItemType[] = [
@@ -26,9 +26,9 @@ export const menuItems: MenuItemType[] = [
 	{
 		title: 'Notice',
 		items: [
-			{ title: 'Notices', href: '/tenders-notice/notices' },
-			{ title: 'Open Tenders', href: '/tenders-notice/open-tenders' },
-			{ title: 'Archive Tenders', href: '/tenders-notice/archive-tenders' },
+			{ title: 'Notices', href: NOTICE },
+			{ title: 'Open Tenders', href: OPEN_TENDER },
+			{ title: 'Archive Tenders', href: ARCHIVE_TENDER },
 		],
 	},
 	{
