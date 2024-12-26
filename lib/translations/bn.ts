@@ -23,6 +23,14 @@ export const bn = {
 	relatedNews: 'সম্পর্কিত খবর',
 	noRelatedNewsFound: 'সম্পর্কিত কোনো খবর পাওয়া যায়নি!',
 
+	// Gallery
+  photoGallery: 'ফটো গ্যালারি',
+  photoGallerySubtitle: "প্রধান উপদেষ্টার কার্যালয়ের গুরুত্বপূর্ণ মুহূর্ত এবং ঘটনাগুলির একটি দৃশ্যমান যাত্রা",
+  noPhotosFound: 'কোন ছবি পাওয়া যায়নি!',
+  videoGallery: 'ভিডিও গ্যালারি',
+  videoGallerySubtitle: "প্রধান উপদেষ্টা কার্যালয়ের কাজ এবং উদ্যোগগুলি প্রদর্শনকারী ভিডিওগুলির একটি সংগ্রহ",
+  noVideosFound: 'কোন ভিডিও পাওয়া যায়নি!',
+
 	// Contact
 	contactUs: 'যোগাযোগ করুন',
 	contactSubtitle: 'আপনার যেকোনো প্রশ্ন বা জিজ্ঞাসা নিয়ে আমাদের সাথে যোগাযোগ করুন',

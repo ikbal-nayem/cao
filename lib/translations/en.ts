@@ -22,6 +22,14 @@ export const en = {
   newsSubtitle: "Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
   relatedNews: 'Related News',
   noRelatedNewsFound: 'No related news found!',
+
+  // Gallery
+  photoGallery: 'Photo Gallery',
+  photoGallerySubtitle: "A visual journey through key moments and events of the Chief Adviser's Office",
+  noPhotosFound: 'No photos found!',
+  videoGallery: 'Video Gallery',
+  videoGallerySubtitle: "A collection of videos showcasing the work and initiatives of the Chief Adviser's Office",
+  noVideosFound: 'No videos found!',
   
   // Contact
   contactUs: 'Contact Us',

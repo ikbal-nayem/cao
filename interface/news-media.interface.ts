@@ -1,3 +1,5 @@
+import { IFile } from './common.interface';
+
 export interface INewsList {
 	id: string;
 	title_bn: string;
@@ -9,14 +11,7 @@ export interface INewsList {
 	news_date: string;
 	newsitem: {
 		id: number;
-		thumbnail_path: {
-			id: number;
-			orgfilename: string;
-			contenttype: string;
-			filesize: number;
-			filepath: string;
-			relativepath: string;
-		}[];
+		thumbnail_path: IFile[];
 	}[];
 }
 
@@ -34,21 +29,15 @@ export interface INewsDetails {
 		id: number;
 		image_caption_bn: string;
 		image_caption_en: string;
-		image_path: {
-			id: number;
-			orgfilename: string;
-			contenttype: string;
-			filesize: number;
-			filepath: string;
-			relativepath: string;
-		}[];
-		thumbnail_path: {
-			id: number;
-			orgfilename: string;
-			contenttype: string;
-			filesize: number;
-			filepath: string;
-			relativepath: string;
-		}[];
+		image_path: IFile[];
+		thumbnail_path: IFile[];
 	}[];
+}
+
+export interface IImageGallery {
+	id: number;
+	caption_bn: string;
+	caption_en: string;
+	file_path: IFile[];
+	thumbnail_path: IFile[];
 }

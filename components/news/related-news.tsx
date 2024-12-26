@@ -63,7 +63,7 @@ export function RelatedNews({ currentNewsId, category }: RelatedNewsProps) {
 						</div>
 						<div className='flex-1 min-w-0'>
 							<div className='flex items-center gap-2 text-xs text-muted-foreground mb-2'>
-								<span className='px-2 py-1 rounded-full bg-primary/10 text-primary'>
+								<span className='px-2 py-1 rounded-full bg-primary/10 text-primary capitalize'>
 									{item.news_category}
 								</span>
 								<span className='flex items-center'>
