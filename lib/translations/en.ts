@@ -3,6 +3,9 @@ export const en = {
   readMore: 'Read More',
   learnMore: 'Learn More',
   viewMore: 'View More',
+  fileSize: 'File Size',
+  download: 'Download',
+  preview: 'Preview',
   
   // Header Menu
   aboutUs: 'About Us',
@@ -16,6 +19,12 @@ export const en = {
   heroSubtitle: 'Serving the nation through effective governance, transparent leadership, and sustainable development initiatives',
   latestNews: 'Latest News',
   latestNewsSubtitle: 'Stay updated with the latest announcements, policies, and developments from the Chief Adviser\'s Office',
+
+  // Notice
+  noticeTitle: 'Notices',
+  noticeSubtitle: 'Stay updated with the latest notices and announcements from the Chief Adviser\'s Office',
+  noticeSearch: 'Search Notice',
+  noNoticesFound: 'No notices found!',
   
   // News Section
   newsTitle: 'Latest Updates',

@@ -12,6 +12,7 @@ import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
 import { IFile } from '@/interface/common.interface';
 import { bn, enUS } from 'date-fns/locale';
+import PageTitle from '@/components/layout/page-title';
 
 export default function VideoGalleryPage() {
 	const [gallery, setGallery] = useState<Array<IVideoGallery>>([]);
@@ -31,15 +32,7 @@ export default function VideoGalleryPage() {
 	return (
 		<main className='min-h-screen pt-24'>
 			<div className='container mx-auto px-4'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}
-					className='text-center mb-16'
-				>
-					<h1 className='text-4xl font-bold mb-6'>{t('videoGallery')}</h1>
-					<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>{t('videoGallerySubtitle')}</p>
-				</motion.div>
+				<PageTitle title={t('videoGallery')} subTitle={t('videoGallerySubtitle')} />
 
 				{isLoading ? <VideoGallerySkeleton /> : null}
 

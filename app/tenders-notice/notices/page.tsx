@@ -5,91 +5,49 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Pagination } from '@/components/ui/pagination';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { format } from 'date-fns';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Download, FileText, ScanEye } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { CategoryFilter } from './category-filter';
+import PageTitle from '@/components/layout/page-title';
+import { useTranslation } from '@/hooks/use-translation';
+import { INotice } from '@/interface/notice.interface';
+import { useNoticeList } from '@/api/notice';
+import { useLanguage } from '@/components/language/language-context';
+import { bn, enUS } from 'date-fns/locale';
+import { formatFileSize, makePreviewURL } from '@/lib/utils';
 
-const notices = [
-	{
-		title: 'Dr. Khalilur Rahman, High Representative to the Chief Adviser',
-		date: '2024-12-15',
-		category: 'GO',
-		description: '',
-		file: 'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/notices/821ed99f_aed6_44c1_bbca_978e185e77dc/go_usa_hr-rohingya_khalilur-1193_151224.pdf',
-		fileSize: '1.2 MB',
-	},
-	{
-		title: 'Mohammad Mizanur Rahman, Deputy Director, NSDA +3',
-		date: '2024-12-15',
-		category: 'GO',
-		description: '',
-		file: 'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/notices/713f1d97_f54b_47d9_94fb_f6119c13ff96/go_nepal_dd_NSDA_mizanur-156_151224.pdf',
-		fileSize: '850 KB',
-	},
-	{
-		title: 'Md. Hasmat Ali, Office Assistant cum-computer typist',
-		date: '2024-12-08',
-		category: 'Ex Bangladesh leave',
-		description: 'Treatment [India] [Md. Hasmat Ali, Office Assistant cum-computer typist] – 1157',
-		file: 'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/notices/12e32458_9a52_4cca_8adb_56f27a444cf2/ex_bdlv_india_cao_hasmat-1157_081224.pdf',
-		fileSize: '500 KB',
-	},
-	{
-		title: 'Dr. Khalilur Rahman, High Representative to the Chief Adviser',
-		date: '2024-12-15',
-		category: 'GO',
-		description: '',
-		file: 'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/notices/821ed99f_aed6_44c1_bbca_978e185e77dc/go_usa_hr-rohingya_khalilur-1193_151224.pdf',
-		fileSize: '1.2 MB',
-	},
-	{
-		title: 'Mohammad Mizanur Rahman, Deputy Director, NSDA +3',
-		date: '2024-12-15',
-		category: 'GO',
-		description: '',
-		file: 'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/notices/713f1d97_f54b_47d9_94fb_f6119c13ff96/go_nepal_dd_NSDA_mizanur-156_151224.pdf',
-		fileSize: '850 KB',
-	},
-	{
-		title: 'Md. Hasmat Ali, Office Assistant cum-computer typist',
-		date: '2024-12-08',
-		category: 'Ex Bangladesh leave',
-		description: 'Treatment [India] [Md. Hasmat Ali, Office Assistant cum-computer typist] – 1157',
-		file: 'https://cao.gov.bd/sites/default/files/files/cao.portal.gov.bd/notices/12e32458_9a52_4cca_8adb_56f27a444cf2/ex_bdlv_india_cao_hasmat-1157_081224.pdf',
-		fileSize: '500 KB',
-	},
-];
+const categories = ['GO', 'Notice'];
 
 const ITEMS_PER_PAGE = 5;
 
 export default function NoticesPage() {
+	const { data: notices } = useNoticeList();
 	const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-	const [previewFile, setPreviewFile] = useState('');
 	const [searchQuery, setSearchQuery] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
 
-	const categories = useMemo(() => Array.from(new Set(notices.map((notice) => notice.category))), []);
+	const previewFile = useRef({ file: '', title: '' });
+	const { t, tNumber } = useTranslation();
+	const { language } = useLanguage();
 
 	const filteredNotices = useMemo(() => {
-		return notices.filter((notice) => {
+		return notices?.data?.filter((notice: INotice) => {
 			const matchesSearch =
-				notice.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-				notice.description.toLowerCase().includes(searchQuery.toLowerCase());
-			const matchesCategory = selectedCategory ? notice.category === selectedCategory : true;
+				notice.title_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
+				notice.description_en.toLowerCase().includes(searchQuery.toLowerCase());
+			const matchesCategory = selectedCategory ? notice.notice_type === selectedCategory : true;
 			return matchesSearch && matchesCategory;
 		});
 	}, [searchQuery, selectedCategory]);
 
-	const totalPages = Math.ceil(filteredNotices.length / ITEMS_PER_PAGE);
-	const paginatedNotices = filteredNotices.slice(
-		(currentPage - 1) * ITEMS_PER_PAGE,
-		currentPage * ITEMS_PER_PAGE
-	);
+	useEffect(() => {}, []);
 
-	const handlePreview = (file: string) => {
-		setPreviewFile(file);
+	const totalPages = Math.ceil(filteredNotices?.length / ITEMS_PER_PAGE);
+
+	const handlePreview = (title: string, file: string) => {
+		previewFile.current = { file, title };
 		setIsPreviewOpen(true);
 	};
 
@@ -100,31 +58,18 @@ export default function NoticesPage() {
 	return (
 		<main className='min-h-screen py-24'>
 			<div className='container mx-auto px-4'>
-				<AnimatePresence>
-					<motion.div
-						initial={{ opacity: 0, y: 20 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 0.8 }}
-						className='text-center mb-16'
-					>
-						<h1 className='text-4xl font-bold mb-6'>Notices</h1>
-						<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>
-							Stay updated with the latest notices, announcements, and circulars from the Chief Adviser's
-							Office
-						</p>
-					</motion.div>
-				</AnimatePresence>
+				<PageTitle title={t('notice')} subTitle={t('noticeSubtitle')} />
 
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8 mb-8'>
 					<div className='md:col-span-3'>
 						<div className='mb-6'>
-							<SearchBar placeholder='Search notice...' value={searchQuery} onChange={setSearchQuery} />
+							<SearchBar placeholder={t('noticeSearch')} value={searchQuery} onChange={setSearchQuery} />
 						</div>
 
 						<div className='space-y-6'>
-							{paginatedNotices?.map((notice, index) => (
+							{notices?.data?.map((notice: INotice, index: number) => (
 								<motion.div
-									key={notice.title}
+									key={notice?.id}
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -133,33 +78,46 @@ export default function NoticesPage() {
 									<div className='flex items-start justify-between gap-4'>
 										<div className='flex-1'>
 											<div className='flex items-center gap-4 mb-3'>
-												<span className='px-3 py-1 rounded-full bg-primary/10 text-primary text-sm'>
-													{notice.category}
+												<span className='px-3 py-1 rounded-full bg-primary/10 text-primary text-sm uppercase'>
+													{notice.notice_type}
 												</span>
 												<span className='text-sm text-muted-foreground'>
-													{format(new Date(notice.date), 'MMMM d, yyyy')}
+													{tNumber(
+														format(new Date(notice.notice_date), 'MMMM d, yyyy', {
+															locale: language === 'en' ? enUS : bn,
+														})
+													)}
 												</span>
 											</div>
 											<h3 className='text-xl font-bold mb-2 flex items-center gap-2'>
 												<FileText className='w-5 h-5 text-primary hidden sm:inline' />
-												{notice.title}
+												{language === 'en' ? notice.title_en : notice.title_bn}
 											</h3>
-											<p className='text-muted-foreground mb-4'>{notice.description}</p>
-											<div className='text-sm text-muted-foreground'>File size: {notice.fileSize}</div>
+											<p className='text-muted-foreground mb-4'>
+												{language === 'en' ? notice?.description_en : notice?.description_bn}
+											</p>
+											<div className='text-sm text-muted-foreground'>
+												{t('fileSize')}: {formatFileSize(notice?.document?.[0]?.filesize)}
+											</div>
 										</div>
 										<div className='flex flex-col gap-2'>
 											<Button
 												variant='outline'
 												size='sm'
 												className='text-primary shrink-0'
-												onClick={() => handlePreview(notice.file)}
+												onClick={() =>
+													handlePreview(
+														language === 'en' ? notice.title_en : notice.title_bn,
+														notice?.document?.[0]?.relativepath
+													)
+												}
 											>
 												<ScanEye className='w-4 h-4 sm:mr-2' />
-												<div className='hidden sm:inline'>Preview</div>
+												<div className='hidden sm:inline'>{t('preview')}</div>
 											</Button>
 											<Button variant='outline' size='sm' className='text-green-600 shrink-0'>
 												<Download className='w-4 h-4 sm:mr-2' />
-												<div className='hidden sm:inline'>Download</div>
+												<div className='hidden sm:inline'>{t('download')}</div>
 											</Button>
 										</div>
 									</div>
@@ -186,8 +144,13 @@ export default function NoticesPage() {
 
 			<Dialog open={isPreviewOpen} onOpenChange={handleClosePreview}>
 				<DialogContent className='max-w-5xl p-0 border-none'>
-					<h4 className='pt-3 pl-3 font-bold mb-0'>Notice</h4>
-					<iframe src={previewFile + '#toolbar=0&navpanes=0'} title='Preview' className='w-full h-[80vh]' />
+					<h4 className='pt-3 pl-3 font-bold mb-0'>{previewFile.current?.title}</h4>
+					<object
+						data={makePreviewURL(previewFile.current?.file) + '#toolbar=0&navpanes=0'}
+						type="application/pdf"
+						title='Preview'
+						className='w-full h-[80vh]'
+					/>
 				</DialogContent>
 			</Dialog>
 		</main>

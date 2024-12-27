@@ -3,6 +3,7 @@
 import { PhotoGroupCard } from '@/components/gallery/photo-group-card';
 import { PhotoPreview } from '@/components/gallery/photo-preview';
 import { useLanguage } from '@/components/language/language-context';
+import PageTitle from '@/components/layout/page-title';
 import { axiosIns } from '@/config/axios';
 import { DEFAULT_LINKS } from '@/constants/common.constant';
 import { useTranslation } from '@/hooks/use-translation';
@@ -41,15 +42,7 @@ export default function PhotoGalleryPage() {
 	return (
 		<main className='min-h-screen py-24'>
 			<div className='container mx-auto px-4'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}
-					className='text-center mb-16'
-				>
-					<h1 className='text-4xl font-bold mb-6'>{t('photoGallery')}</h1>
-					<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>{t('photoGallerySubtitle')}</p>
-				</motion.div>
+				<PageTitle title={t('photoGallery')} subTitle={t('photoGallerySubtitle')} />
 
 				{/* Recent Photos Slider */}
 				<motion.div

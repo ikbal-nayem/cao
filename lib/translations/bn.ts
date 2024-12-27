@@ -3,6 +3,9 @@ export const bn = {
 	readMore: 'বিস্তারিত পড়ুন',
 	learnMore: 'আরও জানুন',
 	viewMore: 'আরও দেখুন',
+	fileSize: 'ফাইল সাইজ',
+	download: 'ডাউনলোড',
+	preview: 'প্রদর্শন',
 
 	// Header Menu
 	aboutUs: 'আমাদের সম্পর্কে',
@@ -16,6 +19,12 @@ export const bn = {
 	heroSubtitle: 'কার্যকর শাসন, স্বচ্ছ নেতৃত্ব এবং টেকসই উন্নয়ন উদ্যোগের মাধ্যমে জাতির সেবা করা',
 	latestNews: 'সর্বশেষ সংবাদ',
 	latestNewsSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ ঘোষণা, নীতিমালা এবং উন্নয়ন সম্পর্কে জানুন',
+
+	// Notice
+	noticeTitle: 'নোটিশসমূহ',
+	noticeSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ নোটিশ এবং ঘোষণাগুলি সম্পর্কে জানুন',
+	noticeSearch: 'নোটিশ সার্চ',
+	noNoticesFound: 'কোন নোটিশ পাওয়া যায়নি!',
 
 	// News Section
 	newsTitle: 'সর্বশেষ আপডেট',
