@@ -41,3 +41,16 @@ export interface IImageGallery {
 	file_path: IFile[];
 	thumbnail_path: IFile[];
 }
+
+export interface IVideoGallery {
+	id: number;
+	title_bn: string;
+	title_en: string;
+	caption_bn: string;
+	caption_en: string;
+	file_path: (IFile & {
+		upload_date: string;
+		caption_bn: string;
+		caption_en: string;
+	})[];
+}
