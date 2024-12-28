@@ -7,7 +7,7 @@ import { SearchBar } from '@/components/ui/SearchBar';
 import { format } from 'date-fns';
 import { motion } from 'framer-motion';
 import { Download, FileText, ScanEye } from 'lucide-react';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { CategoryFilter } from './category-filter';
 import PageTitle from '@/components/layout/page-title';
 import { useTranslation } from '@/hooks/use-translation';
@@ -19,32 +19,20 @@ import { formatFileSize, makePreviewURL } from '@/lib/utils';
 
 const categories = ['GO', 'Notice'];
 
-const ITEMS_PER_PAGE = 5;
+const ITEMS_PER_PAGE = 10;
 
 export default function NoticesPage() {
-	const { data: notices } = useNoticeList();
 	const [isPreviewOpen, setIsPreviewOpen] = useState(false);
 	const [searchQuery, setSearchQuery] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
-
 	const previewFile = useRef({ file: '', title: '' });
+	const { data: notices } = useNoticeList(currentPage, ITEMS_PER_PAGE);
+
 	const { t, tNumber } = useTranslation();
 	const { language } = useLanguage();
 
-	const filteredNotices = useMemo(() => {
-		return notices?.data?.filter((notice: INotice) => {
-			const matchesSearch =
-				notice.title_en.toLowerCase().includes(searchQuery.toLowerCase()) ||
-				notice.description_en.toLowerCase().includes(searchQuery.toLowerCase());
-			const matchesCategory = selectedCategory ? notice.notice_type === selectedCategory : true;
-			return matchesSearch && matchesCategory;
-		});
-	}, [searchQuery, selectedCategory]);
-
-	useEffect(() => {}, []);
-
-	const totalPages = Math.ceil(filteredNotices?.length / ITEMS_PER_PAGE);
+	const totalPages = Math.ceil(notices?.totalRecords / ITEMS_PER_PAGE);
 
 	const handlePreview = (title: string, file: string) => {
 		previewFile.current = { file, title };
