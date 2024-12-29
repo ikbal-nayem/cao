@@ -9,7 +9,7 @@ import { Pagination } from '@/components/ui/pagination';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { useTranslation } from '@/hooks/use-translation';
 import { INotice } from '@/interface/notice.interface';
-import { debounce, formatFileSize, makePreviewURL } from '@/lib/utils';
+import { debounce, formatFileSize, isNull, makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
 import { bn, enUS } from 'date-fns/locale';
 import { motion } from 'framer-motion';
@@ -47,19 +47,19 @@ export default function NoticesPage() {
 	const handleClosePreview = () => {
 		setIsPreviewOpen(false);
 	};
-	
+
 	const totalPages = Math.ceil(notices?.totalRecords / ITEMS_PER_PAGE);
 
 	return (
 		<main className='min-h-screen py-24'>
 			<div className='container mx-auto px-4'>
-				<PageTitle title={t('notice')} subTitle={t('noticeSubtitle')} />
+				<PageTitle title={t('noticeTitle')} subTitle={t('noticeSubtitle')} />
 
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8 mb-8'>
 					<div className='md:col-span-3'>
 						<div className='mb-6'>
 							<SearchBar
-								placeholder={t('noticeSearch')}
+								placeholder={t('noticeSearch')+' ...'}
 								defaultValue={searchQuery}
 								onChange={debounce((val) => setSearchQuery(val), 500)}
 							/>
@@ -95,30 +95,34 @@ export default function NoticesPage() {
 											<p className='text-muted-foreground mb-4'>
 												{language === 'en' ? notice?.description_en : notice?.description_bn}
 											</p>
-											<div className='text-sm text-muted-foreground'>
-												{t('fileSize')}: {formatFileSize(notice?.document?.[0]?.filesize)}
+											{!isNull(notice?.document?.[0]?.relativepath) && (
+												<div className='text-sm text-muted-foreground'>
+													{t('fileSize')}: {formatFileSize(notice?.document?.[0]?.filesize)}
+												</div>
+											)}
+										</div>
+										{!isNull(notice?.document?.[0]?.relativepath) && (
+											<div className='flex flex-col gap-2'>
+												<Button
+													variant='outline'
+													size='sm'
+													className='text-primary shrink-0'
+													onClick={() =>
+														handlePreview(
+															language === 'en' ? notice.title_en : notice.title_bn,
+															notice?.document?.[0]?.relativepath
+														)
+													}
+												>
+													<ScanEye className='w-4 h-4 sm:mr-2' />
+													<div className='hidden sm:inline'>{t('preview')}</div>
+												</Button>
+												<Button variant='outline' size='sm' className='text-green-600 shrink-0'>
+													<Download className='w-4 h-4 sm:mr-2' />
+													<div className='hidden sm:inline'>{t('download')}</div>
+												</Button>
 											</div>
-										</div>
-										<div className='flex flex-col gap-2'>
-											<Button
-												variant='outline'
-												size='sm'
-												className='text-primary shrink-0'
-												onClick={() =>
-													handlePreview(
-														language === 'en' ? notice.title_en : notice.title_bn,
-														notice?.document?.[0]?.relativepath
-													)
-												}
-											>
-												<ScanEye className='w-4 h-4 sm:mr-2' />
-												<div className='hidden sm:inline'>{t('preview')}</div>
-											</Button>
-											<Button variant='outline' size='sm' className='text-green-600 shrink-0'>
-												<Download className='w-4 h-4 sm:mr-2' />
-												<div className='hidden sm:inline'>{t('download')}</div>
-											</Button>
-										</div>
+										)}
 									</div>
 								</motion.div>
 							))}

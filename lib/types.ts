@@ -1,4 +1,5 @@
 export interface MenuItem {
+  key: string;
   title: string;
   href?: string;
   items?: MenuItem[];

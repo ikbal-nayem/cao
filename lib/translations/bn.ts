@@ -8,12 +8,32 @@ export const bn = {
 	preview: 'প্রদর্শন',
 	Categories: 'ক্যাটাগরি',
 
-	// Header Menu
-	aboutUs: 'আমাদের সম্পর্কে',
-	administration: 'প্রশাসন',
-	notice: 'নোটিশ',
-	newsMedia: 'নিউজ ও মিডিয়া',
-	contact: 'যোগাযোগ',
+	// Menu
+	menu: {
+		aboutUs: 'আমাদের সম্পর্কে',
+		administration: 'প্রশাসন',
+		adviseryCouncil: 'উপদেষ্টা পরিষদ',
+		formerChiefAdvisers: 'প্রাক্তন প্রধান উপদেষ্টারা',
+		organizationStructure: 'সংগঠন কাঠামো',
+		programsAndPriorities: 'কার্যক্রম',
+		ourStaffs: 'আমাদের কর্মকর্তারা',
+		documentsPublications: 'ডকুমেন্ট ও প্রকাশনা',
+		policyDocuments: 'নীতিমালা',
+		reportsStats: 'প্রতিবেদন ও পরিসংখ্যান',
+		notice: 'নোটিশ',
+		openTenders: 'উন্মুক্ত দরপত্র',
+		archiveTenders: 'আর্কাইভ দরপত্র',
+		newsMedia: 'সংবাদ ও মিডিয়া',
+		news: 'সংবাদ',
+		advisersSpeeches: 'উপদেষ্টাদের বক্তৃতা',
+		photoGallery: 'ছবি গ্যালারি',
+		videoGallery: 'ভিডিও গ্যালারি',
+		contact: 'যোগাযোগ',
+		contactUs: 'যোগাযোগ করুন',
+		FAQ: 'সচরাচর জিজ্ঞাসা',
+		feedback: 'প্রতিক্রিয়া',
+		address: 'ঠিকানা',
+	},
 
 	// Home Page
 	heroTitle: 'প্রধান উপদেষ্টার কার্যালয়',
@@ -34,13 +54,14 @@ export const bn = {
 	noRelatedNewsFound: 'সম্পর্কিত কোনো খবর পাওয়া যায়নি!',
 
 	// Gallery
-  photoGallery: 'ফটো গ্যালারি',
-  photoGallerySubtitle: "প্রধান উপদেষ্টার কার্যালয়ের গুরুত্বপূর্ণ মুহূর্ত এবং ঘটনাগুলির একটি দৃশ্যমান যাত্রা",
+	photoGallery: 'ফটো গ্যালারি',
+	photoGallerySubtitle:
+		'প্রধান উপদেষ্টার কার্যালয়ের গুরুত্বপূর্ণ মুহূর্ত এবং ঘটনাগুলির একটি দৃশ্যমান যাত্রা',
 	pictures: 'টি ছবি',
-  noPhotosFound: 'কোন ছবি পাওয়া যায়নি!',
-  videoGallery: 'ভিডিও গ্যালারি',
-  videoGallerySubtitle: "প্রধান উপদেষ্টা কার্যালয়ের কাজ এবং উদ্যোগগুলি প্রদর্শনকারী ভিডিওগুলির একটি সংগ্রহ",
-  noVideosFound: 'কোন ভিডিও পাওয়া যায়নি!',
+	noPhotosFound: 'কোন ছবি পাওয়া যায়নি!',
+	videoGallery: 'ভিডিও গ্যালারি',
+	videoGallerySubtitle: 'প্রধান উপদেষ্টা কার্যালয়ের কাজ এবং উদ্যোগগুলি প্রদর্শনকারী ভিডিওগুলির একটি সংগ্রহ',
+	noVideosFound: 'কোন ভিডিও পাওয়া যায়নি!',
 
 	// Contact
 	contactUs: 'যোগাযোগ করুন',
