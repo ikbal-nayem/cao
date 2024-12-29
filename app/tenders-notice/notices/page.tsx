@@ -1,23 +1,21 @@
 'use client';
 
+import { useNoticeList } from '@/api/notice';
+import { useLanguage } from '@/components/language/language-context';
+import PageTitle from '@/components/layout/page-title';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { Pagination } from '@/components/ui/pagination';
 import { SearchBar } from '@/components/ui/SearchBar';
-import { format } from 'date-fns';
-import { motion } from 'framer-motion';
-import { Download, FileText, ScanEye } from 'lucide-react';
-import { useRef, useState } from 'react';
-import { CategoryFilter } from './category-filter';
-import PageTitle from '@/components/layout/page-title';
 import { useTranslation } from '@/hooks/use-translation';
 import { INotice } from '@/interface/notice.interface';
-import { useNoticeList } from '@/api/notice';
-import { useLanguage } from '@/components/language/language-context';
+import { debounce, formatFileSize, makePreviewURL } from '@/lib/utils';
+import { format } from 'date-fns';
 import { bn, enUS } from 'date-fns/locale';
-import { formatFileSize, makePreviewURL } from '@/lib/utils';
-
-const categories = ['GO', 'Notice'];
+import { motion } from 'framer-motion';
+import { Download, FileText, ScanEye } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { CategoryFilter } from './category-filter';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -27,12 +25,19 @@ export default function NoticesPage() {
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
 	const previewFile = useRef({ file: '', title: '' });
-	const { data: notices } = useNoticeList(currentPage, ITEMS_PER_PAGE);
+	const { data: notices } = useNoticeList(
+		currentPage,
+		ITEMS_PER_PAGE,
+		searchQuery,
+		selectedCategory as string
+	);
 
 	const { t, tNumber } = useTranslation();
 	const { language } = useLanguage();
 
-	const totalPages = Math.ceil(notices?.totalRecords / ITEMS_PER_PAGE);
+	useEffect(() => {
+		setCurrentPage(1);
+	}, [searchQuery, selectedCategory]);
 
 	const handlePreview = (title: string, file: string) => {
 		previewFile.current = { file, title };
@@ -42,6 +47,8 @@ export default function NoticesPage() {
 	const handleClosePreview = () => {
 		setIsPreviewOpen(false);
 	};
+	
+	const totalPages = Math.ceil(notices?.totalRecords / ITEMS_PER_PAGE);
 
 	return (
 		<main className='min-h-screen py-24'>
@@ -51,7 +58,11 @@ export default function NoticesPage() {
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8 mb-8'>
 					<div className='md:col-span-3'>
 						<div className='mb-6'>
-							<SearchBar placeholder={t('noticeSearch')} value={searchQuery} onChange={setSearchQuery} />
+							<SearchBar
+								placeholder={t('noticeSearch')}
+								defaultValue={searchQuery}
+								onChange={debounce((val) => setSearchQuery(val), 500)}
+							/>
 						</div>
 
 						<div className='space-y-6'>
@@ -121,11 +132,7 @@ export default function NoticesPage() {
 					</div>
 
 					<div className='md:col-span-1'>
-						<CategoryFilter
-							categories={categories}
-							selectedCategory={selectedCategory}
-							onSelectCategory={setSelectedCategory}
-						/>
+						<CategoryFilter selectedCategory={selectedCategory} onSelectCategory={setSelectedCategory} />
 					</div>
 				</div>
 			</div>
@@ -135,7 +142,7 @@ export default function NoticesPage() {
 					<h4 className='pt-3 pl-3 font-bold mb-0'>{previewFile.current?.title}</h4>
 					<object
 						data={makePreviewURL(previewFile.current?.file) + '#toolbar=0&navpanes=0'}
-						type="application/pdf"
+						type='application/pdf'
 						title='Preview'
 						className='w-full h-[80vh]'
 					/>

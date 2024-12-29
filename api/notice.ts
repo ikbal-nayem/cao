@@ -1,11 +1,20 @@
 import { axiosIns } from '@/config/axios';
 import { useQuery } from '@tanstack/react-query';
 
-export const useNoticeList = (page: number = 1, limit: number = 6) => {
+export const useNoticeList = (
+	page: number = 1,
+	limit: number = 6,
+	searchKey: string = '',
+	category: string = ''
+) => {
 	return useQuery({
-		queryKey: ['notice-list', page],
+		queryKey: ['notice-list', page, category, searchKey],
 		queryFn: async () => {
-			const response = await axiosIns.get(`/get-notice-list?pageNumber=${page || 1}&pageSize=${limit}`);
+			const response = await axiosIns.get(
+				`/get-notice-list?pageNumber=${page || 1}&pageSize=${limit}&searchByTitle=${searchKey}&noticeType=${
+					category || ''
+				}`
+			);
 			return response.data;
 		},
 	});

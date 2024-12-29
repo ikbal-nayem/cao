@@ -6,6 +6,7 @@ export const bn = {
 	fileSize: 'ফাইল সাইজ',
 	download: 'ডাউনলোড',
 	preview: 'প্রদর্শন',
+	Categories: 'ক্যাটাগরি',
 
 	// Header Menu
 	aboutUs: 'আমাদের সম্পর্কে',

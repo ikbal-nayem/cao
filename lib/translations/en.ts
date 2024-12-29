@@ -6,6 +6,7 @@ export const en = {
   fileSize: 'File Size',
   download: 'Download',
   preview: 'Preview',
+  Categories: 'Categories',
   
   // Header Menu
   aboutUs: 'About Us',
