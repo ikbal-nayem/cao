@@ -11,7 +11,7 @@ export const menuItems: MenuItemType[] = [
 		title: 'Administration',
 		key: 'menu.administration',
 		items: [
-			{ title: 'Advisery Council', key: 'menu.adviseryCouncil', href: '/administration/cabinet' },
+			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: '/administration/cabinet' },
 			{
 				title: 'Former Chief Advisers',
 				key: 'menu.formerChiefAdvisers',

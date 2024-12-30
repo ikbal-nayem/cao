@@ -12,7 +12,7 @@ export const bn = {
 	menu: {
 		aboutUs: 'আমাদের সম্পর্কে',
 		administration: 'প্রশাসন',
-		adviseryCouncil: 'উপদেষ্টা পরিষদ',
+		cabinetMember: 'উপদেষ্টা পরিষদ',
 		formerChiefAdvisers: 'প্রাক্তন প্রধান উপদেষ্টারা',
 		organizationStructure: 'সংগঠন কাঠামো',
 		programsAndPriorities: 'কার্যক্রম',
@@ -40,6 +40,11 @@ export const bn = {
 	heroSubtitle: 'কার্যকর শাসন, স্বচ্ছ নেতৃত্ব এবং টেকসই উন্নয়ন উদ্যোগের মাধ্যমে জাতির সেবা করা',
 	latestNews: 'সর্বশেষ সংবাদ',
 	latestNewsSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ ঘোষণা, নীতিমালা এবং উন্নয়ন সম্পর্কে জানুন',
+
+	// Administration
+	cabinetMemberTitle: 'উপদেষ্টা পরিষদের সদস্য',
+	cabinetMemberSubtitle: 'রাষ্ট্রীয় নীতি বাস্তবায়ন এবং বাংলাদেশের উন্নয়ন অগ্রগতির জন্য ক্লান্তিহীনভাবে কাজ করা আমাদের সম্মানিত উপদেষ্টা পরিষদের সদস্যগন',
+	cabinetMinistry: 'মন্ত্রণালয় / বিভাগ',
 
 	// Notice
 	noticeTitle: 'নোটিশসমূহ',

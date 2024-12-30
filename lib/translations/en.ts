@@ -12,7 +12,7 @@ export const en = {
 	menu: {
 		aboutUs: 'About Us',
 		administration: 'Administration',
-		adviseryCouncil: 'Advisery Council',
+		cabinetMember: 'Advisery Council',
 		formerChiefAdvisers: 'Former Chief Advisers',
 		organizationStructure: 'Organization Structure',
 		programsAndPriorities: 'Programs and Priorities',
@@ -42,6 +42,11 @@ export const en = {
 	latestNews: 'Latest News',
 	latestNewsSubtitle:
 		"Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
+
+	// Administration
+	cabinetMemberTitle: 'Advisery Council Members',
+	cabinetMemberSubtitle: "Meet our distinguished Advisery council members who work tirelessly to implement national policies and drive Bangladesh's development agenda",
+	cabinetMinistry: 'Ministry / Division',
 
 	// Notice
 	noticeTitle: 'Notices',
