@@ -47,6 +47,7 @@ export const en = {
 	cabinetMemberTitle: 'Advisery Council Members',
 	cabinetMemberSubtitle: "Meet our distinguished Advisery council members who work tirelessly to implement national policies and drive Bangladesh's development agenda",
 	cabinetMinistry: 'Ministry / Division',
+	ourStaffSubtitle: 'Meet the dedicated professionals working to serve our nation',
 
 	// Notice
 	noticeTitle: 'Notices',

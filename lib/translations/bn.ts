@@ -16,7 +16,7 @@ export const bn = {
 		formerChiefAdvisers: 'প্রাক্তন প্রধান উপদেষ্টারা',
 		organizationStructure: 'সংগঠন কাঠামো',
 		programsAndPriorities: 'কার্যক্রম',
-		ourStaffs: 'আমাদের কর্মকর্তারা',
+		ourStaffs: 'আমাদের কর্মকর্তাগন',
 		documentsPublications: 'ডকুমেন্ট ও প্রকাশনা',
 		policyDocuments: 'নীতিমালা',
 		reportsStats: 'প্রতিবেদন ও পরিসংখ্যান',
@@ -45,6 +45,7 @@ export const bn = {
 	cabinetMemberTitle: 'উপদেষ্টা পরিষদের সদস্য',
 	cabinetMemberSubtitle: 'রাষ্ট্রীয় নীতি বাস্তবায়ন এবং বাংলাদেশের উন্নয়ন অগ্রগতির জন্য ক্লান্তিহীনভাবে কাজ করা আমাদের সম্মানিত উপদেষ্টা পরিষদের সদস্যগন',
 	cabinetMinistry: 'মন্ত্রণালয় / বিভাগ',
+	ourStaffSubtitle: 'যে সকল নিবেদিত কর্মকর্তা/কর্মচারিগন আমাদের জাতির সেবা করার জন্য কাজ করছেন',
 
 	// Notice
 	noticeTitle: 'নোটিশসমূহ',
