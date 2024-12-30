@@ -6,7 +6,9 @@ export const en = {
 	fileSize: 'File Size',
 	download: 'Download',
 	preview: 'Preview',
-	Categories: 'Categories',
+	categories: 'Categories',
+	reference: 'Reference',
+	
 
 	// Menu
 	menu: {
@@ -54,6 +56,10 @@ export const en = {
 	noticeSubtitle: "Stay updated with the latest notices and announcements from the Chief Adviser's Office",
 	noticeSearch: 'Search Notice',
 	noNoticesFound: 'No notices found!',
+	openTenderSubtitle: "Current tender opportunities from the Chief Adviser's Office",
+	published: 'Published',
+	closingDate: 'Closing Date',
+	estimatedBudget: 'Estimated Budget',
 
 	// News Section
 	newsTitle: 'Latest Updates',

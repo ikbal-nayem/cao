@@ -19,3 +19,22 @@ export const useNoticeList = (
 		},
 	});
 };
+
+export const useTanderList = (
+	page: number = 1,
+	limit: number = 6,
+	searchKey: string = '',
+	category: string = ''
+) => {
+	return useQuery({
+		queryKey: ['tender-list', page, category, searchKey],
+		queryFn: async () => {
+			const response = await axiosIns.get(
+				`/get-tender-list?pageNumber=${page || 1}&pageSize=${limit}&searchByTitle=${searchKey}&noticeType=${
+					category || ''
+				}`
+			);
+			return response.data;
+		},
+	});
+};

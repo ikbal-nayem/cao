@@ -6,7 +6,8 @@ export const bn = {
 	fileSize: 'ফাইল সাইজ',
 	download: 'ডাউনলোড',
 	preview: 'প্রদর্শন',
-	Categories: 'ক্যাটাগরি',
+	categories: 'ক্যাটাগরি',
+	reference: 'রেফারেন্স',
 
 	// Menu
 	menu: {
@@ -52,6 +53,10 @@ export const bn = {
 	noticeSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ নোটিশ এবং ঘোষণাগুলি সম্পর্কে জানুন',
 	noticeSearch: 'নোটিশ সার্চ',
 	noNoticesFound: 'কোন নোটিশ পাওয়া যায়নি!',
+	openTenderSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে বর্তমান দরপত্রের সুযোগসমূহ',
+	published: 'প্রকাশিত',
+	closingDate: 'সমাপ্তির তারিখ',
+	estimatedBudget: 'অনুমানিত বাজেট',
 
 	// News Section
 	newsTitle: 'সর্বশেষ আপডেট',

@@ -93,8 +93,8 @@ const CabinetListSkeleton: React.FC = () => {
 	return (
 		<div className='space-y-4'>
 			{Array.from({ length: 3 }).map((_, index) => (
-				<div className='border border-border/90 rounded-xl'>
-					<div key={index} className='grid grid-cols-1 md:grid-cols-3 gap-8 p-4 space-x-4 animate-pulse'>
+				<div key={index} className='border border-border/90 rounded-xl'>
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-8 p-4 space-x-4 animate-pulse'>
 						<div className='bg-gray-300 rounded-xl h-[250px] w-full' />
 						<div className='space-y-3'>
 							<div className='h-10 bg-gray-300 rounded w-full' />

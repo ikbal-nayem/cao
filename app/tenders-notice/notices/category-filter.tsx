@@ -26,7 +26,7 @@ export function CategoryFilter({ selectedCategory, onSelectCategory }: CategoryF
 
 	return (
 		<div className='rounded-lg sticky top-24'>
-			<h3 className='font-semibold text-lg mb-4 text-sidebar-foreground'>{t('Categories')}</h3>
+			<h3 className='font-semibold text-lg mb-4 text-sidebar-foreground'>{t('categories')}</h3>
 			<ScrollArea className='h-[calc(100vh-250px)] pr-4'>
 				<div className='space-y-2'>
 					<motion.div whileTap={{ scale: 0.98 }}>

@@ -2,17 +2,22 @@ import { NewsContent } from '@/components/news/news-content';
 import { NewsHeader } from '@/components/news/news-header';
 import { RelatedNews } from '@/components/news/related-news';
 import { axiosIns } from '@/config/axios';
+import { InferGetStaticPropsType } from 'next';
+import { getStaticProps } from 'next/dist/build/templates/pages';
 import { notFound } from 'next/navigation';
 
-interface NewsDetailsPageProps {
-	params: {
-		id: string;
-	};
-}
+// interface NewsDetailsPageProps {
+// 	params: {
+// 		id: string;
+// 	};
+// }
+
+type NewsDetailsPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default async function NewsDetailsPage({ params }: NewsDetailsPageProps) {
+	const { id } = await params;
 
-	const newsItemReq = await axiosIns.get('/get-news-event-detail-by-id?eventid=' + params.id);
+	const newsItemReq = await axiosIns.get('/get-news-event-detail-by-id?eventid=' + id);
 	const newsItem = newsItemReq.data;
 
 	if (!newsItem) {
