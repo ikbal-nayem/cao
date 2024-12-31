@@ -22,5 +22,8 @@ export interface ITender {
 	budget: string;
 	description_bn: string;
 	description_en: string;
+	awarded_date: string;
+	awarded_to: string;
+	contact_value: string;
 	document: IFile[];
 }

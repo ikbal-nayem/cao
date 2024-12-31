@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { axiosIns } from '@/config/axios';
 import { useTranslation } from '@/hooks/use-translation';
 import { motion } from 'framer-motion';
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type IFaq = {
 	id: number;

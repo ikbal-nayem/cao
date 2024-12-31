@@ -8,7 +8,8 @@ export const en = {
 	preview: 'Preview',
 	categories: 'Categories',
 	reference: 'Reference',
-	
+	noDataFound: 'No data found!',
+	noDataFoundDetails: 'The data you are searching for is currently unavailable or does not exist.',
 
 	// Menu
 	menu: {
@@ -57,9 +58,14 @@ export const en = {
 	noticeSearch: 'Search Notice',
 	noNoticesFound: 'No notices found!',
 	openTenderSubtitle: "Current tender opportunities from the Chief Adviser's Office",
+	archivedTenderSubtitle: "Historical record of completed tenders and their outcomes",
 	published: 'Published',
 	closingDate: 'Closing Date',
+	closedDate: 'Closed Date',
 	estimatedBudget: 'Estimated Budget',
+	awardedDate: 'Awarded Date',
+	awardedTo: 'Awarded To',
+	contractValue: 'Contract Value',
 
 	// News Section
 	newsTitle: 'Latest Updates',

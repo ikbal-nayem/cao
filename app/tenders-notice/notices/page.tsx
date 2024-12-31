@@ -5,6 +5,7 @@ import { useLanguage } from '@/components/language/language-context';
 import PageTitle from '@/components/layout/page-title';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import NoDataFound from '@/components/ui/no-data-found';
 import { Pagination } from '@/components/ui/pagination';
 import { SearchBar } from '@/components/ui/SearchBar';
 import { useTranslation } from '@/hooks/use-translation';
@@ -25,7 +26,7 @@ export default function NoticesPage() {
 	const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 	const [currentPage, setCurrentPage] = useState(1);
 	const previewFile = useRef({ file: '', title: '' });
-	const { data: notices } = useNoticeList(
+	const { data: notices, isFetching } = useNoticeList(
 		currentPage,
 		ITEMS_PER_PAGE,
 		searchQuery,
@@ -59,13 +60,14 @@ export default function NoticesPage() {
 					<div className='md:col-span-3'>
 						<div className='mb-6'>
 							<SearchBar
-								placeholder={t('noticeSearch')+' ...'}
+								placeholder={t('noticeSearch') + ' ...'}
 								defaultValue={searchQuery}
 								onChange={debounce((val) => setSearchQuery(val), 500)}
 							/>
 						</div>
 
 						<div className='space-y-6'>
+							{!isFetching && notices?.data?.length === 0 ? <NoDataFound /> : null}
 							{notices?.data?.map((notice: INotice, index: number) => (
 								<motion.div
 									key={notice?.id}

@@ -2,8 +2,11 @@
 
 import { useTanderList } from '@/api/notice';
 import { useLanguage } from '@/components/language/language-context';
+import PageTitle from '@/components/layout/page-title';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
+import NoDataFound from '@/components/ui/no-data-found';
+import { Pagination } from '@/components/ui/pagination';
 import { useTranslation } from '@/hooks/use-translation';
 import { ITender } from '@/interface/notice.interface';
 import { isNull, makePreviewURL } from '@/lib/utils';
@@ -13,9 +16,12 @@ import { motion } from 'framer-motion';
 import { Calendar, FileText, ScanEye } from 'lucide-react';
 import { useRef, useState } from 'react';
 
+const ITEMS_PER_PAGE = 10;
+
 export default function OpenTendersPage() {
 	const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-	const { data: tenders } = useTanderList();
+	const [currentPage, setCurrentPage] = useState(1);
+	const { data: tenders, isFetching } = useTanderList(currentPage, ITEMS_PER_PAGE, 'open');
 	const { t, tNumber } = useTranslation();
 	const { language } = useLanguage();
 	const previewFile = useRef({ file: '', title: '' });
@@ -25,33 +31,29 @@ export default function OpenTendersPage() {
 		setIsPreviewOpen(true);
 	};
 
+	const totalPages = Math.ceil(tenders?.totalRecords / ITEMS_PER_PAGE);
+
 	return (
 		<main className='min-h-screen pt-24'>
-			<div className='cotNumberntainer mx-auto px-4'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.8 }}
-					className='text-center mb-16'
-				>
-					<h1 className='text-4xl font-bold mb-6'>{t('menu.openTenders')}</h1>
-					<p className='text-xl text-muted-foreground max-w-3xl mx-auto'>{t('openTenderSubtitle')}</p>
-				</motion.div>
+			<div className='container mx-auto px-4'>
+				<PageTitle title={t('menu.openTenders')} subTitle={t('openTenderSubtitle')} />
 
 				<div className='space-y-8'>
+					{!isFetching && tenders?.data?.length === 0 ? <NoDataFound /> : null}
+
 					{tenders?.data?.map((tender: ITender, index: number) => (
 						<motion.div
 							key={tender.reference}
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: index * 0.1 }}
-							className='bg-card border border-border/50 rounded-lg p-6 hover:border-primary/50 transition-colors'
+							className='bg-card border border-border/50 rounded-lg p-4 hover:border-primary/50 transition-colors'
 						>
 							<div className='flex items-start justify-between gap-4'>
 								<div className='flex-1'>
 									<div className='flex items-center gap-4 mb-3'>
 										<span className='px-3 py-1 rounded-full bg-primary/10 text-primary text-sm uppercase'>
-											{tender.tender_type}
+											{tender?.tender_type}
 										</span>
 										<span className='text-sm text-muted-foreground'>
 											{t('reference')}: {tender.reference}
@@ -121,6 +123,11 @@ export default function OpenTendersPage() {
 						</motion.div>
 					))}
 				</div>
+				{totalPages > 1 && (
+					<div className='mt-8'>
+						<Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={setCurrentPage} />
+					</div>
+				)}
 			</div>
 			<Dialog open={isPreviewOpen} onOpenChange={() => setIsPreviewOpen(false)}>
 				<DialogContent className='max-w-5xl p-0 border-none'>

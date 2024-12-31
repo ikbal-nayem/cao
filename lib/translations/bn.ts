@@ -8,6 +8,8 @@ export const bn = {
 	preview: 'প্রদর্শন',
 	categories: 'ক্যাটাগরি',
 	reference: 'রেফারেন্স',
+	noDataFound: 'কোন তথ্য পাওয়া যায়নি!',
+	noDataFoundDetails: 'আপনি যে ডেটা অনুসন্ধান করছেন তা বর্তমানে বিদ্যমান নেই৷',
 
 	// Menu
 	menu: {
@@ -54,9 +56,14 @@ export const bn = {
 	noticeSearch: 'নোটিশ সার্চ',
 	noNoticesFound: 'কোন নোটিশ পাওয়া যায়নি!',
 	openTenderSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে বর্তমান দরপত্রের সুযোগসমূহ',
+	archivedTenderSubtitle: 'পূর্ণ হয়ে যাওয়া দরপত্র এবং তাদের ফলাফলের ঐতিহাসিক রেকর্ড',
 	published: 'প্রকাশিত',
 	closingDate: 'সমাপ্তির তারিখ',
+	closedDate: 'সমাপ্তির তারিখ',
 	estimatedBudget: 'অনুমানিত বাজেট',
+	awardedDate: 'প্রদানের তারিখ',
+	awardedTo: 'প্রদানকারী',
+	contractValue: 'চুক্তির মান',
 
 	// News Section
 	newsTitle: 'সর্বশেষ আপডেট',

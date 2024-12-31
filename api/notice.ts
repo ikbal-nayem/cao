@@ -23,15 +23,15 @@ export const useNoticeList = (
 export const useTanderList = (
 	page: number = 1,
 	limit: number = 6,
-	searchKey: string = '',
-	category: string = ''
+	type: string = '',
+	searchKey: string = ''
 ) => {
 	return useQuery({
-		queryKey: ['tender-list', page, category, searchKey],
+		queryKey: ['tender-list', page, type, searchKey],
 		queryFn: async () => {
 			const response = await axiosIns.get(
-				`/get-tender-list?pageNumber=${page || 1}&pageSize=${limit}&searchByTitle=${searchKey}&noticeType=${
-					category || ''
+				`/get-tender-list?pageNumber=${page || 1}&pageSize=${limit}&searchByTitle=${searchKey}&tenderType=${
+					type || 'all'
 				}`
 			);
 			return response.data;
