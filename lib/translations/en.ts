@@ -45,10 +45,12 @@ export const en = {
 	latestNews: 'Latest News',
 	latestNewsSubtitle:
 		"Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
+	subordinateOffice: 'Subordinate Office',
 
 	// Administration
 	cabinetMemberTitle: 'Advisery Council Members',
-	cabinetMemberSubtitle: "Meet our distinguished Advisery council members who work tirelessly to implement national policies and drive Bangladesh's development agenda",
+	cabinetMemberSubtitle:
+		"Meet our distinguished Advisery council members who work tirelessly to implement national policies and drive Bangladesh's development agenda",
 	cabinetMinistry: 'Ministry / Division',
 	ourStaffSubtitle: 'Meet the dedicated professionals working to serve our nation',
 
@@ -58,7 +60,7 @@ export const en = {
 	noticeSearch: 'Search Notice',
 	noNoticesFound: 'No notices found!',
 	openTenderSubtitle: "Current tender opportunities from the Chief Adviser's Office",
-	archivedTenderSubtitle: "Historical record of completed tenders and their outcomes",
+	archivedTenderSubtitle: 'Historical record of completed tenders and their outcomes',
 	published: 'Published',
 	closingDate: 'Closing Date',
 	closedDate: 'Closed Date',

@@ -43,6 +43,7 @@ export const bn = {
 	heroSubtitle: 'কার্যকর শাসন, স্বচ্ছ নেতৃত্ব এবং টেকসই উন্নয়ন উদ্যোগের মাধ্যমে জাতির সেবা করা',
 	latestNews: 'সর্বশেষ সংবাদ',
 	latestNewsSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ ঘোষণা, নীতিমালা এবং উন্নয়ন সম্পর্কে জানুন',
+	subordinateOffice: 'অধীনস্থ অফিস',
 
 	// Administration
 	cabinetMemberTitle: 'উপদেষ্টা পরিষদের সদস্য',
