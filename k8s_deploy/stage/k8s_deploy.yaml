@@ -25,7 +25,8 @@ spec:
       restartPolicy: Always
       imagePullSecrets:
       - name: imagerepo.gems.gov.bd
-#      hostAliases:
-#        - ip: 172.22.177.83
-#          hostnames:
-#            - api-stage.gems.gov.bd
+      hostAliases:
+        - ip: 172.20.8.79
+          hostnames:
+            - api-stage.cao.gov.bd
+            - stage.cao.gov.bd
