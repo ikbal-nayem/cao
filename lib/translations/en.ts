@@ -86,6 +86,8 @@ export const en = {
 	phone: 'Phone',
 	message: 'Message',
 	send: 'Send',
+	faqTitle: 'Frequently Asked Questions',
+	faqSubtitle: "Find answers to common questions about the Chief Adviser's Office and our services",
 
 	// Footer
 	quickLinks: 'Quick Links',

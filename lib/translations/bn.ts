@@ -82,6 +82,8 @@ export const bn = {
 	phone: 'ফোন',
 	message: 'বার্তা',
 	send: 'পাঠান',
+	faqTitle: 'সচরাচর জিজ্ঞাসা',
+	faqSubtitle: "প্রধান উপদেষ্টার কার্যালয় এবং আমাদের সেবা সম্পর্কে সাধারণ প্রশ্ন ও উত্তর",
 
 	// Footer
 	quickLinks: 'দ্রুত লিংক',
