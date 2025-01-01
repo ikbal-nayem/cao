@@ -42,7 +42,7 @@ const Header: FC = () => {
 							className='text-xl sm:text-2xl font-bold'
 							style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 						>
-							Chief Adviser&apos;s Office
+							{t('pmo')}
 						</span>
 					</Link>
 

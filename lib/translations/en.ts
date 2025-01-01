@@ -1,5 +1,6 @@
 export const en = {
 	// Common
+	pmo: "Chief Adviser's Office",
 	readMore: 'Read More',
 	learnMore: 'Learn More',
 	viewMore: 'View More',
@@ -101,5 +102,6 @@ export const en = {
 	quickLinks: 'Quick Links',
 	importantLinks: 'Important Links',
 	followUs: 'Follow Us',
+	theme: 'Theme',
 	allRightsReserved: 'All rights reserved',
 };

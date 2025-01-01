@@ -1,5 +1,6 @@
 export const bn = {
 	// Common
+	pmo: 'প্রধান উপদেষ্টার কার্যালয়',
 	readMore: 'বিস্তারিত পড়ুন',
 	learnMore: 'আরও জানুন',
 	viewMore: 'আরও দেখুন',
@@ -97,5 +98,6 @@ export const bn = {
 	quickLinks: 'দ্রুত লিংক',
 	importantLinks: 'গুরুত্বপূর্ণ লিংক',
 	followUs: 'আমাদের অনুসরণ করুন',
+	theme: 'থিম',
 	allRightsReserved: 'সর্বস্বত্ব সংরক্ষিত',
 };
