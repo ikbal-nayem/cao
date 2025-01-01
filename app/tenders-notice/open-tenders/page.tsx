@@ -34,7 +34,7 @@ export default function OpenTendersPage() {
 	const totalPages = Math.ceil(tenders?.totalRecords / ITEMS_PER_PAGE);
 
 	return (
-		<main className='min-h-screen pt-24'>
+		<main className='min-h-screen py-24'>
 			<div className='container mx-auto px-4'>
 				<PageTitle title={t('menu.openTenders')} subTitle={t('openTenderSubtitle')} />
 
