@@ -22,7 +22,7 @@ export default function NewsList() {
 	const isInView = useInView(ref);
 	const { t, tNumber } = useTranslation();
 	const { language } = useLanguage();
-	const { data: newsList, isFetching, fetchNextPage } = useNewsList(3);
+	const { data: newsList, isFetching, fetchNextPage } = useNewsList();
 
 	useEffect(() => {
 		if (isInView) {
