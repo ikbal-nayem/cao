@@ -47,6 +47,8 @@ export const en = {
 	latestNewsSubtitle:
 		"Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
 	subordinateOffice: 'Subordinate Office',
+	ourMission: 'Our Mission',
+	ourVision: 'Our Vision',
 
 	// Administration
 	cabinetMemberTitle: 'Advisery Council Members',

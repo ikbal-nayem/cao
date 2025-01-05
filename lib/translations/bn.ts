@@ -45,6 +45,8 @@ export const bn = {
 	latestNews: 'সর্বশেষ সংবাদ',
 	latestNewsSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ ঘোষণা, নীতিমালা এবং উন্নয়ন সম্পর্কে জানুন',
 	subordinateOffice: 'অধীনস্থ অফিস',
+	ourMission: 'আমাদের লক্ষ্য',
+	ourVision: 'আমাদের উদ্দেশ্য',
 
 	// Administration
 	cabinetMemberTitle: 'উপদেষ্টা পরিষদের সদস্য',
