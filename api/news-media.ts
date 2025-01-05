@@ -19,3 +19,22 @@ export const useNewsList = (limit: number = 6) => {
 		},
 	});
 };
+
+export const useSpeechList = (limit: number = 6) => {
+	return useInfiniteQuery({
+		queryKey: ['speech-list'],
+		queryFn: async ({ pageParam }) => {
+			const response = await axiosIns.get(
+				`/get-advisor-speech?pageNumber=${pageParam || 1}&pageSize=${limit}`
+			);
+			return response.data;
+		},
+		initialPageParam: 1,
+		getNextPageParam: (lastPage, _) => {
+			if (lastPage.totalRecords > lastPage.pageSize * lastPage.pageNumber) {
+				return lastPage.pageNumber + 1;
+			}
+			return undefined;
+		},
+	});
+};

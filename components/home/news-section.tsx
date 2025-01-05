@@ -21,9 +21,6 @@ const NewsSection: FC = () => {
 	const { language } = useLanguage();
 	const { data: newsList } = useNewsList();
 
-	console.log(newsList);
-	
-
 	return (
 		<section className='py-20 bg-gradient-to-b from-background via-background/50 to-background'>
 			<div className='container mx-auto px-4'>

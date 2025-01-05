@@ -74,6 +74,7 @@ export const bn = {
 	newsSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ উদ্যোগ এবং উন্নয়ন সম্পর্কে জানুন',
 	relatedNews: 'সম্পর্কিত খবর',
 	noRelatedNewsFound: 'সম্পর্কিত কোনো খবর পাওয়া যায়নি!',
+	adviserSpeechSubtitle: 'প্রধান উপদেষ্টার বক্তৃতা ও ভাষণের সংগ্রহ',
 
 	// Gallery
 	photoGallery: 'ফটো গ্যালারি',

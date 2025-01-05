@@ -34,6 +34,18 @@ export interface INewsDetails {
 	}[];
 }
 
+export interface ISpeech {
+	id: number;
+	title_bn: string;
+	title_en: string;
+	speech_bn: string;
+	speech_en: string;
+	speech_date: string;
+	youtube_link: string;
+	document: IFile[];
+	thumbnail: IFile[];
+}
+
 export interface IImageGallery {
 	id: number;
 	caption_bn: string;

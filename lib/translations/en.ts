@@ -78,6 +78,7 @@ export const en = {
 		"Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
 	relatedNews: 'Related News',
 	noRelatedNewsFound: 'No related news found!',
+	adviserSpeechSubtitle: 'Collection of speeches and addresses by the Chief Adviser',
 
 	// Gallery
 	photoGallery: 'Photo Gallery',
