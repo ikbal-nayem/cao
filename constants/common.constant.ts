@@ -4,3 +4,7 @@ export const DEFAULT_LINKS = {
 	NOT_AVAILABLE: '/static/image/not-available.png',
 	BLANK_PROFILE: '/static/image/blank-profile.webp',
 };
+
+export const DATE_FORMAT = {
+	CASUAL: 'MMMM d, yyyy',
+};

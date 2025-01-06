@@ -3,10 +3,11 @@
 import { useSpeechList } from '@/api/news-media';
 import { useLanguage } from '@/components/language/language-context';
 import Loading from '@/components/ui/loading';
-import { DEFAULT_LINKS } from '@/constants/common.constant';
+import { DATE_FORMAT, DEFAULT_LINKS } from '@/constants/common.constant';
+import { SPEECHES } from '@/constants/routes.constants';
 import { useTranslation } from '@/hooks/use-translation';
 import { ISpeech } from '@/interface/news-media.interface';
-import { makePreviewURL } from '@/lib/utils';
+import { makePreviewURL, makeYTThumb } from '@/lib/utils';
 import { format } from 'date-fns';
 import { bn, enUS } from 'date-fns/locale';
 import { motion, useInView } from 'framer-motion';
@@ -53,11 +54,13 @@ export default function AdviserSpeechesPage() {
 									transition={{ duration: 0.5, delay: index * 0.1 }}
 									className='group'
 								>
-									<Link href={`/news-media/adviser-speeches/${index}`}>
+									<Link href={`${SPEECHES}/${speech?.id}`}>
 										<div className='relative aspect-video rounded-xl overflow-hidden mb-4'>
 											<Image
 												src={
-													makePreviewURL(speech?.thumbnail?.[0]?.relativepath) || DEFAULT_LINKS.NOT_AVAILABLE
+													makePreviewURL(speech?.thumbnail?.[0]?.relativepath) ||
+													makeYTThumb(speech?.youtube_link) ||
+													DEFAULT_LINKS.NOT_AVAILABLE
 												}
 												alt={speech?.title_bn}
 												fill
@@ -78,13 +81,13 @@ export default function AdviserSpeechesPage() {
 												<span className='flex items-center'>
 													<Calendar className='w-4 h-4 mr-1' />
 													{tNumber(
-														format(new Date(speech?.speech_date), 'MMM d, yyyy', {
+														format(new Date(speech?.speech_date), DATE_FORMAT.CASUAL, {
 															locale: language === 'bn' ? bn : enUS,
 														})
 													)}
 												</span>
 											</div>
-											<h2 className='text-xl font-bold mb-2 group-hover:text-primary transition-colors'>
+											<h2 className='text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2'>
 												{language === 'bn' ? speech.title_bn : speech.title_en}
 											</h2>
 											{/* <p className='text-muted-foreground line-clamp-2'>{speech.subtitle}</p> */}

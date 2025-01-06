@@ -1,7 +1,6 @@
-import { ARCHIVE_TENDER, NEWS, NOTICE, OPEN_TENDER } from '@/constants/routes.constants';
-import { MenuItemType } from '@/lib/types';
+import { ARCHIVE_TENDER, NEWS, NOTICE, OPEN_TENDER, SPEECHES } from '@/constants/routes.constants';
 
-export const menuItems: MenuItemType[] = [
+export const menuItems = [
 	{
 		title: 'About Us',
 		key: 'menu.aboutUs',
@@ -22,13 +21,21 @@ export const menuItems: MenuItemType[] = [
 				key: 'menu.organizationStructure',
 				href: '/administration/organization-structure',
 			},
-			{ title: 'Programs and Priorities', key: 'menu.programsAndPriorities', href: '/administration/programs' },
+			{
+				title: 'Programs and Priorities',
+				key: 'menu.programsAndPriorities',
+				href: '/administration/programs',
+			},
 			{ title: 'Our Staffs', key: 'menu.ourStaffs', href: '/administration/staffs' },
 			{
 				title: 'Documents & Publications',
 				key: 'menu.documentsPublications',
 				items: [
-					{ title: 'Policy Documents', key: 'menu.policyDocuments', href: '/administration/documents/policy' },
+					{
+						title: 'Policy Documents',
+						key: 'menu.policyDocuments',
+						href: '/administration/documents/policy',
+					},
 					{ title: 'Reports & Stats', key: 'menu.reportsStats', href: '/administration/documents/reports' },
 				],
 			},
@@ -48,7 +55,7 @@ export const menuItems: MenuItemType[] = [
 		key: 'menu.newsMedia',
 		items: [
 			{ title: 'News', key: 'menu.news', href: NEWS },
-			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: '/news-media/adviser-speeches' },
+			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: SPEECHES },
 			{ title: 'Photo Gallery', key: 'menu.photoGallery', href: '/news-media/photo-gallery' },
 			{ title: 'Video Gallery', key: 'menu.videoGallery', href: '/news-media/video-gallery' },
 		],

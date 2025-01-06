@@ -6,10 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-export const makePreviewURL = (url: string) => {
+export const makePreviewURL = (url: string | null | undefined) => {
 	if (!url) return;
 	return 'http://admin-stage.cao.gov.bd' + url;
 };
+
+export const makeYTThumb = (url?: string) =>
+	url ? `https://img.youtube.com/vi/${url?.split('v=')?.[1]}/maxresdefault.jpg` : null;
 
 export const isNull = (val: string | null | undefined | Array<any> | IObject) => {
 	return (
