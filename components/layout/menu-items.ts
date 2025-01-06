@@ -1,6 +1,14 @@
 import { ARCHIVE_TENDER, NEWS, NOTICE, OPEN_TENDER, SPEECHES } from '@/constants/routes.constants';
 
-export const menuItems = [
+interface MenuItem {
+	title: string;
+	href?: string;
+	key: any;
+	items?: MenuItem[];
+	icon?: React.ComponentType;
+}
+
+export const menuItems: MenuItem[] = [
 	{
 		title: 'About Us',
 		key: 'menu.aboutUs',
