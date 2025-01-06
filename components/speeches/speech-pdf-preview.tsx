@@ -1,6 +1,6 @@
 'use client';
 
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { makePreviewURL } from '@/lib/utils';
 
 interface SpeechPdfPreviewProps {
@@ -15,9 +15,10 @@ export function SpeechPdfPreview({ isOpen, onOpenChange, title, pdfUrl }: Speech
 
 	return (
 		<Dialog open={isOpen} onOpenChange={onOpenChange}>
-			<DialogContent className='max-w-5xl p-0 bg-background'>
-				<div className='p-4 border-b'>
-					<h2 className='text-xl font-semibold'>{title}</h2>
+			<DialogContent className='max-w-5xl p-0 bg-background gap-0 border-none'>
+				<DialogTitle title={title} />
+				<div className='p-3 border-b'>
+					<h2 className='text-xl font-semibold line-clamp-1'>{title}</h2>
 				</div>
 				<div className='h-[80vh]'>
 					<object
