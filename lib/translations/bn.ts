@@ -14,29 +14,43 @@ export const bn = {
 
 	// Menu
 	menu: {
-		aboutUs: 'আমাদের সম্পর্কে',
-		administration: 'প্রশাসন',
-		cabinetMember: 'উপদেষ্টা পরিষদ',
-		formerChiefAdvisers: 'প্রাক্তন প্রধান উপদেষ্টারা',
-		organizationStructure: 'সংগঠন কাঠামো',
-		programsAndPriorities: 'কার্যক্রম',
-		ourStaffs: 'আমাদের কর্মকর্তাগন',
-		documentsPublications: 'ডকুমেন্ট ও প্রকাশনা',
-		policyDocuments: 'নীতিমালা',
-		reportsStats: 'প্রতিবেদন ও পরিসংখ্যান',
-		notice: 'নোটিশ',
-		openTenders: 'উন্মুক্ত দরপত্র',
-		archiveTenders: 'আর্কাইভ দরপত্র',
-		newsMedia: 'সংবাদ ও মিডিয়া',
-		news: 'সংবাদ',
-		advisersSpeeches: 'উপদেষ্টাদের বক্তৃতা',
-		photoGallery: 'ছবি গ্যালারি',
-		videoGallery: 'ভিডিও গ্যালারি',
-		contact: 'যোগাযোগ',
-		contactUs: 'যোগাযোগ করুন',
-		FAQ: 'সচরাচর জিজ্ঞাসা',
-		feedback: 'প্রতিক্রিয়া',
-		address: 'ঠিকানা',
+		chiefAdviser: 'Chief Adviser',
+		whoWeAre: 'Who We Are',
+		whatWeDo: 'What We Do',
+		archive: 'Archive',
+
+		message: 'Message',
+		biography: 'Biography',
+		statement: 'Statement',
+		nobleLaureatte: 'Noble Laureatte',
+		ideas: 'Ideas',
+		quotes: 'Quotes',
+
+		advisersSpeeches: 'Advisers Speeches',
+		cabinetMember: 'Advisery Council',
+		formerChiefAdvisers: 'Former Chief Advisers',
+		organizationStructure: 'Organization Structure',
+		ourTeam: 'Our Team',
+		missionAndVision: 'Mission & Vision',
+
+		programsAndPriorities: 'Programs and Priorities',
+		news: 'News',
+		notice: 'Notice',
+		openTenders: 'Open Tenders',
+		media: 'Media',
+		photoGallery: 'Photo Gallery',
+		videoGallery: 'Video Gallery',
+
+		officeOrder: 'Office Order',
+		documents: 'Documents',
+		publications: 'Publications',
+		archiveTenders: 'Archive Tenders',
+
+		contact: 'Contact',
+		contactUs: 'Contact Us',
+		FAQ: 'FAQ',
+		feedback: 'Feedback',
+		address: 'Address',
 	},
 
 	// Home Page
@@ -50,7 +64,8 @@ export const bn = {
 
 	// Administration
 	cabinetMemberTitle: 'উপদেষ্টা পরিষদের সদস্য',
-	cabinetMemberSubtitle: 'রাষ্ট্রীয় নীতি বাস্তবায়ন এবং বাংলাদেশের উন্নয়ন অগ্রগতির জন্য ক্লান্তিহীনভাবে কাজ করা আমাদের সম্মানিত উপদেষ্টা পরিষদের সদস্যগন',
+	cabinetMemberSubtitle:
+		'রাষ্ট্রীয় নীতি বাস্তবায়ন এবং বাংলাদেশের উন্নয়ন অগ্রগতির জন্য ক্লান্তিহীনভাবে কাজ করা আমাদের সম্মানিত উপদেষ্টা পরিষদের সদস্যগন',
 	cabinetMinistry: 'মন্ত্রণালয় / বিভাগ',
 	ourStaffSubtitle: 'যে সকল নিবেদিত কর্মকর্তা/কর্মচারিগন আমাদের জাতির সেবা করার জন্য কাজ করছেন',
 
@@ -95,7 +110,7 @@ export const bn = {
 	message: 'বার্তা',
 	send: 'পাঠান',
 	faqTitle: 'সচরাচর জিজ্ঞাসা',
-	faqSubtitle: "প্রধান উপদেষ্টার কার্যালয় এবং আমাদের সেবা সম্পর্কে সাধারণ প্রশ্ন ও উত্তর",
+	faqSubtitle: 'প্রধান উপদেষ্টার কার্যালয় এবং আমাদের সেবা সম্পর্কে সাধারণ প্রশ্ন ও উত্তর',
 
 	// Footer
 	quickLinks: 'দ্রুত লিংক',

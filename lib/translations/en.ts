@@ -14,24 +14,38 @@ export const en = {
 
 	// Menu
 	menu: {
-		aboutUs: 'About Us',
-		administration: 'Administration',
+		chiefAdviser: 'Chief Adviser',
+		whoWeAre: 'Who We Are',
+		whatWeDo: 'What We Do',
+		archive: 'Archive',
+
+		message: 'Message',
+		biography: 'Biography',
+		statement: 'Statement',
+		nobleLaureatte: 'Noble Laureatte',
+		ideas: 'Ideas',
+		quotes: 'Quotes',
+
+		advisersSpeeches: 'Advisers Speeches',
 		cabinetMember: 'Advisery Council',
 		formerChiefAdvisers: 'Former Chief Advisers',
 		organizationStructure: 'Organization Structure',
+		ourTeam: 'Our Team',
+		missionAndVision: 'Mission & Vision',
+
 		programsAndPriorities: 'Programs and Priorities',
-		ourStaffs: 'Our Staffs',
-		documentsPublications: 'Documents & Publications',
-		policyDocuments: 'Policy Documents',
-		reportsStats: 'Reports & Stats',
+		news: 'News',
 		notice: 'Notice',
 		openTenders: 'Open Tenders',
-		archiveTenders: 'Archive Tenders',
-		newsMedia: 'News & Media',
-		news: 'News',
-		advisersSpeeches: 'Advisers Speeches',
+		media: 'Media',
 		photoGallery: 'Photo Gallery',
 		videoGallery: 'Video Gallery',
+
+		officeOrder: 'Office Order',
+		documents: 'Documents',
+		publications: 'Publications',
+		archiveTenders: 'Archive Tenders',
+		
 		contact: 'Contact',
 		contactUs: 'Contact Us',
 		FAQ: 'FAQ',

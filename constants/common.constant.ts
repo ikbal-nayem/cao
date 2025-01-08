@@ -1,5 +1,6 @@
 export const DEFAULT_LINKS = {
 	GOV_LOGO_BN: '/static/logo/gov-bn.png',
+	GOV_LOGO_EN: '/static/logo/gov-en.png',
 	CAO_1: '/static/image/cao.jpg',
 	NOT_AVAILABLE: '/static/image/not-available.png',
 	BLANK_PROFILE: '/static/image/blank-profile.webp',

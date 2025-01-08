@@ -11,12 +11,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useEffect, useState } from 'react';
 import { menuItems } from './menu-items';
+import { DEFAULT_LINKS } from '@/constants/common.constant';
+import { useLanguage } from '../language/language-context';
 
 const Header: FC = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 	const { theme } = useTheme();
 	const { t } = useTranslation();
+	const { language } = useLanguage();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -37,7 +40,13 @@ const Header: FC = () => {
 			<div className='container mx-auto px-4'>
 				<div className='flex items-center justify-between h-16'>
 					<Link href='/' className='flex items-center space-x-2'>
-						<Image src='/static/logo/ca.png' alt='CAO Logo' width={40} height={40} className='rounded-full' />
+						<Image
+							src={language === 'en' ? DEFAULT_LINKS.GOV_LOGO_EN : DEFAULT_LINKS.GOV_LOGO_BN}
+							alt='BD Gov'
+							width={40}
+							height={40}
+							className='rounded-full'
+						/>
 						<span
 							className='text-xl sm:text-2xl font-bold'
 							style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
