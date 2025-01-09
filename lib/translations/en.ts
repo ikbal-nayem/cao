@@ -28,7 +28,7 @@ export const en = {
 
 		advisersSpeeches: 'Advisers Speeches',
 		cabinetMember: 'Advisery Council',
-		formerChiefAdvisers: 'Former Chief Advisers',
+		formerAdvisers: 'Former Chief Advisers',
 		organizationStructure: 'Organization Structure',
 		ourTeam: 'Our Team',
 		missionAndVision: 'Mission & Vision',
@@ -38,13 +38,16 @@ export const en = {
 		notice: 'Notice',
 		openTenders: 'Open Tenders',
 		media: 'Media',
-		photoGallery: 'Photo Gallery',
-		videoGallery: 'Video Gallery',
-
+		
 		officeOrder: 'Office Order',
 		documents: 'Documents',
+		policyDocuments: 'Policy Documents',
 		publications: 'Publications',
+		report: 'Reports & Stats',
 		archiveTenders: 'Archive Tenders',
+		mediaGallery: 'Media Gallery',
+		photoGallery: 'Photo Gallery',
+		videoGallery: 'Video Gallery',
 		
 		contact: 'Contact',
 		contactUs: 'Contact Us',
@@ -64,11 +67,12 @@ export const en = {
 	ourMission: 'Our Mission',
 	ourVision: 'Our Vision',
 
-	// Administration
+	// Who we are
 	cabinetMemberTitle: 'Advisery Council Members',
 	cabinetMemberSubtitle:
 		"Meet our distinguished Advisery council members who work tirelessly to implement national policies and drive Bangladesh's development agenda",
 	cabinetMinistry: 'Ministry / Division',
+	formerAdvisersSubtitle: 'A chronological journey through the leadership that has shaped our nation',
 	ourStaffSubtitle: 'Meet the dedicated professionals working to serve our nation',
 
 	// Notice

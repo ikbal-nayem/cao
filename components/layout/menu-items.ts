@@ -84,14 +84,13 @@ export const menuItems: MenuItem[] = [
 	{
 		title: 'CHIEF ADVISER',
 		key: 'menu.chiefAdviser',
-		href: '',
 		items: [
-			{ title: 'Message', key: 'menu.message', href: '/adviser/' },
-			{ title: 'Biography', key: 'menu.biography', href: '/adviser/' },
-			{ title: 'Statement', key: 'menu.statement', href: '/adviser/' },
-			{ title: 'Noble laureatte', key: 'menu.nobleLaureatte', href: '/adviser/' },
-			{ title: 'Ideas', key: 'menu.ideas', href: '/adviser/' },
-			{ title: 'Quotes', key: 'menu.quotes', href: '/adviser/' },
+			{ title: 'Message', key: 'menu.message', href: '#' },
+			{ title: 'Biography', key: 'menu.biography', href: '#' },
+			{ title: 'Statement', key: 'menu.statement', href: '#' },
+			{ title: 'Noble laureatte', key: 'menu.nobleLaureatte', href: '#' },
+			{ title: 'Ideas', key: 'menu.ideas', href: '#' },
+			{ title: 'Quotes', key: 'menu.quotes', href: '#' },
 		],
 	},
 	{
@@ -102,7 +101,7 @@ export const menuItems: MenuItem[] = [
 			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: '/administration/cabinet' },
 			{
 				title: 'Former Chief Advisers',
-				key: 'menu.formerChiefAdvisers',
+				key: 'menu.formerAdvisers',
 				href: '/administration/former-chief-advisers',
 			},
 			{
@@ -111,7 +110,7 @@ export const menuItems: MenuItem[] = [
 				href: '/administration/organization-structure',
 			},
 			{ title: 'Our Team', key: 'menu.ourTeam', href: '/administration/staffs' },
-			{ title: 'MISSION AND VISION', key: 'menu.missionAndVision', href: '/administration/staffs' },
+			{ title: 'MISSION AND VISION', key: 'menu.missionAndVision', href: '#' },
 		],
 	},
 	{
@@ -127,14 +126,7 @@ export const menuItems: MenuItem[] = [
 			{ title: 'News', key: 'menu.news', href: NEWS },
 			{ title: 'Notice', key: 'menu.notice', href: NOTICE },
 			{ title: 'Tender', key: 'menu.openTenders', href: OPEN_TENDER },
-			{
-				title: 'Media',
-				key: 'menu.media',
-				items: [
-					{ title: 'Photo Gallery', key: 'menu.photoGallery', href: '/news-media/photo-gallery' },
-					{ title: 'Video Gallery', key: 'menu.videoGallery', href: '/news-media/video-gallery' },
-				],
-			},
+			{ title: 'Media', key: 'menu.media', href: OPEN_TENDER },
 		],
 	},
 	{
@@ -142,17 +134,33 @@ export const menuItems: MenuItem[] = [
 		key: 'menu.archive',
 		items: [
 			{ title: 'Notice', key: 'menu.notice', href: NOTICE },
-			{ title: 'Office Order', key: 'menu.officeOrder', href: NOTICE },
+			{ title: 'Office Order', key: 'menu.officeOrder', href: '#' },
 			{
 				title: 'Documents',
 				key: 'menu.documents',
-				href: '/administration/documents/policy',
+				items: [
+					{
+						title: 'Policy Documents',
+						key: 'menu.policyDocuments',
+						href: '/administration/documents/policy',
+					},
+				],
 			},
-			{ title: 'Publications', key: 'menu.publications', href: '/administration/documents/reports' },
+			{
+				title: 'Publications',
+				key: 'menu.publications',
+				items: [
+					{
+						title: 'Reports & Stats',
+						key: 'menu.report',
+						href: '/administration/documents/reports',
+					},
+				],
+			},
 			{ title: 'Archived Tenders', key: 'menu.archiveTenders', href: ARCHIVE_TENDER },
 			{
 				title: 'Media',
-				key: 'menu.media',
+				key: 'menu.mediaGallery',
 				items: [
 					{ title: 'Photo Gallery', key: 'menu.photoGallery', href: '/news-media/photo-gallery' },
 					{ title: 'Video Gallery', key: 'menu.videoGallery', href: '/news-media/video-gallery' },
