@@ -43,14 +43,13 @@ export default function StaffsPage() {
 					<div className='absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/60' />
 				</motion.div>
 				<div className='relative container mx-auto px-4 h-full flex items-center'>
-					{/* <PageTitle title={t('menu.ourStaffs')}/> */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.8 }}
 						className='max-w-3xl'
 					>
-						<h1 className='text-5xl md:text-7xl font-bold mb-6'>{t('menu.ourStaffs')}</h1>
+						<h1 className='text-5xl md:text-7xl font-bold mb-6'>{t('menu.ourTeam')}</h1>
 						<p className='text-xl text-muted-foreground'>{t('ourStaffSubtitle')}</p>
 					</motion.div>
 				</div>
