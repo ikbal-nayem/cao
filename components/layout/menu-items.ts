@@ -1,110 +1,39 @@
 import {
 	ARCHIVE_TENDER,
-	CABINET,
-	FORMER_ADVISERS,
 	NEWS,
 	NOTICE,
 	OPEN_TENDER,
-	ORGANIZATION_STRUCTURE,
 	POLICY,
 	PROGRAMS,
 	REPORTS,
-	SPEECHES,
+	ROUTES,
 } from '@/constants/routes.constants';
 
-interface MenuItem {
+export interface IMenuItem {
 	title?: string;
 	href?: string;
 	isExternal?: boolean;
 	key?: any;
-	items?: MenuItem[];
+	items?: IMenuItem[];
 }
 
-// export const menuItems: MenuItem[] = [
-// 	{
-// 		title: 'About Us',
-// 		key: 'menu.aboutUs',
-// 		href: '/about-us',
-// 	},
-// 	{
-// 		title: 'Administration',
-// 		key: 'menu.administration',
-// 		items: [
-// 			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: '/administration/cabinet' },
-// 			{
-// 				title: 'Former Chief Advisers',
-// 				key: 'menu.formerChiefAdvisers',
-// 				href: '/administration/former-chief-advisers',
-// 			},
-// 			{
-// 				title: 'Organization Structure',
-// 				key: 'menu.organizationStructure',
-// 				href: '/administration/organization-structure',
-// 			},
-// 			{
-// 				title: 'Programs and Priorities',
-// 				key: 'menu.programsAndPriorities',
-// 				href: '/administration/programs',
-// 			},
-// 			{ title: 'Our Staffs', key: 'menu.ourStaffs', href: '/administration/staffs' },
-// 			{
-// 				title: 'Documents & Publications',
-// 				key: 'menu.documentsPublications',
-// 				items: [
-// 					{
-// 						title: 'Policy Documents',
-// 						key: 'menu.policyDocuments',
-// 						href: '/administration/documents/policy',
-// 					},
-// 					{ title: 'Reports & Stats', key: 'menu.reportsStats', href: '/administration/documents/reports' },
-// 				],
-// 			},
-// 		],
-// 	},
-// 	{
-// 		title: 'Notice',
-// 		key: 'menu.notice',
-// 		items: [
-// 			{ title: 'Notices', key: 'menu.notice', href: NOTICE },
-// 			{ title: 'Open Tenders', key: 'menu.openTenders', href: OPEN_TENDER },
-// 			{ title: 'Archive Tenders', key: 'menu.archiveTenders', href: ARCHIVE_TENDER },
-// 		],
-// 	},
-// 	{
-// 		title: 'News & Media',
-// 		key: 'menu.newsMedia',
-// 		items: [
-// 			{ title: 'News', key: 'menu.news', href: NEWS },
-// 			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: SPEECHES },
-// 			{ title: 'Photo Gallery', key: 'menu.photoGallery', href: '/news-media/photo-gallery' },
-// 			{ title: 'Video Gallery', key: 'menu.videoGallery', href: '/news-media/video-gallery' },
-// 		],
-// 	},
-// 	{
-// 		title: 'Contact',
-// 		key: 'menu.contact',
-// 		items: [
-// 			{ title: 'Contact Us', key: 'menu.contactUs', href: '/contact' },
-// 			{ title: 'FAQ', key: 'menu.FAQ', href: '/contact/faq' },
-// 			{ title: 'Feedback', key: 'menu.feedback', href: '/contact/feedback' },
-// 			{ title: 'Address', key: 'menu.address', href: '/contact/address' },
-// 		],
-// 	},
-// ];
-
-export const menuItems: MenuItem[] = [
+export const menuItems: Array<IMenuItem> = [
 	{
 		title: 'CHIEF ADVISER',
 		key: 'menu.chiefAdviser',
 		items: [
-			{ title: 'Message', key: 'menu.message', href: '#' },
-			{ title: 'Biography', key: 'menu.biography', href: '#' },
-			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: SPEECHES },
-			{ title: 'Statement', key: 'menu.statement', href: '#' },
-			{ title: 'Nobel Laureatte', key: 'menu.nobelLaureatte', href: '#' },
-			{ title: 'Concept', key: 'menu.concepts', href: '#' },
-			{ title: 'Quotes', key: 'menu.quotes', href: '#' },
-			{ title: 'Former Chief Advisers', key: 'menu.formerAdvisers', href: FORMER_ADVISERS },
+			{ title: 'Message', key: 'menu.message', href: ROUTES.CHIEF_ADVISER.MESSAGE },
+			{ title: 'Biography', key: 'menu.biography', href: ROUTES.CHIEF_ADVISER.BIOGRAPHY },
+			{ title: 'Speeches', key: 'menu.advisersSpeeches', href: ROUTES.CHIEF_ADVISER.SPEECHES },
+			{ title: 'Statement', key: 'menu.statement', href: ROUTES.CHIEF_ADVISER.STATEMENT },
+			{ title: 'Nobel Laureate', key: 'menu.nobelLaureatte', href: ROUTES.CHIEF_ADVISER.NOBEL_LAUREATE },
+			{ title: 'Concepts', key: 'menu.concepts', href: ROUTES.CHIEF_ADVISER.CONCEPTS },
+			{ title: 'Quotes', key: 'menu.quotes', href: ROUTES.CHIEF_ADVISER.QUOTES },
+			{
+				title: 'Former Chief Advisers',
+				key: 'menu.formerAdvisers',
+				href: ROUTES.CHIEF_ADVISER.FORMER_ADVISERS,
+			},
 		],
 	},
 	{
@@ -145,7 +74,11 @@ export const menuItems: MenuItem[] = [
 							{ title: 'BANGLADESH ECONOMIC ZONES AUTHORITY (BEZA)', href: '#', isExternal: true },
 							{ title: 'BANGLADESH EXPORT PROCESSING ZONES AUTHORITY (BEPZA)', href: '#', isExternal: true },
 							{ title: 'BANGLADESH INVESTMENT DEVELOPMENT AUTHORITY (BIDA)', href: '#', isExternal: true },
-							{ title: 'PUBLIC PRIVATE PARTNERSHIP AUTHORITY (PPPA)', href: 'https://www.pppo.gov.bd/', isExternal: true },
+							{
+								title: 'PUBLIC PRIVATE PARTNERSHIP AUTHORITY (PPPA)',
+								href: 'https://www.pppo.gov.bd/',
+								isExternal: true,
+							},
 							{ title: 'NATIONAL SKILLS DEVELOPMENT AUTHORITY (NSDA)', href: '#', isExternal: true },
 							{ title: 'SPECIAL SECURITY FORCE (SSF)', href: '#', isExternal: true },
 							{ title: 'NATIONAL SECURITY INTELLIGENCE (NSI)', href: '#', isExternal: true },
@@ -153,9 +86,17 @@ export const menuItems: MenuItem[] = [
 					},
 				],
 			},
-			{ title: 'ADVISERY COUNCIL', key: 'menu.cabinetMember', href: CABINET },
-			{ title: 'ORGANIZATIONAL STRUCTURE', key: 'menu.organizationStructure', href: ORGANIZATION_STRUCTURE },
-			{ title: 'MISSION AND VISION', key: 'menu.missionAndVision', href: '#' },
+			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: ROUTES.WHO_WE_ARE.CABINET },
+			{
+				title: 'Organization Structure',
+				key: 'menu.organizationStructure',
+				href: ROUTES.WHO_WE_ARE.ORGANIZATION,
+			},
+			{
+				title: 'MISSION AND VISION',
+				key: 'menu.missionAndVision',
+				href: ROUTES.WHO_WE_ARE.MISSION_AND_VISION,
+			},
 		],
 	},
 	{
