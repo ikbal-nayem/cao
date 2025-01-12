@@ -17,38 +17,44 @@ export const en = {
 		chiefAdviser: 'Chief Adviser',
 		whoWeAre: 'Who We Are',
 		whatWeDo: 'What We Do',
-		archive: 'Archive',
+		mediaAndPublication: 'Media and Publication',
 
 		message: 'Message',
 		biography: 'Biography',
+		advisersSpeeches: 'Advisers Speeches',
 		statement: 'Statement',
 		nobleLaureatte: 'Noble Laureatte',
-		ideas: 'Ideas',
+		concepts: 'Concepts',
 		quotes: 'Quotes',
-
-		advisersSpeeches: 'Advisers Speeches',
-		cabinetMember: 'Advisery Council',
 		formerAdvisers: 'Former Chief Advisers',
-		organizationStructure: 'Organization Structure',
+		
+		cabinetMember: 'Advisery Council',
 		ourTeam: 'Our Team',
+		subordinateOffice: 'Subordinate Office',
 		missionAndVision: 'Mission & Vision',
-
+		organizationStructure: 'Organization Structure',
+		
 		programsAndPriorities: 'Programs and Priorities',
 		news: 'News',
+		archivedNews: 'Archived News',
 		notice: 'Notice',
-		openTenders: 'Open Tenders',
+		archivedNotice: 'Archived Notice',
+		tenders: 'Open Tenders',
+		archiveTenders: 'Archive Tenders',
 		media: 'Media',
-		
 		officeOrder: 'Office Order',
+		archivedOfficeOrder: 'Archived Office Order',
+
 		documents: 'Documents',
 		policyDocuments: 'Policy Documents',
 		publications: 'Publications',
-		report: 'Reports & Stats',
-		archiveTenders: 'Archive Tenders',
+		reports: 'Reports',
+		statistics: 'Statistics',
 		mediaGallery: 'Media Gallery',
 		photoGallery: 'Photo Gallery',
 		videoGallery: 'Video Gallery',
-		
+		archivedGallery: 'Archived Gallery',
+
 		contact: 'Contact',
 		contactUs: 'Contact Us',
 		FAQ: 'FAQ',
@@ -63,7 +69,6 @@ export const en = {
 	latestNews: 'Latest News',
 	latestNewsSubtitle:
 		"Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
-	subordinateOffice: 'Subordinate Office',
 	ourMission: 'Our Mission',
 	ourVision: 'Our Vision',
 
@@ -76,7 +81,7 @@ export const en = {
 	ourStaffSubtitle: 'Meet the dedicated professionals working to serve our nation',
 
 	// Notice
-	noticeTitle: 'Notices',
+	noticeTitle: 'Latest Notice',
 	noticeSubtitle: "Stay updated with the latest notices and announcements from the Chief Adviser's Office",
 	noticeSearch: 'Search Notice',
 	noNoticesFound: 'No notices found!',

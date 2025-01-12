@@ -1,7 +1,20 @@
-import { ARCHIVE_TENDER, NEWS, NOTICE, OPEN_TENDER, SPEECHES } from '@/constants/routes.constants';
+import {
+	ARCHIVE_TENDER,
+	CABINET,
+	FORMER_ADVISERS,
+	NEWS,
+	NOTICE,
+	OPEN_TENDER,
+	ORGANIZATION_STRUCTURE,
+	OUR_TEAM,
+	POLICY,
+	PROGRAMS,
+	REPORTS,
+	SPEECHES,
+} from '@/constants/routes.constants';
 
 interface MenuItem {
-	title: string;
+	title?: string;
 	href?: string;
 	key: any;
 	items?: MenuItem[];
@@ -87,29 +100,27 @@ export const menuItems: MenuItem[] = [
 		items: [
 			{ title: 'Message', key: 'menu.message', href: '#' },
 			{ title: 'Biography', key: 'menu.biography', href: '#' },
+			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: SPEECHES },
 			{ title: 'Statement', key: 'menu.statement', href: '#' },
 			{ title: 'Noble laureatte', key: 'menu.nobleLaureatte', href: '#' },
-			{ title: 'Ideas', key: 'menu.ideas', href: '#' },
+			{ title: 'Concept', key: 'menu.concepts', href: '#' },
 			{ title: 'Quotes', key: 'menu.quotes', href: '#' },
+			{ title: 'Former Chief Advisers', key: 'menu.formerAdvisers', href: FORMER_ADVISERS },
 		],
 	},
 	{
 		title: 'WHO WE ARE',
 		key: 'menu.whoWeAre',
 		items: [
-			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: SPEECHES },
-			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: '/administration/cabinet' },
 			{
-				title: 'Former Chief Advisers',
-				key: 'menu.formerAdvisers',
-				href: '/administration/former-chief-advisers',
+				title: 'CHIEF ADVISER’S OFFICE',
+				key: 'menu.cabinetMember',
+				items: [
+					{ title: 'OUR TEAM', key: 'menu.ourTeam', href: OUR_TEAM },
+					{ title: 'SUBORDINATE OFFICE', key: 'menu.subordinateOffice', href: '#' },
+				],
 			},
-			{
-				title: 'ORGANIZATIONAL STRUCTURE',
-				key: 'menu.organizationStructure',
-				href: '/administration/organization-structure',
-			},
-			{ title: 'Our Team', key: 'menu.ourTeam', href: '/administration/staffs' },
+			{ title: 'ORGANIZATIONAL STRUCTURE', key: 'menu.organizationStructure', href: ORGANIZATION_STRUCTURE },
 			{ title: 'MISSION AND VISION', key: 'menu.missionAndVision', href: '#' },
 		],
 	},
@@ -117,53 +128,66 @@ export const menuItems: MenuItem[] = [
 		title: 'WHAT WE DO',
 		key: 'menu.whatWeDo',
 		items: [
-			{ title: 'WHAT WE DO', key: 'menu.whatWeDo', href: NOTICE },
+			{ title: 'WHAT WE DO', key: 'menu.whatWeDo', href: '#' },
+			{ title: 'PROGRAMS AND PRIORITIES', key: 'menu.programsAndPriorities', href: PROGRAMS },
 			{
-				title: 'Programs and Priorities',
-				key: 'menu.programsAndPriorities',
-				href: '/administration/programs',
+				title: 'NEWS',
+				key: 'menu.news',
+				items: [
+					{ title: 'NEWS', key: 'menu.news', href: NEWS },
+					{ title: 'ARCHIVED NEWS', key: 'menu.archivedNews', href: NEWS },
+				],
 			},
-			{ title: 'News', key: 'menu.news', href: NEWS },
-			{ title: 'Notice', key: 'menu.notice', href: NOTICE },
-			{ title: 'Tender', key: 'menu.openTenders', href: OPEN_TENDER },
-			{ title: 'Media', key: 'menu.media', href: OPEN_TENDER },
+			{
+				title: 'NOTICE',
+				key: 'menu.notice',
+				items: [
+					{ title: 'NOTICE', key: 'menu.notice', href: NOTICE },
+					{ title: 'ARCHIVED NOTICE', key: 'menu.archivedNotice', href: NOTICE },
+				],
+			},
+			{
+				title: 'TENDER',
+				key: 'menu.tenders',
+				items: [
+					{ title: 'TENDER', key: 'menu.tenders', href: OPEN_TENDER },
+					{ title: 'ARCHIVED TENDER', key: 'menu.archiveTenders', href: ARCHIVE_TENDER },
+				],
+			},
+			{
+				title: 'OFFICE ORDER',
+				key: 'menu.officeOrder',
+				items: [
+					{ title: 'OFFICE ORDER', key: 'menu.officeOrder', href: '#' },
+					{ title: 'ARCHIVED TENDER', key: 'menu.archivedOfficeOrder', href: '#' },
+				],
+			},
 		],
 	},
 	{
-		title: 'ARCHIVE',
-		key: 'menu.archive',
+		title: 'MEDIA AND PUBLICATION',
+		key: 'menu.mediaAndPublication',
 		items: [
-			{ title: 'Notice', key: 'menu.notice', href: NOTICE },
-			{ title: 'Office Order', key: 'menu.officeOrder', href: '#' },
 			{
-				title: 'Documents',
+				title: 'DOCUMENTS',
 				key: 'menu.documents',
-				items: [
-					{
-						title: 'Policy Documents',
-						key: 'menu.policyDocuments',
-						href: '/administration/documents/policy',
-					},
-				],
+				items: [{ title: 'Policy Documents', key: 'menu.policyDocuments', href: POLICY }],
 			},
 			{
-				title: 'Publications',
+				title: 'PUBLICATIONS',
 				key: 'menu.publications',
 				items: [
-					{
-						title: 'Reports & Stats',
-						key: 'menu.report',
-						href: '/administration/documents/reports',
-					},
+					{ title: 'REPORTS', key: 'menu.reports', href: REPORTS },
+					{ title: 'STATISTICS', key: 'menu.statistics', href: '#' },
 				],
 			},
-			{ title: 'Archived Tenders', key: 'menu.archiveTenders', href: ARCHIVE_TENDER },
 			{
-				title: 'Media',
+				title: 'MEDIA',
 				key: 'menu.mediaGallery',
 				items: [
 					{ title: 'Photo Gallery', key: 'menu.photoGallery', href: '/news-media/photo-gallery' },
 					{ title: 'Video Gallery', key: 'menu.videoGallery', href: '/news-media/video-gallery' },
+					{ title: 'Archive Gallery', key: 'menu.archivedGallery', href: '#' },
 				],
 			},
 		],
