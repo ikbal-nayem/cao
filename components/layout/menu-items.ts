@@ -6,7 +6,6 @@ import {
 	NOTICE,
 	OPEN_TENDER,
 	ORGANIZATION_STRUCTURE,
-	OUR_TEAM,
 	POLICY,
 	PROGRAMS,
 	REPORTS,
@@ -16,9 +15,9 @@ import {
 interface MenuItem {
 	title?: string;
 	href?: string;
-	key: any;
+	isExternal?: boolean;
+	key?: any;
 	items?: MenuItem[];
-	icon?: React.ComponentType;
 }
 
 // export const menuItems: MenuItem[] = [
@@ -102,7 +101,7 @@ export const menuItems: MenuItem[] = [
 			{ title: 'Biography', key: 'menu.biography', href: '#' },
 			{ title: 'Advisers Speeches', key: 'menu.advisersSpeeches', href: SPEECHES },
 			{ title: 'Statement', key: 'menu.statement', href: '#' },
-			{ title: 'Noble laureatte', key: 'menu.nobleLaureatte', href: '#' },
+			{ title: 'Nobel Laureatte', key: 'menu.nobelLaureatte', href: '#' },
 			{ title: 'Concept', key: 'menu.concepts', href: '#' },
 			{ title: 'Quotes', key: 'menu.quotes', href: '#' },
 			{ title: 'Former Chief Advisers', key: 'menu.formerAdvisers', href: FORMER_ADVISERS },
@@ -114,12 +113,47 @@ export const menuItems: MenuItem[] = [
 		items: [
 			{
 				title: 'CHIEF ADVISER’S OFFICE',
-				key: 'menu.cabinetMember',
+				key: 'pmo',
 				items: [
-					{ title: 'OUR TEAM', key: 'menu.ourTeam', href: OUR_TEAM },
-					{ title: 'SUBORDINATE OFFICE', key: 'menu.subordinateOffice', href: '#' },
+					{
+						title: 'OUR TEAM',
+						key: 'menu.ourTeam',
+						items: [
+							{ title: 'SECRETARIAT WING', href: '#' },
+							{ title: 'PERSONAL WING', href: '#' },
+							{ title: 'PRESS WING', href: '#' },
+							{ title: 'Hon’ble ADVISER', href: '#' },
+							{ title: 'SPECIAL ASSISTANT / SPECIAL ENVOY / PRINCIPAL COORDINATOR', href: '#' },
+							{
+								title: 'SPECIALIZED UNIT',
+								items: [
+									{ title: 'GOVERNANCE INNOVATION UNIT (GIU)', href: '#' },
+									{ title: 'ASRAYN-2', href: '#' },
+									{ title: 'Sub-Regional Co-operation Cell (SRCC)', href: '#' },
+									{ title: 'MIDI', href: '#' },
+								],
+							},
+							{ title: 'ALL OFFICERS', href: '#' },
+						],
+					},
+					{
+						title: 'SUBORDINATE OFFICE',
+						key: 'menu.subordinateOffice',
+						items: [
+							{ title: 'PRIVATE EXPORT PROCESSING ZONES (PEPZ)', href: '#', isExternal: true },
+							{ title: 'NGO AFFAIRS BUREAU', href: '#', isExternal: true },
+							{ title: 'BANGLADESH ECONOMIC ZONES AUTHORITY (BEZA)', href: '#', isExternal: true },
+							{ title: 'BANGLADESH EXPORT PROCESSING ZONES AUTHORITY (BEPZA)', href: '#', isExternal: true },
+							{ title: 'BANGLADESH INVESTMENT DEVELOPMENT AUTHORITY (BIDA)', href: '#', isExternal: true },
+							{ title: 'PUBLIC PRIVATE PARTNERSHIP AUTHORITY (PPPA)', href: 'https://www.pppo.gov.bd/', isExternal: true },
+							{ title: 'NATIONAL SKILLS DEVELOPMENT AUTHORITY (NSDA)', href: '#', isExternal: true },
+							{ title: 'SPECIAL SECURITY FORCE (SSF)', href: '#', isExternal: true },
+							{ title: 'NATIONAL SECURITY INTELLIGENCE (NSI)', href: '#', isExternal: true },
+						],
+					},
 				],
 			},
+			{ title: 'ADVISERY COUNCIL', key: 'menu.cabinetMember', href: CABINET },
 			{ title: 'ORGANIZATIONAL STRUCTURE', key: 'menu.organizationStructure', href: ORGANIZATION_STRUCTURE },
 			{ title: 'MISSION AND VISION', key: 'menu.missionAndVision', href: '#' },
 		],
@@ -129,7 +163,11 @@ export const menuItems: MenuItem[] = [
 		key: 'menu.whatWeDo',
 		items: [
 			{ title: 'WHAT WE DO', key: 'menu.whatWeDo', href: '#' },
-			{ title: 'PROGRAMS AND PRIORITIES', key: 'menu.programsAndPriorities', href: PROGRAMS },
+			{
+				title: 'PROGRAMS AND PRIORITIES',
+				key: 'menu.programsAndPriorities',
+				items: [{ title: 'PROJECTS', key: 'menu.projects', href: PROGRAMS }],
+			},
 			{
 				title: 'NEWS',
 				key: 'menu.news',
@@ -171,14 +209,20 @@ export const menuItems: MenuItem[] = [
 			{
 				title: 'DOCUMENTS',
 				key: 'menu.documents',
-				items: [{ title: 'Policy Documents', key: 'menu.policyDocuments', href: POLICY }],
+				items: [{ title: 'POLICY DOCUMENTS', key: 'menu.policyDocuments', href: POLICY }],
 			},
 			{
 				title: 'PUBLICATIONS',
 				key: 'menu.publications',
 				items: [
-					{ title: 'REPORTS', key: 'menu.reports', href: REPORTS },
-					{ title: 'STATISTICS', key: 'menu.statistics', href: '#' },
+					{
+						title: 'REPORTS & STATS',
+						key: 'menu.reportsStats',
+						items: [
+							{ title: 'REPORTS', key: 'menu.reports', href: REPORTS },
+							{ title: 'STATISTICS', key: 'menu.statistics', href: '#' },
+						],
+					},
 				],
 			},
 			{

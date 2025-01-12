@@ -71,7 +71,7 @@ const Header: FC = () => {
 										className='flex items-center space-x-1 text-foreground hover:bg-inherit hover:text-gray-800'
 										style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 									>
-										<span>{t(item?.key)}</span>
+										<span>{item?.key ? t(item?.key) : item?.title}</span>
 										<ChevronDown className='w-4 h-4' />
 									</Button>
 								) : (
@@ -80,7 +80,7 @@ const Header: FC = () => {
 										className='text-foreground hover:text-gray-800'
 										style={{ textShadow: `${theme === 'dark' ? '#000000' : '#ffffff'} 0px 1px 10px` }}
 									>
-										{t(item?.key)}
+										{item?.key ? t(item?.key) : item?.title}
 									</Link>
 								)}
 								{item.items && activeDropdown === item?.key && (
@@ -146,7 +146,7 @@ const Header: FC = () => {
 											<AccordionItem key={index} value={`item-${index}`}>
 												{item.items ? (
 													<>
-														<AccordionTrigger className='text-lg'>{t(item?.key)}</AccordionTrigger>
+														<AccordionTrigger className='text-lg'>{item?.key ? t(item?.key) : item?.title}</AccordionTrigger>
 														<AccordionContent>
 															<div className='pl-4'>
 																{item.items.map((subItem, subIndex) => (
@@ -187,7 +187,7 @@ const Header: FC = () => {
 													</>
 												) : (
 													<Link href={item.href || '#'} className='block py-4 text-lg hover:text-primary'>
-														{t(item?.key)}
+														{item?.key ? t(item?.key) : item?.title}
 													</Link>
 												)}
 											</AccordionItem>
