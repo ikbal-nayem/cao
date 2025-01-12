@@ -36,7 +36,7 @@ export default function OpenTendersPage() {
 	return (
 		<main className='min-h-screen py-24'>
 			<div className='container mx-auto px-4'>
-				<PageTitle title={t('menu.openTenders')} subTitle={t('openTenderSubtitle')} />
+				<PageTitle title={t('menu.tenders')} subTitle={t('openTenderSubtitle')} />
 
 				<div className='space-y-8'>
 					{!isFetching && tenders?.data?.length === 0 ? <NoDataFound /> : null}
