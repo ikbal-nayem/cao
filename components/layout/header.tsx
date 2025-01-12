@@ -92,7 +92,7 @@ const Header: FC = () => {
 														<div className='relative group'>
 															<button className='w-full text-left block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'>
 																{t(subItem?.key)}
-																<ChevronRight className='inline-block w-4 h-4 ml-2' />
+																<ChevronRight className='inline-block w-4 h-4 ml-2 float-right' />
 															</button>
 															<div className='absolute left-full top-0 hidden group-hover:block'>
 																<div className='ml-2 w-max rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5'>

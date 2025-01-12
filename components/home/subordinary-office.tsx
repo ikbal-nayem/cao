@@ -36,7 +36,7 @@ const SubordinaryOfficeSection: FC = () => {
 					transition={{ duration: 0.8 }}
 					className='text-center mb-16'
 				>
-					<h2 className='text-4xl font-bold mb-6'>{t('subordinateOffice')}</h2>
+					<h2 className='text-4xl font-bold mb-6'>{t('menu.subordinateOffice')}</h2>
 				</motion.div>
 
 				<div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center'>
