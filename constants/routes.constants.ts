@@ -19,22 +19,19 @@ export const REPORTS = '/administration/documents/reports';
 
 export const ROUTES = {
   // Chief Adviser
-  CHIEF_ADVISER: {
+  ADVISER: {
     MESSAGE: '/chief-adviser/message',
     BIOGRAPHY: '/chief-adviser/biography',
     SPEECHES: '/news-media/speeches',
-    STATEMENT: '/chief-adviser/statement',
-    NOBEL_LAUREATE: '/chief-adviser/nobel-laureate',
-    CONCEPTS: '/chief-adviser/concepts',
-    QUOTES: '/chief-adviser/quotes',
     FORMER_ADVISERS: '/administration/former-chief-advisers'
   },
 
   // Who we are
   WHO_WE_ARE: {
+    OUR_TEAM: '/administration/our-team',
     CABINET: '/administration/cabinet',
-    ORGANIZATION: '/administration/organization-structure',
     MISSION_AND_VISION: '/administration/mission-and-vision',
+    WEB_MAIL: '#',
     PROGRAMS: '/administration/programs',
     DOCUMENTS: {
       POLICY: '/administration/documents/policy',

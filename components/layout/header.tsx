@@ -10,7 +10,6 @@ import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC, useState, useEffect } from 'react';
-import { useLanguage } from '../language/language-context';
 import { menuItems } from './menu-items';
 import { RecursiveMenu } from './recursive-menu';
 import { RecursiveMobileMenu } from './recursive-mobile-menu'
@@ -19,7 +18,6 @@ const Header: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { theme } = useTheme();
   const { t } = useTranslation();
-  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {

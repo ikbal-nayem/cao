@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { IMenuItem } from './menu-items';
+import { cn } from '@/lib/utils';
 import clsx from 'clsx';
 
 interface RecursiveMenuProps {
@@ -53,9 +54,10 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 								<motion.div
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
-									className={`absolute ${
+									className={cn(
+										'absolute z-50 min-w-max rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5',
 										level === 0 ? 'left-0 top-full' : 'left-full top-0'
-									} min-w-[200px] rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5`}
+									)}
 								>
 									<div className='py-1'>
 										<RecursiveMenu items={item.items} level={level + 1} />
