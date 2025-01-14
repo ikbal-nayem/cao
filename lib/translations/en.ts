@@ -74,6 +74,23 @@ export const en = {
 	ourMission: 'Our Mission',
 	ourVision: 'Our Vision',
 
+	// Adviser
+	messageTitle: 'Message from the Chief Adviser',
+	messageSubTitle: 'Dr. Muhammad Yunus shares his vision for Bangladesh',
+	biographyTitle: 'Dr. Muhammad Yunus Biography',
+	biographySubTitle: 'Learn about the life and work of Dr. Muhammad Yunus, Nobel Peace Prize laureate and Chief Adviser',
+	adviserSpeechSubtitle: 'Collection of speeches and addresses by the Chief Adviser',
+	statementTitle: 'Statement from the Chief Adviser',
+	statementSubTitle: 'Read the latest statement from Dr. Muhammad Yunus',
+	advisersSpeechesTitle: 'Speeches and Addresses',
+	nobelLaureatteTitle: 'Nobel Peace Prize Laureatee',
+	nobelLaureatteSubTitle: "Dr. Muhammad Yunus's contributions to social and economic development",
+	conceptsTitle: 'Concepts and Ideas',
+	conceptsSubTitle: 'Explore the key concepts and ideas that guide our work',
+	quotesTitle: 'Notable Quotes',
+	quotesSubTitle: 'Inspiring words and wisdom from Dr. Muhammad Yunus',
+
+
 	// Who we are
 	cabinetMemberTitle: 'Advisery Council Members',
 	cabinetMemberSubtitle:
@@ -103,7 +120,6 @@ export const en = {
 		"Stay updated with the latest announcements, policies, and developments from the Chief Adviser's Office",
 	relatedNews: 'Related News',
 	noRelatedNewsFound: 'No related news found!',
-	adviserSpeechSubtitle: 'Collection of speeches and addresses by the Chief Adviser',
 
 	// Gallery
 	photoGallery: 'Photo Gallery',

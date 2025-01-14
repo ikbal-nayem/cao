@@ -41,7 +41,7 @@ const Header: FC = () => {
         <div className='flex items-center justify-between h-16'>
           <Link href='/' className='flex items-center space-x-2'>
             <Image
-              src={language === 'en' ? DEFAULT_LINKS.GOV_LOGO_EN : DEFAULT_LINKS.GOV_LOGO_BN}
+              src={DEFAULT_LINKS.GOV_LOGO_BN}
               alt='BD Gov'
               width={40}
               height={40}

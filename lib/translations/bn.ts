@@ -72,6 +72,23 @@ export const bn = {
 	ourMission: 'আমাদের লক্ষ্য',
 	ourVision: 'আমাদের উদ্দেশ্য',
 
+	// Adviser
+	messageTitle: 'প্রধান উপদেষ্টা থেকে বার্তা',
+	messageSubTitle: 'ডঃ মুহাম্মদ ইউনূস বাংলাদেশের জন্য তার দৃষ্টিভঙ্গি শেয়ার করেছেন',
+	biographyTitle: 'ডঃ মুহাম্মদ ইউনূস',
+	biographySubTitle:
+		'নোবেল শান্তি পুরস্কার বিজয়ী এবং প্রধান উপদেষ্টা ডক্টর মুহাম্মদ ইউনূসের জীবন ও কাজ সম্পর্কে জানুন',
+	adviserSpeechSubtitle: 'প্রধান উপদেষ্টার বক্তৃতা ও ভাষণের সংগ্রহ',
+	statementTitle: 'প্রধান উপদেষ্টার বক্তব্য',
+	statementSubTitle: 'ডঃ মুহাম্মদ ইউনূসের সর্বশেষ বক্তব্য পড়ুন',
+	advisersSpeechesTitle: 'বক্তৃতা',
+	nobelLaureatteTitle: 'নোবেল শান্তি পুরস্কার বিজয়ী',
+	nobelLaureatteSubTitle: 'ড. মুহাম্মদ ইউনূসের সামাজিক ও অর্থনৈতিক উন্নয়নে অবদান',
+	conceptsTitle: 'ধারণা',
+	conceptsSubTitle: 'মূল ধারণা এবং ধারণাগুলি অন্বেষণ করুন যা আমাদের কাজকে নির্দেশ করে',
+	quotesTitle: 'উল্লেখযোগ্য উক্তি',
+	quotesSubTitle: 'ডক্টর মুহাম্মদ ইউনূসের অনুপ্রেরণামূলক কথা ও প্রজ্ঞা',
+
 	// Administration
 	cabinetMemberTitle: 'উপদেষ্টা পরিষদের সদস্য',
 	cabinetMemberSubtitle:
@@ -99,7 +116,6 @@ export const bn = {
 	newsSubtitle: 'প্রধান উপদেষ্টার কার্যালয় থেকে সর্বশেষ উদ্যোগ এবং উন্নয়ন সম্পর্কে জানুন',
 	relatedNews: 'সম্পর্কিত খবর',
 	noRelatedNewsFound: 'সম্পর্কিত কোনো খবর পাওয়া যায়নি!',
-	adviserSpeechSubtitle: 'প্রধান উপদেষ্টার বক্তৃতা ও ভাষণের সংগ্রহ',
 
 	// Gallery
 	photoGallery: 'ফটো গ্যালারি',
