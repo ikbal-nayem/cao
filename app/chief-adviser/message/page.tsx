@@ -11,7 +11,7 @@ export default function MessagePage() {
 	const ref = useRef<HTMLDivElement>(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
-		offset: ['start start', 'end end'],
+		offset: ['start start', 'end start'],
 	});
 
 	const y = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
@@ -22,7 +22,7 @@ export default function MessagePage() {
 		<main className='min-h-screen py-24' ref={ref}>
 			<motion.div style={{ y }} className='absolute inset-0 -z-10'>
 				<Image src={DEFAULT_LINKS.CA_LOGO} alt='News Background' fill className='object-cover' />
-				<div className='absolute inset-0 bg-gradient-to-b from-background to-background/90' />
+				<div className='absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background' />
 			</motion.div>
 
 			<div className='container mx-auto px-4'>

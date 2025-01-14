@@ -17,6 +17,10 @@ const config: Config = {
       },
     },
     extend: {
+      fontFamily: {
+        kalpurush: ['var(--font-kalpurush)'],
+        roboto: ['var(--font-roboto)'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
