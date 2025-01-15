@@ -12,7 +12,7 @@ export const LanguageSwitch: FC = () => {
       variant="ghost"
       size="sm"
       onClick={() => setLanguage(language === 'en' ? 'bn' : 'en')}
-      className="text-sm font-medium"
+      className="text-xs font-medium"
     >
       {language === 'en' ? 'বাংলা' : 'English'}
     </Button>

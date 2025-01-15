@@ -41,7 +41,10 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 							<Button
 								variant='ghost'
 								size='sm'
-								className='flex items-center justify-between space-x-1 text-foreground w-full hover:text-gray-800'
+								className={clsx(
+									'flex items-center justify-between space-x-1 text-foreground w-full hover:text-gray-800',
+									{ 'hover:bg-transparent': level === 0 }
+								)}
 							>
 								<span className='text-xs'>{item.key ? t(item.key) : item.title}</span>
 								{level === 0 ? <ChevronDown className='w-4 h-4' /> : <ChevronRight className='w-4 h-4' />}
@@ -68,9 +71,7 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 							target={item.isExternal ? '_blank' : undefined}
 							className='flex items-center justify-between w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
 						>
-							<span className='text-xs'>
-								{item.key ? t(item.key) : item.title}
-							</span>
+							<span className='text-xs'>{item.key ? t(item.key) : item.title}</span>
 							{item.isExternal && <ExternalLink className='w-3 h-3 min-w-min' />}
 						</Link>
 					)}

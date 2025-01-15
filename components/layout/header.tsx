@@ -12,6 +12,7 @@ import { FC, useEffect, useState } from 'react';
 import { menuItems } from './menu-items';
 import { RecursiveMenu } from './recursive-menu';
 import { RecursiveMobileMenu } from './recursive-mobile-menu';
+import clsx from 'clsx';
 
 const Header: FC = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -27,15 +28,16 @@ const Header: FC = () => {
 
 	return (
 		<header
-			className={`fixed w-full z-50 transition-all duration-300 ${
-				// isScrolled
-				//   ? 'bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'
-				//   : 'bg-transparent'
-				'bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/50 rounded-br-full'
-			}`}
+			className={clsx(`fixed w-full z-50 transition-all duration-300`, {
+				'bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/50': isScrolled,
+			})}
 		>
-			<div className='container mx-auto px-4'>
-				<div className='flex items-center justify-between h-14'>
+			<div
+				className={clsx('container mx-auto rounded-full px-4', {
+					'bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/50 mt-2': !isScrolled,
+				})}
+			>
+				<div className='flex items-center justify-between h-12'>
 					<Link href='/' className='flex items-center space-x-2'>
 						<Image
 							src={DEFAULT_LINKS.GOV_LOGO_BN}
@@ -45,7 +47,9 @@ const Header: FC = () => {
 							className='rounded-full'
 						/>
 						{/* <span className='text-primary text-xl sm:text-2xl font-bold'>{t('pmo')}</span> */}
-						<span className='text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-cyan-600'>{t('pmo')}</span>
+						<span className='text-xl sm:text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-cyan-600'>
+							{t('pmo')}
+						</span>
 					</Link>
 
 					{/* Desktop Menu */}
