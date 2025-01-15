@@ -46,7 +46,7 @@ const Header: FC = () => {
 							height={40}
 							className='rounded-full'
 						/>
-						<span className='text-xl sm:text-2xl font-bold text-primary/70 dark:text-primary/90'>{t('pmo')}</span>
+						<span className='text-xl sm:text-2xl font-bold text-primary/70 dark:text-primary/95'>{t('pmo')}</span>
 					</Link>
 
 					{/* Desktop Menu */}
