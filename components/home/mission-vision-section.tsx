@@ -64,7 +64,7 @@ const MissionVisionSection: FC = () => {
 
 					<div className='absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2 z-10'>
 						<div className='w-24 h-24 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg'>
-							<Image src='/static/logo/ca.png' alt='Logo' width={90} height={90} className='rounded-full' />
+							<Image src={DEFAULT_LINKS.GOV_LOGO_BN} alt='Logo' width={90} height={90} className='rounded-full' />
 						</div>
 					</div>
 
