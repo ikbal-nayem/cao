@@ -5,7 +5,6 @@ import { useTranslation } from '@/hooks/use-translation';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { IMenuItem } from './menu-items';
-import clsx from 'clsx';
 
 interface RecursiveMobileMenuProps {
 	items: IMenuItem[];
@@ -20,7 +19,7 @@ export function RecursiveMobileMenu({ items }: RecursiveMobileMenuProps) {
 				<AccordionItem key={index} value={`item-${index}`}>
 					{item.items ? (
 						<>
-							<AccordionTrigger>
+							<AccordionTrigger className='text-xs'>
 								{item?.key ? t(item?.key) : item?.title}
 							</AccordionTrigger>
 							<AccordionContent>
@@ -35,9 +34,7 @@ export function RecursiveMobileMenu({ items }: RecursiveMobileMenuProps) {
 							target={item.isExternal ? '_blank' : undefined}
 							className='flex items-center justify-between py-4 hover:text-primary'
 						>
-							<span className={clsx({ 'text-xs': item?.isExternal })}>
-								{item?.key ? t(item?.key) : item?.title}
-							</span>
+							<span className='text-xs'>{item?.key ? t(item?.key) : item?.title}</span>
 							{item.isExternal && <ExternalLink className='w-3 h-3 min-w-min' />}
 						</Link>
 					)}
