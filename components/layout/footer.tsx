@@ -1,9 +1,9 @@
 'use client';
 
 import { ThemeSwitcher } from '@/components/theme/theme-switcher';
-import { NEWS, NOTICE } from '@/constants/routes.constants';
+import { ROUTES } from '@/constants/routes.constants';
 import { useTranslation } from '@/hooks/use-translation';
-import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+import { Clock, Facebook, Linkedin, Mail, MapPin, Phone, Twitter, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { FC } from 'react';
 
@@ -15,50 +15,83 @@ const Footer: FC = () => {
 			<div className='container mx-auto px-4 py-12'>
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
 					<div>
-						<h3 className='text-xl font-bold mb-4'>{t('contactUs')}</h3>
-						<div className='space-y-2'>
-							<p className='flex items-center gap-2'>
-								<MapPin className='w-4 h-4' />
-								<span>
-									{t('pmo')}
-									<br />
-									Tejgaon, Dhaka-1215
-								</span>
-							</p>
-							<p className='flex items-center gap-2'>
-								<Phone className='w-4 h-4' />
-								<span>+880-2-XXXXXXXX</span>
-							</p>
-							<p className='flex items-center gap-2'>
-								<Mail className='w-4 h-4' />
-								<span>info@cao.gov.bd</span>
-							</p>
+						<h3 className='text-xl font-bold mb-4'>{t('contact')}</h3>
+						<div className='mb-4'>
+							<h5 className='text-md mb-2'>{t('contactUs')}</h5>
+							<div className='ml-8 space-y-2'>
+								<p className='flex items-center gap-2'>
+									<MapPin className='w-4 h-4' />
+									<span>{t('pmo')}, Tejgaon, Dhaka-1215</span>
+								</p>
+								<p className='flex items-center gap-2'>
+									<Phone className='w-4 h-4' />
+									<span>+880-2-XXXXXXXX</span>
+								</p>
+								<p className='flex items-center gap-2'>
+									<Mail className='w-4 h-4' />
+									<span>info@cao.gov.bd</span>
+								</p>
+								<p className='flex items-center gap-2'>
+									<Clock className='w-4 h-4' />
+									<span>
+										Sunday - Thursday <br />
+										9:00 AM - 5:00 PM
+									</span>
+								</p>
+							</div>
 						</div>
+						<ul className='space-y-2'>
+							<li>
+								<Link href={ROUTES.CONTACT.FEEDBACK} className='text-gray-300 hover:text-white'>
+									{t('feedback')}
+								</Link>
+							</li>
+							<li>
+								<Link href={ROUTES.CONTACT.ADDRESS} className='text-gray-300 hover:text-white'>
+									{t('map')}
+								</Link>
+							</li>
+						</ul>
 					</div>
+
 					<div>
 						<h3 className='text-xl font-bold mb-4'>{t('quickLinks')}</h3>
 						<ul className='space-y-2'>
 							<li>
-								<Link href='/administration/cabinet' className='text-gray-300 hover:text-white'>
-									{t('menu.cabinetMember')}
+								<Link href={'#'} className='text-gray-300 hover:text-white'>
+									{t('menu.webMail')}
 								</Link>
 							</li>
 							<li>
 								<Link
-									href={NOTICE}
+									href={'https://n-doptor-accounts.nothi.gov.bd/'}
+									target='_blank'
 									className='text-gray-300 hover:text-white'
 								>
-									{t('menu.notice')}
+									{t('dNothi')}
 								</Link>
 							</li>
 							<li>
-								<Link href='/administration/documents/policy' className='text-gray-300 hover:text-white'>
-									Policy Documents
+								<Link
+									href={'https://gems.gov.bd/'}
+									target='_blank'
+									className='text-gray-300 hover:text-white'
+								>
+									{t('gems')}
 								</Link>
 							</li>
 							<li>
-								<Link href={NEWS} className='text-gray-300 hover:text-white'>
-                {t('menu.news')}
+								<Link href={'#'} className='text-gray-300 hover:text-white'>
+									{t('hotline')}
+								</Link>
+							</li>
+							<li>
+								<Link
+									href={'https://www.mygov.bd/'}
+									target='_blank'
+									className='text-gray-300 hover:text-white'
+								>
+									{t('myGov')}
 								</Link>
 							</li>
 						</ul>
@@ -67,44 +100,45 @@ const Footer: FC = () => {
 						<h3 className='text-xl font-bold mb-4'>{t('importantLinks')}</h3>
 						<ul className='space-y-2'>
 							<li>
-								<a
+								<Link
 									href='http://www.bangabhaban.gov.bd/'
 									target='_blank'
-									rel='noopener noreferrer'
 									className='text-gray-300 hover:text-white'
 								>
-									President's Office (Bangabhaban)
-								</a>
+									{t('po')}
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href='https://cabinet.gov.bd/'
 									target='_blank'
-									rel='noopener noreferrer'
 									className='text-gray-300 hover:text-white'
 								>
-									Cabinet Division
-								</a>
+									{t('cd')}
+								</Link>
 							</li>
 							<li>
-								<a
-									href='https://mopa.gov.bd/'
-									target='_blank'
-									rel='noopener noreferrer'
-									className='text-gray-300 hover:text-white'
-								>
-									Ministry of Public Administration
-								</a>
+								<Link href='https://mopa.gov.bd/' target='_blank' className='text-gray-300 hover:text-white'>
+									{t('mopa')}
+								</Link>
 							</li>
 							<li>
-								<a
+								<Link
 									href='https://bangladesh.gov.bd/'
 									target='_blank'
-									rel='noopener noreferrer'
 									className='text-gray-300 hover:text-white'
 								>
-									Bangladesh National Portal
-								</a>
+									{t('np')}
+								</Link>
+							</li>
+							<li>
+								<Link
+									href='https://www.eprocure.gov.bd/'
+									target='_blank'
+									className='text-gray-300 hover:text-white'
+								>
+									{t('egp')}
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -120,6 +154,9 @@ const Footer: FC = () => {
 							<a href='#' className='text-gray-300 hover:text-white'>
 								<Linkedin className='w-6 h-6' />
 							</a>
+							<a href='#' className='text-gray-300 hover:text-white'>
+								<Instagram className='w-6 h-6' />
+							</a>
 						</div>
 						<div className='flex items-center gap-2'>
 							<span className='text-sm'>{t('theme')}:</span>
@@ -129,7 +166,7 @@ const Footer: FC = () => {
 				</div>
 				<div className='border-t border-gray-800 mt-8 pt-8 text-center'>
 					<p className='text-gray-400'>
-						© {new Date().getFullYear()} {t('pmo')}. t{'allRightsReserved'}.
+						© {new Date().getFullYear()} {t('pmo')}. {t('allRightsReserved')}.
 					</p>
 				</div>
 			</div>

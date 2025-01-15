@@ -23,13 +23,13 @@ export const en = {
 		biography: 'Biography',
 		speeches: 'Speeches',
 		formerAdvisers: 'Former Chief Advisers',
-		
+
 		cabinetMember: 'Advisery Council',
 		ourTeam: 'Our Team',
 		subordinateOffice: 'Attached Offices',
 		missionAndVision: 'Mission & Vision',
 		webMail: 'Web Mail',
-		
+
 		programsAndPriorities: 'Programs and Priorities',
 		projects: 'Projects',
 		programs: 'Programs',
@@ -37,7 +37,7 @@ export const en = {
 		news: 'News',
 		socialMedia: 'Social Media',
 		archivedNews: 'Archived News',
-		
+
 		notice: 'Notice',
 		archivedNotice: 'Archived Notice',
 		tenders: 'Tenders',
@@ -57,12 +57,6 @@ export const en = {
 		photoGallery: 'Photo',
 		videoGallery: 'Video',
 		archivedGallery: 'Archived Media',
-
-		contact: 'Contact',
-		contactUs: 'Contact Us',
-		FAQ: 'FAQ',
-		feedback: 'Feedback',
-		address: 'Address',
 	},
 
 	// Home Page
@@ -79,11 +73,11 @@ export const en = {
 	messageTitle: 'Message from the Chief Adviser',
 	messageSubTitle: 'Dr. Muhammad Yunus shares his vision for Bangladesh',
 	biographyTitle: 'Dr. Muhammad Yunus Biography',
-	biographySubTitle: 'Learn about the life and work of Dr. Muhammad Yunus, Nobel Peace Prize laureate and Chief Adviser',
+	biographySubTitle:
+		'Learn about the life and work of Dr. Muhammad Yunus, Nobel Peace Prize laureate and Chief Adviser',
 	adviserSpeechSubtitle: 'Collection of speeches and addresses by the Chief Adviser',
 	advisersSpeechesTitle: 'Speeches and Addresses',
 	formerAdvisersSubtitle: 'A chronological journey through the leadership that has shaped our nation',
-
 
 	// Who we are
 	ourTeam: {
@@ -149,7 +143,6 @@ export const en = {
 	noVideosFound: 'No videos found!',
 
 	// Contact
-	contactUs: 'Contact Us',
 	contactSubtitle: 'Please feel free to reach out to us with any questions or inquiries',
 	fullName: 'Full Name',
 	email: 'Email',
@@ -160,8 +153,23 @@ export const en = {
 	faqSubtitle: "Find answers to common questions about the Chief Adviser's Office and our services",
 
 	// Footer
+	contact: 'Contact',
+	contactUs: 'Contact Us',
+	FAQ: 'FAQ',
+	feedback: 'Feedback',
+	map: 'Map',
+	address: 'Address',
 	quickLinks: 'Quick Links',
+	dNothi: 'Digital File System (dNothi)',
+	gems: 'Government Employee Portal (GEMS)',
+	hotline: 'Emergency Hotline',
+	myGov: 'myGov services',
 	importantLinks: 'Important Links',
+	po: 'President’s Office (Bangabhaban)',
+	cd: 'Cabinet Division',
+	mopa: 'Ministry of Public Administration',
+	np: 'Bangladesh National Portal',
+	egp: 'National e-Government Procurement (e-GP)',
 	followUs: 'Follow Us',
 	theme: 'Theme',
 	allRightsReserved: 'All rights reserved',

@@ -67,5 +67,5 @@ export const ROUTES = {
     BEPZA: 'https://www.bepza.gov.bd',
     BIDA: 'https://bida.gov.bd',
     PPPA: 'https://www.pppo.gov.bd'
-  }
+  },
 };

@@ -37,7 +37,7 @@ export const bn = {
 		news: 'সংবাদ',
 		socialMedia: 'সোশ্যাল মিডিয়া',
 		archivedNews: 'সংবাদ আর্কাইভ',
-		
+
 		notice: 'নোটিশ',
 		archivedNotice: 'নোটিশ আর্কাইভ',
 		tenders: 'দরপত্র',
@@ -57,12 +57,6 @@ export const bn = {
 		photoGallery: 'ছবি',
 		videoGallery: 'ভিডিও',
 		archivedGallery: 'মিডিয়া আর্কাইভ',
-
-		contact: 'যোগাযোগ',
-		contactUs: 'যোগাযোগ',
-		FAQ: 'সচরাচর জিজ্ঞাসা',
-		feedback: 'ফিডব্যাক',
-		address: 'ঠিকানা',
 	},
 
 	// Home Page
@@ -147,7 +141,6 @@ export const bn = {
 	noVideosFound: 'কোন ভিডিও পাওয়া যায়নি!',
 
 	// Contact
-	contactUs: 'যোগাযোগ করুন',
 	contactSubtitle: 'আপনার যেকোনো প্রশ্ন বা জিজ্ঞাসা নিয়ে আমাদের সাথে যোগাযোগ করুন',
 	fullName: 'পূর্ণ নাম',
 	email: 'ইমেইল',
@@ -158,8 +151,23 @@ export const bn = {
 	faqSubtitle: 'প্রধান উপদেষ্টার কার্যালয় এবং আমাদের সেবা সম্পর্কে সাধারণ প্রশ্ন ও উত্তর',
 
 	// Footer
+	contact: 'যোগাযোগ',
+	contactUs: 'যোগাযোগ',
+	FAQ: 'সচরাচর জিজ্ঞাসা',
+	feedback: 'ফিডব্যাক',
+	map: 'ম্যাপ',
+	address: 'ঠিকানা',
 	quickLinks: 'দ্রুত লিংক',
+	dNothi: 'ডিজিটাল নথি ব্যবস্থাপনা (ডি-নথি)',
+	gems: 'সরকারি কর্মচারি বাতায়ন (জিইএমএস)',
+	hotline: 'জরুরি হটলাইন',
+	myGov: 'সরকারি সেবা',
 	importantLinks: 'গুরুত্বপূর্ণ লিংক',
+	po: 'রাষ্ট্রপতির কার্যালয় (বঙ্গভবন)',
+	cd: 'মন্ত্রিপরিষদ বিভাগ',
+	mopa: 'জনপ্রশাসন মন্ত্রণালয়',
+	np: 'বাংলাদেশ জাতীয় তথ্য বাতায়ন',
+	egp: 'ন্যাশনাল ইজিপি',
 	followUs: 'আমাদের অনুসরণ করুন',
 	theme: 'থিম',
 	allRightsReserved: 'সর্বস্বত্ব সংরক্ষিত',
