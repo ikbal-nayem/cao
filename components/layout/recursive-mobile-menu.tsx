@@ -19,7 +19,7 @@ export function RecursiveMobileMenu({ items }: RecursiveMobileMenuProps) {
 				<AccordionItem key={index} value={`item-${index}`}>
 					{item.items ? (
 						<>
-							<AccordionTrigger className='text-xs'>
+							<AccordionTrigger className='text-sm'>
 								{item?.key ? t(item?.key) : item?.title}
 							</AccordionTrigger>
 							<AccordionContent>
@@ -34,7 +34,7 @@ export function RecursiveMobileMenu({ items }: RecursiveMobileMenuProps) {
 							target={item.isExternal ? '_blank' : undefined}
 							className='flex items-center justify-between py-4 hover:text-primary'
 						>
-							<span className='text-xs'>{item?.key ? t(item?.key) : item?.title}</span>
+							<span className='text-sm'>{item?.key ? t(item?.key) : item?.title}</span>
 							{item.isExternal && <ExternalLink className='w-3 h-3 min-w-min' />}
 						</Link>
 					)}
