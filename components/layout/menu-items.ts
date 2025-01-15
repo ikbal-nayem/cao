@@ -3,7 +3,6 @@ import {
 	NEWS,
 	NOTICE,
 	OPEN_TENDER,
-	OUR_TEAM,
 	POLICY,
 	PROGRAMS,
 	REPORTS,
@@ -70,7 +69,7 @@ export const menuItems: Array<IMenuItem> = [
 								key: 'ourTeam.midi',
 								href: '#',
 							},
-							{ title: 'Our Team', key: 'ourTeam.allOfficers', href: OUR_TEAM },
+							{ title: 'Our Team', key: 'ourTeam.allOfficers', href: ROUTES.WHO_WE_ARE.OUR_TEAM },
 						],
 					},
 					{

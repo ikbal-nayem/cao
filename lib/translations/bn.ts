@@ -171,4 +171,8 @@ export const bn = {
 	followUs: 'আমাদের অনুসরণ করুন',
 	theme: 'থিম',
 	allRightsReserved: 'সর্বস্বত্ব সংরক্ষিত',
+
+	// Error
+	pageNotFound: 'পেজটি পাওয়া যায়নি',
+	pageNotFoundSubTitle: 'আপনি যে পৃষ্ঠাটি খুঁজছেন সেটি বিদ্যমান নেই।'
 };

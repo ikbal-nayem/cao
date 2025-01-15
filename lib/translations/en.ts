@@ -173,4 +173,8 @@ export const en = {
 	followUs: 'Follow Us',
 	theme: 'Theme',
 	allRightsReserved: 'All rights reserved',
+
+	// Error
+	pageNotFound: 'Page Not Found',
+	pageNotFoundSubTitle: 'The page you are looking for does not exist.',
 };

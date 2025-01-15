@@ -4,7 +4,6 @@ export const SPEECHES = NEWS_MEDIA + '/speeches';
 
 export const FORMER_ADVISERS = '/administration/former-chief-advisers';
 
-export const OUR_TEAM = '/administration/staffs';
 export const CABINET = '/administration/cabinet';
 export const ORGANIZATION_STRUCTURE = '/administration/organization-structure';
 export const PROGRAMS = '/administration/programs';
@@ -28,7 +27,7 @@ export const ROUTES = {
 
   // Who we are
   WHO_WE_ARE: {
-    OUR_TEAM: '/administration/our-team',
+    OUR_TEAM: '/our-team',
     CABINET: '/administration/cabinet',
     MISSION_AND_VISION: '/administration/mission-and-vision',
     WEB_MAIL: '#',

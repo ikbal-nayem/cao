@@ -1,11 +1,13 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/hooks/use-translation';
 import { ArrowLeftIcon } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 const NotFoundPage: React.FC = () => {
 	const [canGoBack, setCanGoBack] = useState(false);
+	const { t } = useTranslation();
 
 	useEffect(() => {
 		setCanGoBack(window.history.length > 1);
@@ -18,8 +20,8 @@ const NotFoundPage: React.FC = () => {
 	return (
 		<div className='relative flex flex-col items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-800'>
 			<h1 className='text-9xl font-bold text-gray-800 dark:text-gray-200'>404</h1>
-			<p className='mt-4 text-2xl font-semibold text-gray-600'>Page Not Found</p>
-			<p className='mt-2 text-gray-500'>The page you are looking for does not exist.</p>
+			<p className='mt-4 text-2xl font-semibold text-gray-600'>{t('pageNotFound')}</p>
+			<p className='mt-2 text-gray-500'>{t('pageNotFoundSubTitle')}</p>
 			{canGoBack && (
 				<Button
 					onClick={handleGoBack}
