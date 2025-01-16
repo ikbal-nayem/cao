@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '../language/language-context';
 import { IMenuItem } from './menu-items';
+import Loading from '../ui/loading';
 
 interface RecursiveMenuProps {
 	items: IMenuItem[] | any[];
@@ -43,11 +44,19 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({
 
 	const apiData = apiFunc?.();
 
-	if (isFromAPI) items = apiData?.data;
+	if (isFromAPI) {
+		items = apiData?.data;
+		if (apiData?.isFetching)
+			return (
+				<div className='w-[100px]'>
+					<Loading />
+				</div>
+			);
+	}
 
 	return (
 		<>
-			{items.map((item, idx) => (
+			{items?.map((item, idx) => (
 				<div
 					key={item.key || idx}
 					className='relative'
