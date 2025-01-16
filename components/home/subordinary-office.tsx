@@ -39,7 +39,7 @@ const SubordinaryOfficeSection: FC = () => {
 					<h2 className='text-4xl font-bold mb-6'>{t('menu.subordinateOffice')}</h2>
 				</motion.div>
 
-				<div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center'>
+				<div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center items-start'>
 					{offices?.map((partner, index) => (
 						<motion.a
 							key={index}
@@ -58,7 +58,7 @@ const SubordinaryOfficeSection: FC = () => {
 						>
 							<div className='flex flex-col items-center'>
 								<Image
-									src={makePreviewURL(partner?.logo?.[0]?.relativepath) || DEFAULT_LINKS.NOT_AVAILABLE}
+									src={makePreviewURL(partner?.logo?.[0]?.relativepath) || DEFAULT_LINKS.GOV_LOGO_BN}
 									alt={language === 'en' ? partner.title_en : partner.title_bn}
 									width={64}
 									height={64}
