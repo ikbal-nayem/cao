@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { DEFAULT_LINKS } from '@/constants/common.constant';
 import { useTranslation } from '@/hooks/use-translation';
+import clsx from 'clsx';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,7 +13,6 @@ import { FC, useEffect, useState } from 'react';
 import { menuItems } from './menu-items';
 import { RecursiveMenu } from './recursive-menu';
 import { RecursiveMobileMenu } from './recursive-mobile-menu';
-import clsx from 'clsx';
 
 const Header: FC = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +46,9 @@ const Header: FC = () => {
 							height={40}
 							className='rounded-full'
 						/>
-						<span className='text-xl sm:text-2xl font-bold text-primary dark:text-primary/95'>{t('pmo')}</span>
+						<span className='text-xl sm:text-2xl font-bold text-primary dark:text-primary/95'>
+							{t('pmo')}
+						</span>
 					</Link>
 
 					{/* Desktop Menu */}

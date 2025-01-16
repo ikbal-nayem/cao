@@ -2,22 +2,36 @@
 
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/use-translation';
+import { IObject } from '@/interface/common.interface';
 import { cn } from '@/lib/utils';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
+import { useLanguage } from '../language/language-context';
 import { IMenuItem } from './menu-items';
 
 interface RecursiveMenuProps {
-	items: IMenuItem[];
+	items: IMenuItem[] | any[];
 	level?: number;
+	isFromAPI?: boolean;
+	apiFunc?: () => IObject;
+	titleProps?: string;
+	urlProps?: string;
 }
 
-export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }) => {
+export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({
+	items,
+	level = 0,
+	apiFunc,
+	isFromAPI,
+	titleProps,
+	urlProps,
+}) => {
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 	const { t } = useTranslation();
+	const { language } = useLanguage();
 
 	const handleMouseEnter = (key: string) => {
 		setActiveDropdown(key);
@@ -27,13 +41,17 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 		setActiveDropdown(null);
 	};
 
+	const apiData = apiFunc?.();
+
+	if (isFromAPI) items = apiData?.data;
+
 	return (
 		<>
-			{items.map((item) => (
+			{items.map((item, idx) => (
 				<div
-					key={item.key || item.title}
+					key={item.key || idx}
 					className='relative'
-					onMouseEnter={() => handleMouseEnter(item.key || item.title || '')}
+					onMouseEnter={() => handleMouseEnter(item.key || '')}
 					onMouseLeave={handleMouseLeave}
 				>
 					{item.items ? (
@@ -46,11 +64,11 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 									{ 'hover:bg-transparent': level === 0 }
 								)}
 							>
-								<span className='text-sm'>{item.key ? t(item.key) : item.title}</span>
+								<span className='text-sm'>{t(item.key)}</span>
 								{level === 0 ? <ChevronDown className='w-4 h-4' /> : <ChevronRight className='w-4 h-4' />}
 							</Button>
 
-							{activeDropdown === (item.key || item.title) && (
+							{activeDropdown === item.key && (
 								<motion.div
 									initial={{ opacity: 0, y: 10 }}
 									animate={{ opacity: 1, y: 0 }}
@@ -60,19 +78,28 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 									)}
 								>
 									<div className='py-1'>
-										<RecursiveMenu items={item.items} level={level + 1} />
+										<RecursiveMenu
+											items={item.items}
+											level={level + 1}
+											apiFunc={item?.apiFunc}
+											isFromAPI={item?.isFromAPI}
+											titleProps={item?.titleProps}
+											urlProps={item?.urlProps}
+										/>
 									</div>
 								</motion.div>
 							)}
 						</>
 					) : (
 						<Link
-							href={item.href || '#'}
-							target={item.isExternal ? '_blank' : undefined}
+							href={(isFromAPI ? item?.[urlProps || ''] : item?.href) || '#'}
+							target={item?.isExternal ? '_blank' : undefined}
 							className='flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
 						>
-							<span className='text-sm'>{item.key ? t(item.key) : item.title}</span>
-							{item.isExternal && <ExternalLink className='w-3 h-3 min-w-min' />}
+							<span className='text-sm'>
+								{isFromAPI ? item?.[`${titleProps}_${language}`] : t(item?.key)}
+							</span>
+							{item?.isExternal && <ExternalLink className='w-3 h-3 min-w-min' />}
 						</Link>
 					)}
 				</div>

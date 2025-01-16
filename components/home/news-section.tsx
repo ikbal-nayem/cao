@@ -13,7 +13,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC, Fragment } from 'react';
+import { FC } from 'react';
 import { useLanguage } from '../language/language-context';
 
 const NewsSection: FC = () => {

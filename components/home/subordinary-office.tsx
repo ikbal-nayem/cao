@@ -1,11 +1,11 @@
-import { axiosIns } from '@/config/axios';
+import { useSubordinateOfficeList } from '@/api/who-we-are';
 import { DEFAULT_LINKS } from '@/constants/common.constant';
 import { useTranslation } from '@/hooks/use-translation';
 import { ISubordinateOffice } from '@/interface/home.interface';
 import { makePreviewURL } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { useLanguage } from '../language/language-context';
 
 const itemVariants = {
@@ -13,18 +13,9 @@ const itemVariants = {
 };
 
 const SubordinaryOfficeSection: FC = () => {
-	const [isLoading, setLoading] = useState(true);
-	const [offices, setOffices] = useState<ISubordinateOffice[]>([]);
+	const { data: offices } = useSubordinateOfficeList();
 	const { t } = useTranslation();
 	const { language } = useLanguage();
-
-	useEffect(() => {
-		setLoading(false);
-		axiosIns
-			.get('/get-subordinate-office-list')
-			.then((res) => setOffices(res?.data))
-			.finally(() => setLoading(false));
-	}, []);
 
 	return (
 		<section className='py-20'>
@@ -40,7 +31,7 @@ const SubordinaryOfficeSection: FC = () => {
 				</motion.div>
 
 				<div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center items-start'>
-					{offices?.map((partner, index) => (
+					{offices?.map((partner: ISubordinateOffice, index: number) => (
 						<motion.a
 							key={index}
 							href={partner?.external_url}
