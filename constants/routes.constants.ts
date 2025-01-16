@@ -22,7 +22,7 @@ export const ROUTES = {
     MESSAGE: '/chief-adviser/message',
     BIOGRAPHY: '/chief-adviser/biography',
     SPEECHES: '/news-media/speeches',
-    FORMER_ADVISERS: '/administration/former-chief-advisers'
+    FORMER_ADVISERS: '/chief-adviser/former-chief-advisers'
   },
 
   // Who we are
