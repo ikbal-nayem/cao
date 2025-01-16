@@ -19,8 +19,8 @@ export interface IMenuItem {
 	items?: IMenuItem[];
 	isFromAPI?: boolean;
 	apiFunc?: () => IObject;
-	titleProps?: string
-	urlProps?: string
+	titleProps?: string;
+	urlProps?: string;
 }
 
 export const menuItems: Array<IMenuItem> = [
@@ -83,18 +83,7 @@ export const menuItems: Array<IMenuItem> = [
 						apiFunc: useSubordinateOfficeList,
 						titleProps: 'title',
 						urlProps: 'external_url',
-						items: []
-						// items: [
-						// 	{ key: 'subordinateOffice.pepz', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.ngo', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.beza', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.bepz', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.bida', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.pppa', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.nsda', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.ssf', href: '#', isExternal: true },
-						// 	{ key: 'subordinateOffice.nsi', href: '#', isExternal: true },
-						// ],
+						items: [],
 					},
 				],
 			},

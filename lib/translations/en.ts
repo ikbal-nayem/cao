@@ -91,17 +91,6 @@ export const en = {
 		midi: 'Moheskhali-Matarbari Integrated Infrastructure Development Initiative (MIDI)',
 		allOfficers: 'All Officers',
 	},
-	subordinateOffice: {
-		pepz: 'Private Export Processing Zones (PEPZ)',
-		ngo: 'NGO Affairs Bureau',
-		beza: 'Bangladesh Economic Zones Authority (BEZA)',
-		bepz: 'Bangladesh Export Processing Zones Authority (BEPZA)',
-		bida: 'Bangladesh Investment Development Authority (BIDA)',
-		pppa: 'Public Private Partnership Authority (PPPA)',
-		nsda: 'National Skills Development Authority (NSDA)',
-		ssf: 'Special Security Force (SSF)',
-		nsi: 'National Security Intelligence (NSI)',
-	},
 	cabinetMemberTitle: 'Advisery Council Members',
 	cabinetMemberSubtitle:
 		"Meet our distinguished Advisery council members who work tirelessly to implement national policies and drive Bangladesh's development agenda",
