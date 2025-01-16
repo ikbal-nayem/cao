@@ -43,7 +43,7 @@ const ScrollToTop: FC = () => {
           <Button
             onClick={scrollToTop}
             size="icon"
-            className="h-10 w-10 rounded-full shadow-lg"
+            className="h-8 w-8 rounded-full shadow-lg bg-blue-950/70"
           >
             <ArrowUp className="h-5 w-5" />
           </Button>

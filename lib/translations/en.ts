@@ -28,7 +28,6 @@ export const en = {
 		ourTeam: 'Our Team',
 		subordinateOffice: 'Attached Offices',
 		missionAndVision: 'Mission & Vision',
-		webMail: 'Web Mail',
 
 		programsAndPriorities: 'Programs and Priorities',
 		projects: 'Projects',
@@ -86,7 +85,6 @@ export const en = {
 		pressWing: 'Press Wing',
 		honourableAdviser: 'Hon’ble Adviser',
 		specialAssistant: 'Special Assistant/ Special Envoy/ Principal Coordinator',
-		specializedUnit: 'Specialized Unit',
 		governanceInnovationUnit: 'Governance Innovation Unit (GIU)',
 		asrayn2: 'ASRAYN-2',
 		subRegionalCooperationCell: 'Sub-Regional Co-operation Cell (SRCC)',
@@ -160,6 +158,7 @@ export const en = {
 	map: 'Map',
 	address: 'Address',
 	quickLinks: 'Quick Links',
+	webMail: 'Web Mail',
 	dNothi: 'Digital File System (dNothi)',
 	gems: 'Government Employee Portal (GEMS)',
 	hotline: 'Emergency Hotline',

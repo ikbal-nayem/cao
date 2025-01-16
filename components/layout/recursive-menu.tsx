@@ -69,7 +69,7 @@ export const RecursiveMenu: React.FC<RecursiveMenuProps> = ({ items, level = 0 }
 						<Link
 							href={item.href || '#'}
 							target={item.isExternal ? '_blank' : undefined}
-							className='flex items-center justify-between w-full px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+							className='flex items-center justify-between w-full px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
 						>
 							<span className='text-sm'>{item.key ? t(item.key) : item.title}</span>
 							{item.isExternal && <ExternalLink className='w-3 h-3 min-w-min' />}

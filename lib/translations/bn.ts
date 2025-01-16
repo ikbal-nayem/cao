@@ -28,7 +28,6 @@ export const bn = {
 		ourTeam: 'কর্মকর্তাবৃন্দ',
 		subordinateOffice: 'সংযুক্ত দপ্তরসমূহ',
 		missionAndVision: 'মিশন ও ভিশন',
-		webMail: 'ওয়েব মেইল',
 
 		programsAndPriorities: 'কার্যক্রম ও অগ্রাধিকার',
 		projects: 'প্রকল্প',
@@ -85,7 +84,6 @@ export const bn = {
 		pressWing: 'প্রেস অনুবিভাগ',
 		honourableAdviser: 'মাননীয় উপদেষ্টা',
 		specialAssistant: 'বিশেষ সহকারী/বিশেষ দূত/মুখ্য সমন্বয়ক',
-		specializedUnit: 'বিশেষায়িত ইউনিট',
 		governanceInnovationUnit: 'গভর্ন্যান্স ইনোভেশন ইউনিট (জিআইইউ)',
 		asrayn2: 'আশ্রয়ণ-২',
 		subRegionalCooperationCell: 'উপআঞ্চলিক সহযোগিতা সেল (এসআরসিসি)',
@@ -158,6 +156,7 @@ export const bn = {
 	map: 'ম্যাপ',
 	address: 'ঠিকানা',
 	quickLinks: 'দ্রুত লিংক',
+	webMail: 'ওয়েব মেইল',
 	dNothi: 'ডিজিটাল নথি ব্যবস্থাপনা (ডি-নথি)',
 	gems: 'সরকারি কর্মচারি বাতায়ন (জিইএমএস)',
 	hotline: 'জরুরি হটলাইন',

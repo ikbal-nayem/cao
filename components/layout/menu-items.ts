@@ -52,7 +52,6 @@ export const menuItems: Array<IMenuItem> = [
 								key: 'ourTeam.specialAssistant',
 								href: '#',
 							},
-							{ title: 'Specialized Unit', key: 'ourTeam.specializedUnit', href: '#' },
 							{
 								title: 'Governance Innovation Unit (GIU)',
 								key: 'ourTeam.governanceInnovationUnit',
@@ -88,7 +87,6 @@ export const menuItems: Array<IMenuItem> = [
 					},
 				],
 			},
-			{ title: 'WEB MAIL', key: 'menu.webMail', href: ROUTES.WHO_WE_ARE.WEB_MAIL },
 			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: ROUTES.WHO_WE_ARE.CABINET },
 			{
 				title: 'MISSION AND VISION',
