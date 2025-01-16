@@ -10,8 +10,8 @@ import { ChevronDown, ChevronRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useLanguage } from '../language/language-context';
-import { IMenuItem } from './menu-items';
 import Loading from '../ui/loading';
+import { IMenuItem } from './menu-items';
 
 interface RecursiveMenuProps {
 	items: IMenuItem[] | any[];
