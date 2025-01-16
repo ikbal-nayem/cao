@@ -10,9 +10,9 @@ const LeadershipSection = dynamic(() => import('@/components/home/leadership/lea
 	loading: () => <Loading />,
 });
 
-const MissionVisionSection = dynamic(() => import('@/components/home/mission-vision-section'), {
-	loading: () => <Loading />,
-});
+// const MissionVisionSection = dynamic(() => import('@/components/home/mission-vision-section'), {
+// 	loading: () => <Loading />,
+// });
 
 const NewsSection = dynamic(() => import('@/components/home/news-section'), {
 	loading: () => <Loading />,
@@ -32,7 +32,7 @@ export default function Home() {
 			<Suspense fallback={<Loading />}>
 				<HeroSection />
 				<LeadershipSection />
-				<MissionVisionSection />
+				{/* <MissionVisionSection /> */}
 				<NewsSection />
 				<PrioritiesSection />
 				{/* <EmergencyContacts /> */}
