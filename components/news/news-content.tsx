@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 
 interface NewsContentProps {
 	descriptionBn?: string;

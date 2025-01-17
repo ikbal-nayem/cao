@@ -7,7 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { Binoculars, Target } from 'lucide-react';
 import Image from 'next/image';
 import { FC, useEffect, useRef, useState } from 'react';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 
 const MissionVisionSection: FC = () => {
 	const [mv, setMV] = useState<{

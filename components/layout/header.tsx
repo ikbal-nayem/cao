@@ -1,6 +1,6 @@
 'use client';
 
-import { LanguageSwitch } from '@/components/language/language-switch';
+import { LanguageSwitch } from '@/context/language/language-switch';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { DEFAULT_LINKS } from '@/constants/common.constant';

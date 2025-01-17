@@ -1,7 +1,7 @@
 'use client';
 
 import { useSpeechList } from '@/api/news-media';
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import Loading from '@/components/ui/loading';
 import { DATE_FORMAT, DEFAULT_LINKS } from '@/constants/common.constant';
 import { SPEECHES } from '@/constants/routes.constants';

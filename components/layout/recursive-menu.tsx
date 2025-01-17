@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { ChevronDown, ChevronRight, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 import Loading from '../ui/loading';
 import { IMenuItem } from './menu-items';
 

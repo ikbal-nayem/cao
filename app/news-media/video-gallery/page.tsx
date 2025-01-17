@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from '@/hooks/use-translation';
 import { IVideoGallery } from '@/interface/news-media.interface';
 import { axiosIns } from '@/config/axios';
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import { makePreviewURL } from '@/lib/utils';
 import { format } from 'date-fns';
 import { IFile } from '@/interface/common.interface';

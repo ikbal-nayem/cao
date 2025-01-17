@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import { SpeechHeader } from '@/components/speeches/speech-header';
 import { SpeechMedia } from '@/components/speeches/speech-media';
 import { SpeechPdfPreview } from '@/components/speeches/speech-pdf-preview';

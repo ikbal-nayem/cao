@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { axiosIns } from '@/config/axios';
 import { DEFAULT_LINKS } from '@/constants/common.constant';

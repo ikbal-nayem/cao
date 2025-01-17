@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import PageTitle from '@/components/layout/page-title';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { axiosIns } from '@/config/axios';

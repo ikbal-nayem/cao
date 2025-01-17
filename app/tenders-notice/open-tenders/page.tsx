@@ -1,7 +1,7 @@
 'use client';
 
 import { useTanderList } from '@/api/notice';
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import PageTitle from '@/components/layout/page-title';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';

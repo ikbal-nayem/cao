@@ -1,7 +1,7 @@
 'use client';
 
 import { useTanderList } from '@/api/notice';
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import PageTitle from '@/components/layout/page-title';
 import NoDataFound from '@/components/ui/no-data-found';
 import { Pagination } from '@/components/ui/pagination';

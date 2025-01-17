@@ -14,7 +14,7 @@ import { ArrowRight, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment, useEffect, useRef } from 'react';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 import Loading from '../ui/loading';
 
 export default function NewsList() {

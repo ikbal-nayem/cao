@@ -13,7 +13,7 @@ import { Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 
 interface RelatedNewsProps {
 	currentNewsId: string;

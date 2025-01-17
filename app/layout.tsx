@@ -1,7 +1,7 @@
-import { LanguageProvider } from '@/components/language/language-context';
+import { LanguageProvider } from '@/context/language/language-context';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
-import { ThemeProvider } from '@/components/theme/theme-provider';
+import { ThemeProvider } from '@/context/theme/theme-provider';
 import { AppProgressBar } from '@/components/ui/progress-bar';
 import ScrollToTop from '@/components/ui/scroll-to-top';
 import { queryClient } from '@/config/queryClient';

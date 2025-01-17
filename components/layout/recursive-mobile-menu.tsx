@@ -5,7 +5,7 @@ import { useTranslation } from '@/hooks/use-translation';
 import { IObject } from '@/interface/common.interface';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 import Loading from '../ui/loading';
 import { IMenuItem } from './menu-items';
 

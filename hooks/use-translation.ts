@@ -1,6 +1,6 @@
 'use client';
 
-import { useLanguage } from '@/components/language/language-context';
+import { useLanguage } from '@/context/language/language-context';
 import { TranslationKey, getTranslation } from '@/lib/translations';
 
 const convertEnToBn = (str: string) => {

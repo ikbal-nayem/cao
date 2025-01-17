@@ -14,7 +14,7 @@ import { ArrowRight, Calendar } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 
 const NewsSection: FC = () => {
 	const { t, tNumber } = useTranslation();

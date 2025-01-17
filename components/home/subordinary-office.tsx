@@ -6,7 +6,7 @@ import { makePreviewURL } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FC } from 'react';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 
 const itemVariants = {
 	hover: { scale: 1.05, transition: { duration: 0.2 } },

@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeSwitcher } from '@/components/theme/theme-switcher';
+import { ThemeSwitcher } from '@/context/theme/theme-switcher';
 import { ROUTES } from '@/constants/routes.constants';
 import { useTranslation } from '@/hooks/use-translation';
 import { Clock, Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';

@@ -9,7 +9,7 @@ import { bn, enUS } from 'date-fns/locale';
 import { motion } from 'framer-motion';
 import { Calendar } from 'lucide-react';
 import Image from 'next/image';
-import { useLanguage } from '../language/language-context';
+import { useLanguage } from '../../context/language/language-context';
 
 interface NewsHeaderProps {
 	item: INewsDetails;
