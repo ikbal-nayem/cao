@@ -1,19 +1,14 @@
 export const NEWS_MEDIA = '/news-media';
 export const NEWS = NEWS_MEDIA + '/news/';
-export const SPEECHES = NEWS_MEDIA + '/speeches';
 
-export const FORMER_ADVISERS = '/administration/former-chief-advisers';
-
-export const CABINET = '/administration/cabinet';
-export const ORGANIZATION_STRUCTURE = '/administration/organization-structure';
-export const PROGRAMS = '/administration/programs';
+export const PROGRAMS = '/who-we-are/programs';
 
 export const NOTICE = '/tenders-notice/notices';
 export const OPEN_TENDER = '/tenders-notice/open-tenders';
 export const ARCHIVE_TENDER = '/tenders-notice/archive-tenders';
 
-export const POLICY = '/administration/documents/policy';
-export const REPORTS = '/administration/documents/reports';
+export const POLICY = '/who-we-are/documents/policy';
+export const REPORTS = '/who-we-are/documents/reports';
 
 
 export const ROUTES = {
@@ -28,13 +23,12 @@ export const ROUTES = {
   // Who we are
   WHO_WE_ARE: {
     OUR_TEAM: '/our-team',
-    CABINET: '/administration/cabinet',
-    MISSION_AND_VISION: '/administration/mission-and-vision',
-    WEB_MAIL: '#',
-    PROGRAMS: '/administration/programs',
+    CABINET: '/who-we-are/cabinet',
+    MISSION_AND_VISION: '/who-we-are/mission-and-vision',
+    PROGRAMS: '/who-we-are/programs',
     DOCUMENTS: {
-      POLICY: '/administration/documents/policy',
-      REPORTS: '/administration/documents/reports'
+      POLICY: '/who-we-are/documents/policy',
+      REPORTS: '/who-we-are/documents/reports'
     }
   },
 
@@ -58,7 +52,8 @@ export const ROUTES = {
     MAIN: '/contact',
     FAQ: '/contact/faq',
     FEEDBACK: '/contact/feedback',
-    ADDRESS: '/contact/address'
+    ADDRESS: '/contact/address',
+    WEB_MAIL: '#',
   },
 
   // External Links

@@ -1,10 +1,10 @@
 'use client';
 
 import { useSpeechList } from '@/api/news-media';
-import { useLanguage } from '@/context/language/language-context';
 import Loading from '@/components/ui/loading';
 import { DATE_FORMAT, DEFAULT_LINKS } from '@/constants/common.constant';
-import { SPEECHES } from '@/constants/routes.constants';
+import { ROUTES } from '@/constants/routes.constants';
+import { useLanguage } from '@/context/language/language-context';
 import { useTranslation } from '@/hooks/use-translation';
 import { ISpeech } from '@/interface/news-media.interface';
 import { makePreviewURL, makeYTThumb } from '@/lib/utils';
@@ -54,7 +54,7 @@ export default function AdviserSpeechesPage() {
 									transition={{ duration: 0.5, delay: index * 0.1 }}
 									className='group'
 								>
-									<Link href={`${SPEECHES}/${speech?.id}`}>
+									<Link href={`${ROUTES.ADVISER.SPEECHES}/${speech?.id}`}>
 										<div className='relative aspect-video rounded-xl overflow-hidden mb-4'>
 											<Image
 												src={
