@@ -12,7 +12,7 @@ import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
-export default function StaffsPage() {
+export default function OurTeamPage() {
 	const [isLoading, setLoading] = useState<boolean>(true);
 	const [ourTeam, setOurTeam] = useState<IOurStaffs[]>();
 	const [selectedStaff, setSelectedStaff] = useState<IStaffMember | null>(null);
@@ -57,6 +57,21 @@ export default function StaffsPage() {
 
 			<section className='pb-24 bg-gradient-to-b from-background to-blue-950/10'>
 				<div className='container mx-auto px-4'>
+					<div className='flex flex-wrap gap-4 my-10'>
+						{ourTeam?.map((grp) => (
+							<motion.button
+								key={grp?.id}
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								transition={{ duration: 0.8 }}
+								// onClick={() => handleScroll(grp?.id)}
+								className='px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600'
+							>
+								{language === 'en' ? grp?.group_name_en : grp?.group_name_bn}
+							</motion.button>
+						))}
+					</div>
+
 					{isLoading && <StaffSkeleton />}
 					{ourTeam?.map((grp) => (
 						<section key={grp?.id}>
