@@ -12,7 +12,8 @@ import localFont from 'next/font/local';
 import './globals.css';
 
 const roboto = Roboto({ weight: '400', subsets: ['latin'], variable: '--font-roboto' });
-const nikosh = localFont({src: '../static/fonts/Nikosh.woff2', variable: '--font-nikosh'})
+// const nikosh = localFont({src: '../static/fonts/Nikosh.woff2', variable: '--font-nikosh'})
+const nikosh = localFont({src: '../static/fonts/kalpurush.woff2', variable: '--font-nikosh'})
 
 export const metadata: Metadata = {
 	title: 'Chief Adviser Office - Bangladesh',
