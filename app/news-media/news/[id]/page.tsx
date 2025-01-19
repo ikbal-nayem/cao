@@ -6,12 +6,6 @@ import { InferGetStaticPropsType } from 'next';
 import { getStaticProps } from 'next/dist/build/templates/pages';
 import { notFound } from 'next/navigation';
 
-// interface NewsDetailsPageProps {
-// 	params: {
-// 		id: string;
-// 	};
-// }
-
 type NewsDetailsPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default async function NewsDetailsPage({ params }: NewsDetailsPageProps) {

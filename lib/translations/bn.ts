@@ -1,6 +1,7 @@
 export const bn = {
 	// Common
 	pmo: 'প্রধান উপদেষ্টার কার্যালয়',
+	all: 'সকল',
 	readMore: 'বিস্তারিত পড়ুন',
 	learnMore: 'আরও জানুন',
 	viewMore: 'আরও দেখুন',

@@ -22,7 +22,7 @@ export const ROUTES = {
 
   // Who we are
   WHO_WE_ARE: {
-    OUR_TEAM: '/our-team',
+    OUR_TEAM: '/our-team/',
     CABINET: '/who-we-are/cabinet',
     MISSION_AND_VISION: '/who-we-are/mission-and-vision',
     PROGRAMS: '/who-we-are/programs',

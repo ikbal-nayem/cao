@@ -1,6 +1,7 @@
 export const en = {
 	// Common
 	pmo: "Chief Adviser's Office",
+	all: 'All',
 	readMore: 'Read More',
 	learnMore: 'Learn More',
 	viewMore: 'View More',
