@@ -6,11 +6,9 @@ import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { DEFAULT_LINKS } from '@/constants/common.constant';
 import { ROUTES } from '@/constants/routes.constants';
 import { useLanguage } from '@/context/language/language-context';
-import { useTranslation } from '@/hooks/use-translation';
 import { IOurStaffs, IStaffMember } from '@/interface/administration.interface';
 import { IObject } from '@/interface/common.interface';
-import { makePreviewURL } from '@/lib/utils';
-import clsx from 'clsx';
+import { makePreviewURL, makeSlug } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { Mail, Phone } from 'lucide-react';
 import Image from 'next/image';
@@ -21,17 +19,12 @@ type OurtTeamProps = {
 	params: Promise<{ groupName: string }>;
 };
 
-const getUrl = (grp: IObject) => {
-	return grp?.group_name_en?.replaceAll(' ', '-')?.replaceAll('/', '-')?.toLowerCase();
-};
-
 export default function OurTeamPage({ params }: OurtTeamProps) {
 	const { groupName } = use(params);
 
 	const [selectedStaff, setSelectedStaff] = useState<IStaffMember | null>(null);
 	const { data: ourTeamGrpList } = useOurTeamGrpList();
 	const { data: ourTeam, isFetching } = useOurTeamList();
-	const { t } = useTranslation();
 	const { language } = useLanguage();
 
 	return (
@@ -39,31 +32,14 @@ export default function OurTeamPage({ params }: OurtTeamProps) {
 			<section className='pb-24 bg-gradient-to-b from-background to-blue-950/10'>
 				<div className='container mx-auto px-4'>
 					<div className='flex flex-wrap gap-4 my-10'>
-						<Link href={ROUTES.WHO_WE_ARE.OUR_TEAM + 'all'}>
-							<Button
-								// initial={{ opacity: 0, y: 20 }}
-								// whileInView={{ opacity: 1, y: 0 }}
-								// transition={{ duration: 0.8 }}
-								variant={'outline'}
-								className={clsx('px-4 py-2 rounded-xl border hover:text-gray-50 hover:bg-primary/70', {
-									'bg-primary text-white border-primary': groupName === 'all',
-								})}
-							>
-								{t('all')}
-							</Button>
-						</Link>
 						{ourTeamGrpList?.map((grp: IObject) => (
-							<Link key={grp?.id} href={ROUTES.WHO_WE_ARE.OUR_TEAM + getUrl(grp)}>
-								<motion.button
-									initial={{ opacity: 0, y: 20 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									transition={{ duration: 0.8 }}
-									className={clsx('px-4 py-2 rounded-xl border hover:text-gray-50 hover:bg-primary/70', {
-										'bg-primary text-white border-primary': groupName === getUrl(grp),
-									})}
+							<Link key={grp?.id} href={ROUTES.WHO_WE_ARE.OUR_TEAM + makeSlug(grp?.group_name_en)}>
+								<Button
+									variant={groupName === makeSlug(grp?.group_name_en) ? 'default' : 'outline'}
+									className='px-4 py-2 rounded-xl'
 								>
 									{language === 'en' ? grp?.group_name_en : grp?.group_name_bn}
-								</motion.button>
+								</Button>
 							</Link>
 						))}
 					</div>
@@ -71,7 +47,7 @@ export default function OurTeamPage({ params }: OurtTeamProps) {
 					{isFetching && <StaffSkeleton />}
 					{ourTeam?.map(
 						(grp: IOurStaffs) =>
-							(groupName === getUrl(grp) || groupName === 'all') && (
+							(groupName === makeSlug(grp?.group_name_en) || groupName === 'all-officers') && (
 								<section key={grp?.id}>
 									<motion.div
 										initial={{ opacity: 0, y: 20 }}

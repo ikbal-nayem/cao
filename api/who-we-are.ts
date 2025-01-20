@@ -1,4 +1,6 @@
 import { axiosIns } from '@/config/axios';
+import { ROUTES } from '@/constants/routes.constants';
+import { makeSlug } from '@/lib/utils';
 import { useQuery } from '@tanstack/react-query';
 
 export const useSubordinateOfficeList = () => {
@@ -17,7 +19,14 @@ export const useOurTeamGrpList = () => {
 		queryKey: ['our-team-grp-list'],
 		queryFn: async () => {
 			const response = await axiosIns.get(`/get-staff-group`);
-			return response.data;
+			return [
+				{
+					id: 99,
+					group_name_bn: 'সকল অফিসার',
+					group_name_en: 'All Officers',
+				},
+				...response.data,
+			].map((d) => ({ ...d, url: `${ROUTES.WHO_WE_ARE.OUR_TEAM}${makeSlug(d.group_name_en)}` }));
 		},
 		staleTime: 60 * 60 * 60 * 1000,
 	});

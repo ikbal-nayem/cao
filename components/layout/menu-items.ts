@@ -48,6 +48,11 @@ export const menuItems: Array<IMenuItem> = [
 				items: [
 					{
 						key: 'menu.ourTeam',
+						// isFromAPI: true,
+						// apiFunc: useOurTeamGrpList,
+						// titleProps: 'group_name',
+						// urlProps: 'url',
+						// items: [],
 						items: [
 							{ title: 'Secretariat Wing', key: 'ourTeam.secretariatWing', href: '#' },
 							{ title: 'Personal Wing', key: 'ourTeam.personalWing', href: '#' },
