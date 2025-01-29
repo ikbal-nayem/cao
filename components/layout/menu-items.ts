@@ -93,11 +93,11 @@ export const menuItems: Array<IMenuItem> = [
 				],
 			},
 			{ title: 'Advisery Council', key: 'menu.cabinetMember', href: ROUTES.WHO_WE_ARE.CABINET },
-			{
-				title: 'MISSION AND VISION',
-				key: 'menu.missionAndVision',
-				href: ROUTES.WHO_WE_ARE.MISSION_AND_VISION,
-			},
+			// {
+			// 	title: 'MISSION AND VISION',
+			// 	key: 'menu.missionAndVision',
+			// 	href: ROUTES.WHO_WE_ARE.MISSION_AND_VISION,
+			// },
 		],
 	},
 	{
